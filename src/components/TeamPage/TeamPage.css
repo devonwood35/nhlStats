@@ -1,0 +1,15 @@
+.team-page {
+	/*width: 80%;*/
+	/*margin: 0 auto;*/
+	border: 1px solid green;
+	text-align: center;
+}
+
+.row-fix {
+	width: 100%;
+	margin: auto
+}
+
+.info-box {
+	border: 1px solid black;
+}
