@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 
 setGlobal({
-	players: [],
-	teamInfo: [],
-	teamPage: "",
-	teamRoster: 0
+	teams: [],
+	teamInfo: {},
+	roster: [],
+	player: {}
 })
 
 ReactDOM.render(<App />, document.getElementById('root'));

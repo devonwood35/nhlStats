@@ -1,19 +1,10 @@
-import React, { setGlobal } from "reactn";
+import React from "reactn";
+import { Link } from 'react-router-dom';
 import "./SideBtn.css";
 
-export default class SideBtn extends React.PureComponent {
-	teamChange = event => {
-		setGlobal({
-			teamPage: event.target.value,
-			teamRoster: 0
-		})
-	}
+const SideBtn = props =>
+	<div>
+		<Link to={`/team/${props.id}`}><button value={props.id} className="btn sideBtn" type="button">{props.name}</button></Link>
+	</div>
 
-	render() {
-		return (
-			<div>
-				<button onClick={this.teamChange} value={this.props.id} className="btn sideBtn" type="button">{this.props.name}</button>
-			</div>
-		);
-	}
-}
+export default SideBtn;
