@@ -2,6 +2,7 @@ import React, { setGlobal } from "reactn";
 import "./PlayerPage.css";
 import apiCall from "../../util/api.js";
 import Stats from "../../components/Stats/Stats.js";
+import StatGraph from "../../components/StatGraph/StatGraph.js";
 
 export default class PlayerPage extends React.PureComponent {
 	componentWillMount() {
@@ -63,6 +64,7 @@ export default class PlayerPage extends React.PureComponent {
 					</div>
 				</div>
 				<Stats stats={this.global.player.stats[0].splits}/>
+				<StatGraph player={this.props.match.params.playerid}/>
 			</div>
 			: <div/>
 		)
