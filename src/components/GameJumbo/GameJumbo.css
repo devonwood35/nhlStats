@@ -1,0 +1,30 @@
+.game-jumbo {
+	text-align: center;
+	width: 90%;
+	margin: auto;
+	border: 1px solid black;
+}
+
+.image-box {
+	width: 90%;
+	padding: 10px;
+	border-bottom: 3px solid grey;
+	margin: auto;
+	height: 21rem;
+}
+
+.helper {
+	height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.team-image {
+	margin: auto;
+	height: 85%;
+}
+
+.goal-box {
+	height: 100%;
+	display: inline-block;
+}

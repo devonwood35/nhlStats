@@ -8,6 +8,7 @@ import Home from "./pages/Home/Home.js";
 import PlayerPage from "./pages/PlayerPage/PlayerPage.js";
 import RosterPage from "./pages/RosterPage/RosterPage.js";
 import TeamPage from "./pages/TeamPage/TeamPage.js";
+import GamePage from "./pages/GamePage/GamePage.js";
 
 export default class App extends React.PureComponent {
   componentDidMount() {
@@ -46,6 +47,7 @@ export default class App extends React.PureComponent {
               <Route exact path={"/team/:teamid"} component={ TeamPage } />
               <Route exact path={"/team/:teamid/roster"} component={ RosterPage } />
               <Route exact path={"/team/:teamid/player/:playerid"} component={ PlayerPage } />
+              <Route exact path={"/game/:gameid"} component={ GamePage } />
             </div>
           </div>
         </div>

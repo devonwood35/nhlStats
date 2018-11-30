@@ -1,5 +1,4 @@
 import React, { setGlobal } from "reactn";
-import { Link } from 'react-router-dom';
 import apiCall from "../../util/api.js";
 import PlayerCard from "../../components/PlayerCard/PlayerCard.js";
 

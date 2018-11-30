@@ -18,7 +18,6 @@ export default class StatGraph extends React.PureComponent {
 		apiCall.getGameStats(this.props.player, year).then(games => {
 			let chart = am4core.create("chartdiv", am4charts.XYChart);
 			let season = games.data.people[0].stats[0].splits;
-			console.log(season);
 			let data = [];
 			let stats = 0;
 			for (let i = season.length-1; i > -1; i--) {
@@ -36,9 +35,6 @@ export default class StatGraph extends React.PureComponent {
 					case "shotPct":
 						stats = season[i].stat.shotPct
 						break;
-					case "toi":
-						stats = season[i].stat.timeOnIce
-						break;
 					case "plusMinus":
 						stats+=season[i].stat.plusMinus
 						break;
@@ -50,7 +46,6 @@ export default class StatGraph extends React.PureComponent {
 					date: new Date(parseInt(date[0]), (parseInt(date[1])-1), parseInt(date[2])), name: "name", value: stats
 				})
 			}
-			console.log(data)
 			chart.data = data;
 
 		    let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -108,12 +103,11 @@ export default class StatGraph extends React.PureComponent {
 				    <button type="button" onClick={this.changeStat} value="goals" className="btn btn-secondary">Goals</button>
 				    <button type="button" onClick={this.changeStat} value="assists" className="btn btn-secondary">Assists</button>
 				    <button type="button" onClick={this.changeStat} value="shotPct" className="btn btn-secondary">Shot %</button>
-				    <button type="button" onClick={this.changeStat} value="toi" className="btn btn-secondary">TOI</button>
 				    <button type="button" onClick={this.changeStat} value="plusMinus" className="btn btn-secondary">+/-</button>
 				    <button type="button" className="btn btn-secondary disabled">Season:</button>
 					<select onChange={this.changeYear} className="year-select">
-						{this.state.career.filter(year => year.league.name === "National Hockey League").map(year => (
-							<option value={year.season}>{year.season}</option>
+						{this.state.career.filter(year => year.league.name === "National Hockey League").map((year,index) => (
+							<option key={index} value={year.season}>{year.season}</option>
 				  		))}
 				  	</select>
 				</div>

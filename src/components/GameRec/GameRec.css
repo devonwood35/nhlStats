@@ -1,0 +1,22 @@
+.recent-games {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.recent-header {
+	border: 1px solid grey;
+	margin: 0;
+	background: #efefef;
+	font-family: 'Anton', sans-serif;
+	height: 1.6rem;
+}
+
+.recent-data {
+	border: 1px solid grey;
+	margin: 0;
+}
+
+.recent-wrapper {
+	border: 5px solid grey;
+}

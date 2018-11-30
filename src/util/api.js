@@ -15,5 +15,8 @@ export default {
 	},
 	getGameStats: function(id, date) {
 		return axios.get(`https://statsapi.web.nhl.com/api/v1/people/${id}?expand=person.stats&stats=gameLog&season=${date}`);
+	},
+	getGame: function(id) {
+		return axios.get(`https://statsapi.web.nhl.com/api/v1/game/${id}/feed/live`);
 	}
 }

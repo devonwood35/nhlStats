@@ -2,6 +2,7 @@ import React, { setGlobal } from "reactn";
 import "./PlayerPage.css";
 import apiCall from "../../util/api.js";
 import Stats from "../../components/Stats/Stats.js";
+import GameRec from "../../components/GameRec/GameRec.js";
 import StatGraph from "../../components/StatGraph/StatGraph.js";
 
 export default class PlayerPage extends React.PureComponent {
@@ -18,7 +19,6 @@ export default class PlayerPage extends React.PureComponent {
 	}
 
 	render() {
-		console.log(this.global.player)
 		return (
 			this.global.player.currentTeam ?
 			<div>
@@ -63,7 +63,11 @@ export default class PlayerPage extends React.PureComponent {
 						</div>
 					</div>
 				</div>
+				<br/>
 				<Stats stats={this.global.player.stats[0].splits}/>
+				<br/>
+				<GameRec player={this.props.match.params.playerid}/>
+				<br/>
 				<StatGraph player={this.props.match.params.playerid}/>
 			</div>
 			: <div/>
