@@ -9,7 +9,8 @@ setGlobal({
 	teams: [],
 	teamInfo: {},
 	roster: [],
-	player: {}
+	player: {},
+	sideBar: -1
 })
 
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -1,19 +1,38 @@
 import React from 'reactn';
+import "./Period.css";
 
 const Period = props =>
 	<div>
 		<div className="card">
-			<div className="card-header" id="headingOne">
+			<div className="card-header" id={props.header}>
 			  	<h5 className="mb-0">
-			    <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			    <button className="btn btn-link" data-toggle="collapse" data-target={"#" + props.coll} aria-expanded="true" aria-controls={props.coll}>
 			      Period {props.period}
 			    </button>
 			  	</h5>
 			</div>
 
-			<div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+			<div id={props.coll} className="collapse" aria-labelledby={props.header} data-parent="#accordion">
 			  	<div className="card-body">
-			    	Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+			  		<div className="row">
+			  			<div className="col-md-7 scoreBox">
+					  		{props.stats.filter(score => "period" + score.about.period == props.header).map(ele => (
+					  			<div key={ele.about.eventId}>
+					  				<div className="row">
+					  					<img className="scoreLogo col-md-2" src={props.team.away.id == ele.team.id ? props.team.away.url : props.team.home.url}/> 
+					  					<h4 className="col-md-6">{ele.players[0].player.fullName}</h4>
+					  					<p className="col-md-2">{ele.about.periodTimeRemaining}</p>
+					  					<h4 className="col-md-2 goals">{ele.about.goals.home} - {ele.about.goals.away} </h4>
+					  				</div>
+					  				{ele.players.filter(play => play.playerType != "Goalie" && play.playerType != "Scorer").map(ele2 => (
+					  					<p key={ele2.player.id}>A: {ele2.player.fullName}</p>
+					  				))}
+					  			</div>
+					  		))}
+			  			</div>
+			  			<div className="col-md-5 penatlyBox">
+			  			</div>
+			  		</div>
 			  	</div>
 			</div>
 		</div>

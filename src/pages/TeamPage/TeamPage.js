@@ -17,7 +17,8 @@ export default class TeamPage extends React.PureComponent {
 	callTeam = id => {
 		apiCall.getTeam(id).then(team => {
 			setGlobal({
-				teamInfo: team.data.teams[0]
+				teamInfo: team.data.teams[0],
+				sideBar: id
 			})
 		})
 	}

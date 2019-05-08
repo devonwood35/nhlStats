@@ -7,6 +7,10 @@ import StatGraph from "../../components/StatGraph/StatGraph.js";
 
 export default class PlayerPage extends React.PureComponent {
 	componentWillMount() {
+		// Prevents previous player info from populating
+		setGlobal({
+			player: {}
+		})
 		this.getPlayer(this.props.match.params.playerid);
 	}
 

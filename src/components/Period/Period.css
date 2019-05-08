@@ -1,0 +1,16 @@
+.scoreLogo {
+	width: 5%;
+	height: 5%;
+}
+
+.goals {
+	text-align: right;
+}
+
+.scoreBox {
+	border: 1px solid black;
+}
+
+.penaltyBox {
+	border: 1px solid black;
+}

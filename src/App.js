@@ -40,7 +40,7 @@ export default class App extends React.PureComponent {
           <Nav/>
           <div className="row">
             <div className="col-md-2">
-              <Sidebar teams={this.global.teams}/>
+              <Sidebar teams={this.global.teams} side={this.global.sideBar}/>
             </div>
             <div className="col-md-10">
               <Route exact path={"/"} component={ Home } />
