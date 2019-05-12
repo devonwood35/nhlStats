@@ -39,7 +39,7 @@ export default class Stats extends React.PureComponent {
 				:
 					<div className="card-body row stat-info">
 						<div className="col-md-4 stat-col">
-							<p>Team: {this.state.yearStats.team.name}</p>
+							<p>{this.state.yearStats.team.name}</p>
 							<p>Games Played: {this.state.yearStats.stat.games}</p>
 							<p>Goals: {this.state.yearStats.stat.goals}</p>
 							<p>Assists: {this.state.yearStats.stat.assists}</p>

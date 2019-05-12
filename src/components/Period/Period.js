@@ -15,7 +15,7 @@ const Period = props =>
 			<div id={props.coll} className="collapse" aria-labelledby={props.header} data-parent="#accordion">
 			  	<div className="card-body">
 			  		<div className="row">
-			  			<div className="col-md-7 scoreBox">
+			  			<div className="col-md-6 scoreBox">
 					  		{props.stats.filter(score => "period" + score.about.period == props.header).map(ele => (
 					  			<div key={ele.about.eventId}>
 					  				<div className="row">
@@ -30,7 +30,17 @@ const Period = props =>
 					  			</div>
 					  		))}
 			  			</div>
-			  			<div className="col-md-5 penatlyBox">
+			  			<div className="col-md-6 penaltyBox">
+			  				{props.penalty.filter(pen => "period" + pen.about.period == props.header).map(ele => (
+					  			<div key={ele.about.eventId}>
+					  				<div className="row">
+					  					<p className="col-md-4">{ele.players[0].player.fullName}</p>
+					  					<p className="col-md-2">{ele.team.triCode}</p>
+					  					<p className="col-md-3">{ele.result.secondaryType}</p>
+					  					<p className="col-md-2">{ele.about.periodTimeRemaining}</p>
+					  				</div>
+					  			</div>
+					  		))}
 			  			</div>
 			  		</div>
 			  	</div>

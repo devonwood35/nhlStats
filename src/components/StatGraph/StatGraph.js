@@ -11,7 +11,8 @@ export default class StatGraph extends React.PureComponent {
 	state = {
 		year: "20182019",
 		stat: "points",
-		career: this.global.player.stats[0].splits.reverse()
+		career: this.global.player.stats[0].splits.reverse(),
+		final: 0
 	}
 
 	callChart = (stat, year) => {
@@ -20,43 +21,59 @@ export default class StatGraph extends React.PureComponent {
 			let season = games.data.people[0].stats[0].splits;
 			let data = [];
 			let stats = 0;
+			let final = 0;
 			for (let i = season.length-1; i > -1; i--) {
 				let date = season[i].date.split("-");
 				// Separate goalies vs forwards/d-men
 				if (season[i].stat.evenSaves) {
 					switch(stat) {
 						case "savePercentage":
-							stats = season[i].stat.savePercentage
+							stats = season[i].stat.savePercentage;
+							final+= season[i].stat.savePercentage;
 							break;
 						case "goalsAgainst":
-							stats = season[i].stat.goalsAgainst
+							stats = season[i].stat.goalsAgainst;
+							final+=season[i].stat.goalsAgainst;
 							break;
 						case "shotsAgainst":
-							stats+=season[i].stat.shotsAgainst
+							stats+=season[i].stat.shotsAgainst;
+							final+=season[i].stat.shotsAgainst;
 							break;
 						case "saves":
-							stats+=season[i].stat.saves
+							stats+=season[i].stat.saves;
+							final+=season[i].stat.saves;
 							break;
 					}
 				} else {
 					switch(stat) {
 						case "goals":
-							stats+=season[i].stat.goals
+							stats+=season[i].stat.goals;
+							final+=season[i].stat.goals;
 							break;
 						case "assists":
-							stats+=season[i].stat.assists
+							stats+=season[i].stat.assists;
+							final+=season[i].stat.assists;
 							break;
 						case "points":
-							stats+=season[i].stat.points
+							stats+=season[i].stat.points;
+							final+=season[i].stat.points;
 							break;
 						case "shotPct":
-							stats = season[i].stat.shotPct
+							stats = season[i].stat.shotPct;
+							// Deals with undefined results
+							if (season[i].stat.shotPct) {
+								final+= season[i].stat.shotPct;
+							} else {
+								final+=0;
+							}
 							break;
 						case "plusMinus":
-							stats+=season[i].stat.plusMinus
+							stats+=season[i].stat.plusMinus;
+							final+= season[i].stat.plusMinus;
 							break;
 						default:
-							stats+=season[i].stat.points
+							stats+=season[i].stat.points;
+							final+=season[i].stat.points;
 							break;
 					}
 				}
@@ -64,6 +81,22 @@ export default class StatGraph extends React.PureComponent {
 					date: new Date(parseInt(date[0]), (parseInt(date[1])-1), parseInt(date[2])), name: "name", value: stats
 				})
 			}
+			if (stat == "savePercentage" || stat == "goalsAgainst" || stat == "shotPct" || stat == "plusMinus") {
+				switch (stat) {
+					case "savePercentage":
+						final = (final/season.length).toFixed(3);
+						break;
+					case "plusMinus":
+						final = Math.round(final/season.length);
+						break;
+					default:
+						final = (final/season.length).toFixed(2);
+						break;
+				}
+			}
+			this.setState({
+				final: final
+			})
 			chart.data = data;
 
 		    let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -71,7 +104,7 @@ export default class StatGraph extends React.PureComponent {
 
 		    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 		    valueAxis.tooltip.disabled = true;
-		    valueAxis.title.text = stat;
+		    valueAxis.title.text = stat.toUpperCase();
 		    valueAxis.renderer.minWidth = 35;
 
 		    let series = chart.series.push(new am4charts.LineSeries());
@@ -145,6 +178,8 @@ export default class StatGraph extends React.PureComponent {
 							<option key={index} value={year.season}>{year.season}</option>
 				  		))}
 				  	</select>
+				  	<button type="button" className="btn btn-secondary disabled">Season Total: </button>
+				  	<button type="button" className="btn btn-primary disabled">{this.state.final}</button>
 				</div>
 				<div className="chartdiv"></div>
 			</div>

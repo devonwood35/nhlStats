@@ -9,7 +9,8 @@ export default class GamePage extends React.PureComponent {
 		game: {},
 		homeAway: {},
 		stars: [],
-		scorers: []
+		scorers: [],
+		penalty: []
 	}
 
 	getGame = id => {
@@ -64,15 +65,21 @@ export default class GamePage extends React.PureComponent {
 				}
 			}
 			let scoringPlays = game.data.liveData.plays.scoringPlays;
+			let penaltyPlays = game.data.liveData.plays.penaltyPlays;
 			let tmpArr = [];
+			let tmpArr2 = [];
 			for (let i = 0; i < scoringPlays.length; i++) {
 				tmpArr.push(game.data.liveData.plays.allPlays[scoringPlays[i]]);
+			}
+			for (let i = 0; i < penaltyPlays.length; i++) {
+				tmpArr2.push(game.data.liveData.plays.allPlays[penaltyPlays[i]]);
 			}
 			this.setState({
 				game: game.data,
 				homeAway: visit,
 				stars: stars,
-				scorers: tmpArr
+				scorers: tmpArr,
+				penalty: tmpArr2
 			})
 		})
 	}
@@ -109,9 +116,9 @@ export default class GamePage extends React.PureComponent {
 						))}
 					</div>
 					<div id="accordion" className="period-wrapper">	
-						<Period team={this.state.homeAway} stats={this.state.scorers} header="period1" coll="period1Coll" period="1"/>
-						<Period team={this.state.homeAway} stats={this.state.scorers} header="period2" coll="period2Coll" period="2"/>
-						<Period team={this.state.homeAway} stats={this.state.scorers} header="period2" coll="period3Coll" period="3"/>
+						<Period team={this.state.homeAway} penalty={this.state.penalty} stats={this.state.scorers} header="period1" coll="period1Coll" period="1"/>
+						<Period team={this.state.homeAway} penalty={this.state.penalty} stats={this.state.scorers} header="period2" coll="period2Coll" period="2"/>
+						<Period team={this.state.homeAway} penalty={this.state.penalty} stats={this.state.scorers} header="period2" coll="period3Coll" period="3"/>
 					</div>
 				</div>
 				: <div/>}
