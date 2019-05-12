@@ -22,25 +22,43 @@ export default class StatGraph extends React.PureComponent {
 			let stats = 0;
 			for (let i = season.length-1; i > -1; i--) {
 				let date = season[i].date.split("-");
-				switch(stat) {
-					case "goals":
-						stats+=season[i].stat.goals
-						break;
-					case "assists":
-						stats+=season[i].stat.assists
-						break;
-					case "points":
-						stats+=season[i].stat.points
-						break;
-					case "shotPct":
-						stats = season[i].stat.shotPct
-						break;
-					case "plusMinus":
-						stats+=season[i].stat.plusMinus
-						break;
-					default:
-						stats+=season[i].stat.points
-						break;
+				// Separate goalies vs forwards/d-men
+				if (season[i].stat.evenSaves) {
+					switch(stat) {
+						case "savePercentage":
+							stats = season[i].stat.savePercentage
+							break;
+						case "goalsAgainst":
+							stats = season[i].stat.goalsAgainst
+							break;
+						case "shotsAgainst":
+							stats+=season[i].stat.shotsAgainst
+							break;
+						case "saves":
+							stats+=season[i].stat.saves
+							break;
+					}
+				} else {
+					switch(stat) {
+						case "goals":
+							stats+=season[i].stat.goals
+							break;
+						case "assists":
+							stats+=season[i].stat.assists
+							break;
+						case "points":
+							stats+=season[i].stat.points
+							break;
+						case "shotPct":
+							stats = season[i].stat.shotPct
+							break;
+						case "plusMinus":
+							stats+=season[i].stat.plusMinus
+							break;
+						default:
+							stats+=season[i].stat.points
+							break;
+					}
 				}
 				data.push({
 					date: new Date(parseInt(date[0]), (parseInt(date[1])-1), parseInt(date[2])), name: "name", value: stats
@@ -72,7 +90,13 @@ export default class StatGraph extends React.PureComponent {
 	}
 
 	componentDidMount() {
-		this.callChart("points", this.state.year);
+		// Show points on skater, Sv% on goalie
+		if (this.state.career[0].stat.evenSaves) {
+			this.callChart("savePercentage", this.state.year);
+		} else {
+			this.callChart("points", this.state.year);
+		}
+		
 	}
 
 	componentWillUnmount() {
@@ -99,11 +123,22 @@ export default class StatGraph extends React.PureComponent {
 		return (
 			<div className="chart-area">
 				<div className="btn-group" role="group" aria-label="Basic example">
-					<button type="button" onClick={this.changeStat} value="points" className="btn btn-secondary">Points</button>
-				    <button type="button" onClick={this.changeStat} value="goals" className="btn btn-secondary">Goals</button>
-				    <button type="button" onClick={this.changeStat} value="assists" className="btn btn-secondary">Assists</button>
-				    <button type="button" onClick={this.changeStat} value="shotPct" className="btn btn-secondary">Shot %</button>
-				    <button type="button" onClick={this.changeStat} value="plusMinus" className="btn btn-secondary">+/-</button>
+					{this.state.career[0].stat.evenSaves ? 
+						<div>
+							<button type="button" onClick={this.changeStat} value="savePercentage" className="btn btn-secondary">Sv%</button>
+						    <button type="button" onClick={this.changeStat} value="goalsAgainst" className="btn btn-secondary">GAA</button>
+						    <button type="button" onClick={this.changeStat} value="shotsAgainst" className="btn btn-secondary">SA</button>
+						    <button type="button" onClick={this.changeStat} value="saves" className="btn btn-secondary">Saves</button>
+						</div>
+					:
+						<div>
+							<button type="button" onClick={this.changeStat} value="points" className="btn btn-secondary">Points</button>
+						    <button type="button" onClick={this.changeStat} value="goals" className="btn btn-secondary">Goals</button>
+						    <button type="button" onClick={this.changeStat} value="assists" className="btn btn-secondary">Assists</button>
+						    <button type="button" onClick={this.changeStat} value="shotPct" className="btn btn-secondary">Shot %</button>
+						    <button type="button" onClick={this.changeStat} value="plusMinus" className="btn btn-secondary">+/-</button>
+						</div>
+					}
 				    <button type="button" className="btn btn-secondary disabled">Season:</button>
 					<select onChange={this.changeYear} className="year-select">
 						{this.state.career.filter(year => year.league.name === "National Hockey League").map((year,index) => (

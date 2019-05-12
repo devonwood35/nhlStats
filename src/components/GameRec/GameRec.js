@@ -30,34 +30,57 @@ export default class GameRec extends React.PureComponent {
 	render() {
 		return (
 			<div className="recent-games">
-				<h4>Last 5 Games</h4>
-				<div className="recent-wrapper">
-					<div className="row recent-header">
-						<p className="col-md-2">Home</p>
-						<p className="col-md-2">Away</p>
-						<p className="col-md-1">W/L</p>
-						<p className="col-md-1">Goals</p>
-						<p className="col-md-1">Assists</p>
-						<p className="col-md-1">Points</p>
-						<p className="col-md-2">Date</p>
-					</div>
-					{this.state.games.map(game => (
-						game ?
-						<div key={game.date} className="row recent-data">
-							<p className="col-md-2">{game.isHome ? game.team.name : game.opponent.name}</p>
-							<p className="col-md-2">{game.isHome ? game.opponent.name : game.team.name}</p>
-							<p className="col-md-1"><strong>{game.isWin ? "W" : "L"}</strong></p>
-							<p className="col-md-1">{game.stat.goals}</p>
-							<p className="col-md-1">{game.stat.assists}</p>
-							<p className="col-md-1">{game.stat.points}</p>
-							<p className="col-md-2">{game.date}</p>
-							<Link className="col-md-2" to={`/game/${game.game.gamePk}`}><button>GameCenter</button></Link>
+				{this.state.games[0] ?
+					<div>
+						<h4>Last 5 Games</h4>
+						<div className="recent-wrapper">
+							<div className="row recent-header">
+								<p className="col-md-2">Home</p>
+								<p className="col-md-2">Away</p>
+								<p className="col-md-1">W/L</p>
+								{this.state.games[0].stat.evenSaves ?
+									<div className="col-md-3 row">
+										<p className="col-md-4">Shots</p>
+										<p className="col-md-4">Saves</p>
+										<p className="col-md-4">Sv%</p>
+									</div>
+								:
+									<div className="col-md-3 row">
+										<p className="col-md-4">Goals</p>
+										<p className="col-md-4">Assists</p>
+										<p className="col-md-4">Points</p>
+									</div>
+								}
+								<p className="col-md-2">Date</p>
+							</div>
+							{this.state.games.map(game => (
+								game ?
+								<div key={game.date} className="row recent-data">
+									<p className="col-md-2">{game.isHome ? game.team.name : game.opponent.name}</p>
+									<p className="col-md-2">{game.isHome ? game.opponent.name : game.team.name}</p>
+									<p className="col-md-1"><strong>{game.isWin ? "W" : "L"}</strong></p>
+									{game.stat.evenSaves ?
+										<div className="row col-md-3">
+											<p className="col-md-4">{game.stat.shotsAgainst}</p>
+											<p className="col-md-4">{game.stat.saves}</p>
+											<p className="col-md-4">{game.stat.savePercentage}</p>
+										</div>
+									:
+										<div className="row col-md-3">
+											<p className="col-md-4">{game.stat.goals}</p>
+											<p className="col-md-4">{game.stat.assists}</p>
+											<p className="col-md-4">{game.stat.points}</p>
+										</div>}
+									<p className="col-md-2">{game.date}</p>
+									<Link className="col-md-2" to={`/game/${game.game.gamePk}`}><button>GameCenter</button></Link>
+								</div>
+								: <div className="row">
+									<p>No Games Found</p>
+								  </div>
+							))}
 						</div>
-						: <div className="row">
-							<p>No Games Found</p>
-						  </div>
-					))}
-				</div>
+					</div>
+				: <div/>}
 			</div>
 		)
 	}
