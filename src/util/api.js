@@ -18,5 +18,8 @@ export default {
 	},
 	getGame: function(id) {
 		return axios.get(`https://statsapi.web.nhl.com/api/v1/game/${id}/feed/live`);
+	},
+	getTeamStats: function(id) {
+		return axios.get(`https://statsapi.web.nhl.com/api/v1/teams/${id}/?expand=team.stats&season=20182019`);
 	}
 }
