@@ -10,28 +10,28 @@ export default class Sidebar extends React.PureComponent {
 			this.props.side != -1 ?
 				<div className="sideBar">
 					<div className="btnDiv">
-						<p><Link to={`/team/${this.global.teamInfo.id}/roster`}><button className="btn sideBtn" type="button">Roster</button></Link></p>
+						<Link to={`/team/${this.global.teamInfo.id}/roster`}><button className="btn sideBtn" type="button">Roster</button></Link>
 						<Link to={"/"}><button className="btn sideBtn" type="button">Back to Home</button></Link>
 					</div>
 				</div>
 			:
 				<div className="sideBar">
 					<div className="btnDiv">
-						<h3>Eastern</h3>
-						<h5>Metropolitan</h5>
+						<h3 className="sideConf">Eastern</h3>
+						<h5 className="sideDivision">Metropolitan</h5>
 							{this.props.teams.filter(div => div.division.name === "Metropolitan").map(team => (
 								<SideBtn key={team.id} id={team.id} name={team.name}/>
 							))}
-						<h5>Atlantic</h5>
+						<h5 className="sideDivision">Atlantic</h5>
 							{this.props.teams.filter(div => div.division.name === "Atlantic").map(team => (
 								<SideBtn key={team.id} id={team.id} name={team.name}/>
 							))}
-						<h3>Western</h3>
-						<h5>Central</h5>
+						<h3 className="sideConf">Western</h3>
+						<h5 className="sideDivision">Central</h5>
 							{this.props.teams.filter(div => div.division.name === "Central").map(team => (
 								<SideBtn key={team.id} id={team.id} name={team.name}/>
 							))}
-						<h5>Pacific</h5>
+						<h5 className="sideDivision">Pacific</h5>
 							{this.props.teams.filter(div => div.division.name === "Pacific").map(team => (
 								<SideBtn key={team.id} id={team.id} name={team.name}/>
 							))}
