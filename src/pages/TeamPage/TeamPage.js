@@ -137,8 +137,8 @@ export default class TeamPage extends React.PureComponent {
 						<div className="col-md-12 info-box">
 							<a href={this.global.teamInfo.officialSiteUrl}>Official Team Site</a>
 						</div>
-						<div>
-							<GameRecTeam games={this.state.games}/>
+						<div className="col-md-12">
+							<GameRecTeam team={this.props.match.params.teamid} games={this.state.games}/>
 						</div>
 					</div>
 				:
