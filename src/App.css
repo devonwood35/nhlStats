@@ -3,3 +3,11 @@
   margin: 0 auto;
   border: 1px solid black;
 }
+
+.main-block {
+	background-color: white;
+}
+
+body {
+	background-color: #ececec
+}

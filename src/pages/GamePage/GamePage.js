@@ -125,7 +125,7 @@ export default class GamePage extends React.PureComponent {
 					<div id="accordion" className="period-wrapper">	
 						<Period team={this.state.homeAway} penalty={this.state.penalty} stats={this.state.scorers} header="period1" coll="period1Coll" period="1"/>
 						<Period team={this.state.homeAway} penalty={this.state.penalty} stats={this.state.scorers} header="period2" coll="period2Coll" period="2"/>
-						<Period team={this.state.homeAway} penalty={this.state.penalty} stats={this.state.scorers} header="period2" coll="period3Coll" period="3"/>
+						<Period team={this.state.homeAway} penalty={this.state.penalty} stats={this.state.scorers} header="period3" coll="period3Coll" period="3"/>
 					</div>
 				</div>
 				: <div/>}

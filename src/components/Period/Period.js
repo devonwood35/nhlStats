@@ -16,6 +16,8 @@ const Period = props =>
 			  	<div className="card-body">
 			  		<div className="row">
 			  			<div className="col-md-6 scoreBox">
+			  				{console.log(props.stats)}
+			  				{console.log(props.header)}
 					  		{props.stats.filter(score => "period" + score.about.period == props.header).map(ele => (
 					  			<div key={ele.about.eventId}>
 					  				<div className="row">

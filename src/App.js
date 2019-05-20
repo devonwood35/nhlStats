@@ -38,7 +38,7 @@ export default class App extends React.PureComponent {
       <Router>
         <div className="App">
           <Nav/>
-          <div className="row">
+          <div className="row main-block row-fix">
             <div className="col-md-2">
               <Sidebar teams={this.global.teams} side={this.global.sideBar}/>
             </div>
