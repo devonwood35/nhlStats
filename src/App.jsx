@@ -16,7 +16,7 @@ function App() {
           </div>
           <div className="main-container">
             <Route exact path="/" component={() => <News />} />
-            <Route exact path="/team" component={() => <Team />} />
+            <Route exact path="/team/:id" component={() => <Team />} />
           </div>
         </div>
       </Router>

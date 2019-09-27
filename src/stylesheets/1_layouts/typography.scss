@@ -8,10 +8,13 @@
 }
 
 .main-container {
+  border: 1px solid $black;
   grid-column-start: 2;
 }
 
 .header-section {
+  border: 1px solid $black;
+  padding: 10px;
   text-align: center;
   width: 100%;
 }

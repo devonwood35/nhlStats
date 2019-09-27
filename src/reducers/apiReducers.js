@@ -1,12 +1,12 @@
 import {
-  LOAD_TEAM,
+  // LOAD_TEAM,
   LOAD_TEAMS,
-  LOAD_TEAMSTATS,
-  LOAD_ROSTER,
-  LOAD_PLAYER,
-  LOAD_PLAYERS,
-  LOAD_GAME,
-  LOAD_SCHEDULE
+  // LOAD_TEAMSTATS,
+  // LOAD_ROSTER,
+  // LOAD_PLAYER,
+  // LOAD_PLAYERS,
+  // LOAD_GAME,
+  // LOAD_SCHEDULE
 } from '../utils/constants';
 
 const INITIAL_STATE = {

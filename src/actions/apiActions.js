@@ -1,13 +1,13 @@
 import axios from 'axios';
 import {
-  LOAD_TEAM,
+  // LOAD_TEAM,
   LOAD_TEAMS,
-  LOAD_TEAMSTATS,
-  LOAD_ROSTER,
-  LOAD_PLAYER,
-  LOAD_PLAYERS,
-  LOAD_GAME,
-  LOAD_SCHEDULE
+  // LOAD_TEAMSTATS,
+  // LOAD_ROSTER,
+  // LOAD_PLAYER,
+  // LOAD_PLAYERS,
+  // LOAD_GAME,
+  // LOAD_SCHEDULE
 } from '../utils/constants';
 
 // function loadTeam(id) {
@@ -98,6 +98,4 @@ function loadTeams() {
 //   };
 // }
 
-export {
-  loadTeams
-};
+export { loadTeams }; // eslint-disable-line

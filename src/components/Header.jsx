@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header(title) {
+function Header() {
   return (
     <div className="header-section">
       Header
