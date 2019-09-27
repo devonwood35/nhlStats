@@ -1,29 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import Button from '../components/Button';
 import { connect } from 'react-redux';
 import * as actions from '../actions/apiActions';
 
-function Sidebar({ loadTeams, teams, history }) {
+function Sidebar({ loadTeams, teams }) {
   Sidebar.propTypes = ({
     loadTeams: PropTypes.func.isRequired,
     teams: PropTypes.array, // eslint-disable-line
-    history: PropTypes.object.isRequired // eslint-disable-line
   });
 
   loadTeams();
 
-  function pushHistory(event) {
-    const teamId = event.target.getAttribute('value');
-    history.push(`/team/${teamId}`);
-  }
-
   return (
-    <div>
+    <div className="side-container">
       {teams.map((team) => (
-        <button className="btn__sidebar" key={team.id} onClick={pushHistory} type="button" value={team.id}>
-          {team.name}
-        </button>
+        <Button name={team.name} id={team.id} key={team.id} />
       ))}
     </div>
   );

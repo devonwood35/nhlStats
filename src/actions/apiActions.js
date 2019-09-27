@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  // LOAD_TEAM,
+  LOAD_TEAM,
   LOAD_TEAMS,
   // LOAD_TEAMSTATS,
   // LOAD_ROSTER,
@@ -10,16 +10,17 @@ import {
   // LOAD_SCHEDULE
 } from '../utils/constants';
 
-// function loadTeam(id) {
-//   return async (dispatch) => {
-//     const response = await axios.get('/api/depositions');
+function loadTeam(id) {
+  return async (dispatch) => {
+    const response = await axios.get('/api/depositions');
+    console.log(response);
 
-//     dispatch({
-//       type: LOAD_DEPOSITIONS,
-//       payload: response.data.depositions
-//     });
-//   };
-// }
+    dispatch({
+      type: LOAD_TEAM,
+      payload: response.data
+    });
+  };
+}
 
 function loadTeams() {
   return async (dispatch) => {
@@ -98,4 +99,4 @@ function loadTeams() {
 //   };
 // }
 
-export { loadTeams }; // eslint-disable-line
+export { loadTeam, loadTeams }; // eslint-disable-line

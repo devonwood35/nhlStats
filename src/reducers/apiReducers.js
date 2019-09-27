@@ -1,5 +1,5 @@
 import {
-  // LOAD_TEAM,
+  LOAD_TEAM,
   LOAD_TEAMS,
   // LOAD_TEAMSTATS,
   // LOAD_ROSTER,
@@ -18,6 +18,8 @@ function reducer(state = INITIAL_STATE, { type, payload }) {
   switch (type) {
     case LOAD_TEAMS:
       return { teams: [...payload] };
+    case LOAD_TEAM:
+      return { api: [...payload] };
     default:
       return state;
   }
