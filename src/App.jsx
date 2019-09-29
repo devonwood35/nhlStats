@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Sidebar from './containers/Sidebar';
 import News from './containers/News';
 import Team from './containers/Team';
+import Game from './containers/Game';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <div className="main-container">
             <Route exact path="/" component={() => <News />} />
             <Route exact path="/team/:id" component={() => <Team />} />
+            <Route exact path="/game/:id" component={() => <Game />} />
           </div>
         </div>
       </Router>

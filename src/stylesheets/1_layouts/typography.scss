@@ -33,6 +33,12 @@
   grid-template-columns: 20% 20% 20% 20% 20%;
 }
 
+.octo-section {
+  display: grid;
+  grid-template-columns: 10% 20% 5% 5% 10% 20% 5% 25%;
+  text-align: center;
+}
+
 .half-section {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -75,3 +81,24 @@
 .third-element {
   grid-column-start: 3;
 }
+
+.fourth-element {
+  grid-column-start: 4;
+}
+
+.fifth-element {
+  grid-column-start: 5;
+}
+
+.sixth-element {
+  grid-column-start: 6;
+}
+
+.seventh-element {
+  grid-column-start: 7;
+}
+
+.eigth-element {
+  grid-column-start: 8;
+}
+

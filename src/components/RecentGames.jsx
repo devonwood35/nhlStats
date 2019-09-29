@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import api from '../utils/api';
 
@@ -36,8 +36,51 @@ class RecentGames extends Component {
     const { games } = this.state;
     return (
       <div>
+        <div className="header-section">Last Five Games</div>
+        <div className="octo-section">
+          <div className="second-element">
+            Home
+          </div>
+          <div className="third-element">
+            Score
+          </div>
+          <div className="sixth-element">
+            Away
+          </div>
+          <div className="seventh-element">
+            Score
+          </div>
+          <div className="eighth-element">
+            Link
+          </div>
+        </div>
         {games.map((data) => (
-          <div>{data.games[0].teams.home.team.name}</div>
+          <div className="octo-section">
+            <div className="first-element">
+
+            </div>
+            <div className="second-element">
+              {data.games[0].teams.home.team.name}
+            </div>
+            <div className="third-element">
+              {data.games[0].teams.home.score}
+            </div>
+            <div className="fourth-element">
+              at
+            </div>
+            <div className="fifth-element">
+
+            </div>
+            <div className="sixth-element">
+              {data.games[0].teams.away.team.name}
+            </div>
+            <div className="seventh-element">
+              {data.games[0].teams.away.score}
+            </div>
+            <div className="eighth-element">
+              <Link to={`/game/${data.games[0].gamePk}`}>To GameCenter</Link>
+            </div>
+          </div>
         ))}
       </div>
     );
