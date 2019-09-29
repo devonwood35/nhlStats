@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import Button from '../components/Button';
 import { connect } from 'react-redux';
 import * as actions from '../actions/apiActions';
+import Button from '../components/Button';
 
 class Sidebar extends Component {
   componentDidMount() {
@@ -25,11 +25,11 @@ class Sidebar extends Component {
 
 Sidebar.propTypes = ({
   loadTeams: PropTypes.func.isRequired,
-  api: PropTypes.array, // eslint-disable-line
+  teams: PropTypes.array, // eslint-disable-line
 });
 
 Sidebar.defaultProps = {
-  api: []
+  teams: []
 };
 
 const mapStateToProps = (state) => ({

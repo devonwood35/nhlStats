@@ -8,31 +8,32 @@ class TeamStats extends Component {
     super(props);
     this.state = {
       teamStats: []
-    }
+    };
   }
+
   componentDidMount() {
-    const { loadTeamStats, match: { params: { id } } } = this.props
-    api.loadTeamStats(id).then((stats) => {
-      this.setState({
-        teamStats: stats.data.teams[0].teamStats[0].splits
-      })
-    })
+    const { match: { params: { id } } } = this.props;
+    this.runUpdate(id);
   }
 
   componentDidUpdate(prevProps) {
-    const { match: { params: { id } }, loadTeam } = this.props;
+    const { match: { params: { id } } } = this.props;
     if (prevProps.match.params.id !== id) {
-      api.loadTeamStats(id).then((stats) => {
-        this.setState({
-          teamStats: stats.data.teams[0].teamStats[0].splits
-        })
-      })
+      this.runUpdate(id);
     }
+  }
+
+  runUpdate(id) {
+    api.loadTeamStats(id).then((stats) => {
+      this.setState({
+        teamStats: stats.data.teams[0].teamStats[0].splits
+      });
+    });
   }
 
   render() {
     const { teamStats } = this.state;
-    if (!teamStats || !teamStats[0]) { return (<div>loading...</div>) };
+    if (!teamStats || !teamStats[0]) { return (<div>loading...</div>); }
 
     const numbers = teamStats[0].stat;
     const rank = teamStats[1].stat;
@@ -42,9 +43,6 @@ class TeamStats extends Component {
           <div className="half-section half-section__first">
             <div className="first-element">
               {numbers.gamesPlayed}
-            </div>
-            <div className="second-element">
-
             </div>
           </div>
           <div className="half-section half-section__second">
@@ -186,5 +184,13 @@ class TeamStats extends Component {
     );
   }
 }
+
+TeamStats.propTypes = ({
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+});
 
 export default withRouter(TeamStats);

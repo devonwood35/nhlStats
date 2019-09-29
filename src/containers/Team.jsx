@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TeamStats from '../components/TeamStats';
 import RecentGames from '../components/RecentGames';
-import allTeams from '../utils/teams.json';
+// import allTeams from '../utils/teams.json';
 import api from '../utils/api';
 
 class Team extends Component {
@@ -15,29 +15,29 @@ class Team extends Component {
   }
 
   componentDidMount() {
-    const { match: { params: { id } }, loadTeam } = this.props;
+    const { match: { params: { id } } } = this.props;
     api.loadTeam(id).then((t) => {
       this.setState({
         team: t.data.teams[0]
-      })
-    })
+      });
+    });
   }
 
   componentDidUpdate(prevProps) {
-    const { match: { params: { id } }, loadTeam } = this.props;
+    const { match: { params: { id } } } = this.props;
     if (prevProps.match.params.id !== id) {
       api.loadTeam(id).then((t) => {
         this.setState({
           team: t.data.teams[0]
-        })
-      })
+        });
+      });
     }
   }
 
   render() {
-    const { team } = this.state
+    const { team } = this.state;
 
-    if (!team.name) { return (<div>loading...</div>) };
+    if (!team.name) { return (<div>loading...</div>); }
 
     return (
       <div>
@@ -72,5 +72,13 @@ class Team extends Component {
     );
   }
 }
+
+Team.propTypes = ({
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+});
 
 export default withRouter(Team);

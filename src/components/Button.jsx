@@ -8,11 +8,11 @@ function Button({ name, id, history }) {
     name: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     history: PropTypes.object.isRequired // eslint-disable-line
-  })
+  });
 
   function pushHistory(event) {
-    const id = event.target.getAttribute('value');
-    history.push(`/team/${id}`);
+    const teamId = event.target.getAttribute('value');
+    history.push(`/team/${teamId}`);
   }
 
   return (

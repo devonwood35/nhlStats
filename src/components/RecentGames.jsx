@@ -8,28 +8,39 @@ class RecentGames extends Component {
     super(props);
     this.state = {
       games: []
-    }
+    };
   }
 
   componentDidMount() {
-    const { match: { params: { id }}} = this.props;
-    let start = new Date();
-    let day = String(start.getDate()).padStart(2, '0');
-    let month = String(start.getMonth() + 1).padStart(2, '0');
-    let year = start.getFullYear();
+    const { match: { params: { id } } } = this.props;
+    this.runUpdate(id);
+  }
 
-    start = `${year-1}-${month}-${day}`;
-    let end = `${year}-${month}-${day}`;
+  componentDidUpdate(prevProps) {
+    const { match: { params: { id } } } = this.props;
+    if (prevProps.match.params.id !== id) {
+      this.runUpdate(id);
+    }
+  }
+
+  runUpdate(id) {
+    let start = new Date();
+    const day = String(start.getDate()).padStart(2, '0');
+    const month = String(start.getMonth() + 1).padStart(2, '0');
+    const year = start.getFullYear();
+
+    start = `${year - 1}-${month}-${day}`;
+    const end = `${year}-${month}-${day}`;
     api.loadGames(id, start, end).then((games) => {
       const totalGames = games.data.dates.length - 1;
-      let lastFive = [];
-      for (let i = totalGames; i > totalGames - 5; i--) {
+      const lastFive = [];
+      for (let i = totalGames; i > totalGames - 5; i -= 1) {
         lastFive.push(games.data.dates[i]);
       }
       this.setState({
         games: lastFive
       });
-    })
+    });
   }
 
   render() {
@@ -57,7 +68,7 @@ class RecentGames extends Component {
         {games.map((data) => (
           <div className="octo-section">
             <div className="first-element">
-
+              Logo
             </div>
             <div className="second-element">
               {data.games[0].teams.home.team.name}
@@ -69,7 +80,7 @@ class RecentGames extends Component {
               at
             </div>
             <div className="fifth-element">
-
+              Logo
             </div>
             <div className="sixth-element">
               {data.games[0].teams.away.team.name}
@@ -86,5 +97,13 @@ class RecentGames extends Component {
     );
   }
 }
+
+RecentGames.propTypes = ({
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+});
 
 export default withRouter(RecentGames);
