@@ -16,5 +16,62 @@
   border: 1px solid $black;
   padding: 10px;
   text-align: center;
-  width: 100%;
+}
+
+.tri-section {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.quad-section {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.quint-section {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.half-section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  &__first {
+    grid-column-start: 1;
+  }
+
+  &__second {
+    grid-column-start: 2;
+  }
+
+  &__third {
+    grid-column-start: 3;
+  }
+
+  &__fourth {
+    grid-column-start: 4;
+  }
+
+  &__fifth {
+    grid-column-start: 5;
+  }
+}
+
+.first-element,
+.second-element,
+.third-element {
+  text-align: center;
+}
+
+.first-element {
+  grid-column-start: 1;
+}
+
+.second-element {
+  grid-column-start: 2;
+}
+
+.third-element {
+  grid-column-start: 3;
 }

@@ -1,26 +1,25 @@
 import axios from 'axios';
 import {
-  LOAD_TEAM,
+  // LOAD_TEAM,
   LOAD_TEAMS,
   // LOAD_TEAMSTATS,
   // LOAD_ROSTER,
   // LOAD_PLAYER,
   // LOAD_PLAYERS,
   // LOAD_GAME,
-  // LOAD_SCHEDULE
+  // LOAD_GAMES
 } from '../utils/constants';
 
-function loadTeam(id) {
-  return async (dispatch) => {
-    const response = await axios.get('/api/depositions');
-    console.log(response);
+// function loadTeam(id) {
+//   return async (dispatch) => {
+//     const response = await axios.get(`https://statsapi.web.nhl.com/api/v1/teams/${id}`);
 
-    dispatch({
-      type: LOAD_TEAM,
-      payload: response.data
-    });
-  };
-}
+//     dispatch({
+//       type: LOAD_TEAM,
+//       payload: response.data.teams
+//     });
+//   };
+// }
 
 function loadTeams() {
   return async (dispatch) => {
@@ -33,13 +32,13 @@ function loadTeams() {
   };
 }
 
-// function loadTeamstats(id) {
+// function loadTeamStats(id) {
 //   return async (dispatch) => {
-//     const response = await axios.get('/api/depositions');
+//     const response = await axios.get(`https://statsapi.web.nhl.com/api/v1/teams/${id}/?expand=team.stats&season=20182019`);
 
 //     dispatch({
-//       type: LOAD_DEPOSITIONS,
-//       payload: response.data.depositions
+//       type: LOAD_TEAMSTATS,
+//       payload: response.data.teams[0].teamStats[0].splits
 //     });
 //   };
 // }
@@ -88,15 +87,15 @@ function loadTeams() {
 //   };
 // }
 
-// function loadSchedule(id) {
+// function loadGames(id) {
 //   return async (dispatch) => {
 //     const response = await axios.get('/api/depositions');
 
 //     dispatch({
-//       type: LOAD_DEPOSITIONS,
-//       payload: response.data.depositions
+//       type: LOAD_GAMES,
+//       payload: response.data.teams
 //     });
 //   };
 // }
 
-export { loadTeam, loadTeams }; // eslint-disable-line
+export { loadTeams }; // eslint-disable-line

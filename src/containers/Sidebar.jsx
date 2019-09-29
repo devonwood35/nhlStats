@@ -1,29 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import Button from '../components/Button';
 import { connect } from 'react-redux';
 import * as actions from '../actions/apiActions';
 
-function Sidebar({ loadTeams, teams }) {
-  Sidebar.propTypes = ({
-    loadTeams: PropTypes.func.isRequired,
-    teams: PropTypes.array, // eslint-disable-line
-  });
+class Sidebar extends Component {
+  componentDidMount() {
+    const { loadTeams } = this.props;
+    loadTeams();
+  }
 
-  loadTeams();
-
-  return (
-    <div className="side-container">
-      {teams.map((team) => (
-        <Button name={team.name} id={team.id} key={team.id} />
-      ))}
-    </div>
-  );
+  render() {
+    const { teams } = this.props;
+    return (
+      <div className="side-container">
+        {teams.map((team) => (
+          <Button name={team.name} id={team.id} key={team.id} />
+        ))}
+      </div>
+    );
+  }
 }
 
+Sidebar.propTypes = ({
+  loadTeams: PropTypes.func.isRequired,
+  api: PropTypes.array, // eslint-disable-line
+});
+
 Sidebar.defaultProps = {
-  teams: []
+  api: []
 };
 
 const mapStateToProps = (state) => ({

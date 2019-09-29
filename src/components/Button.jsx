@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 function Button({ name, id, history }) {
   Button.propTypes = ({
     name: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired,
+    history: PropTypes.object.isRequired // eslint-disable-line
   })
 
   function pushHistory(event) {
