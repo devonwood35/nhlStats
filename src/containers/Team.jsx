@@ -50,7 +50,7 @@ class Team extends Component {
             <img className="logo logo__main" src={logo.url} alt="logo" key={logo.id} />
           ))}
         </div>
-        <div className="tri-section">
+        <div className="tri-section list">
           <div className="first-element">
             {`${team.conference.name} Conference`}
           </div>
@@ -61,7 +61,7 @@ class Team extends Component {
             <a href={team.officialSiteUrl}>Official Team Site</a>
           </div>
         </div>
-        <div className="tri-section">
+        <div className="tri-section list">
           <div className="first-element">
             {team.venue.city}
           </div>
@@ -74,7 +74,7 @@ class Team extends Component {
         </div>
         <TeamStats />
         <RecentGames />
-        <div>
+        <div className="header-section">
           <Link to={`/${id}/roster`}>Roster</Link>
         </div>
       </div>

@@ -38,7 +38,7 @@ class TeamStats extends Component {
     const numbers = teamStats[0].stat;
     const rank = teamStats[1].stat;
     return (
-      <div>
+      <div className="list">
         <div className="quint-section">
           <div className="half-section half-section__first">
             <div className="first-element">

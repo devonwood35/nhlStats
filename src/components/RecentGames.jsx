@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import api from '../utils/api';
+import allTeams from '../utils/teams.json';
 
 class RecentGames extends Component {
   constructor(props) {
@@ -48,51 +49,59 @@ class RecentGames extends Component {
     return (
       <div>
         <div className="header-section">Last Five Games</div>
-        <div className="octo-section">
-          <div className="second-element">
-            Home
-          </div>
-          <div className="third-element">
-            Score
-          </div>
-          <div className="sixth-element">
-            Away
-          </div>
-          <div className="seventh-element">
-            Score
-          </div>
-          <div className="eighth-element">
-            Link
-          </div>
-        </div>
-        {games.map((data) => (
-          <div className="octo-section" key={data.games[0].gamePk}>
-            <div className="first-element">
-              Logo
-            </div>
+        <div className="sub-container">
+          <div className="octo-section list--black">
             <div className="second-element">
-              {data.games[0].teams.home.team.name}
+              Home
             </div>
             <div className="third-element">
-              {data.games[0].teams.home.score}
-            </div>
-            <div className="fourth-element">
-              at
-            </div>
-            <div className="fifth-element">
-              Logo
+              Score
             </div>
             <div className="sixth-element">
-              {data.games[0].teams.away.team.name}
+              Away
             </div>
             <div className="seventh-element">
-              {data.games[0].teams.away.score}
+              Score
             </div>
             <div className="eighth-element">
-              <Link to={`/game/${data.games[0].gamePk}`}>To GameCenter</Link>
+              Link
             </div>
           </div>
-        ))}
+          {games.map((data) => (
+            <div className="octo-section list list--large" key={data.games[0].gamePk}>
+              <div className="first-element">
+                { /* eslint-disable-next-line */ }
+                {allTeams.teams.filter((ele) => ele.id == data.games[0].teams.away.team.id).map((team) => (
+                  <img className="logo logo__small" src={team.url} alt={team.id} key={team.id} />
+                ))}
+              </div>
+              <div className="second-element">
+                {data.games[0].teams.home.team.name}
+              </div>
+              <div className="third-element">
+                {data.games[0].teams.home.score}
+              </div>
+              <div className="fourth-element">
+                at
+              </div>
+              <div className="fifth-element">
+                { /* eslint-disable-next-line */ }
+                {allTeams.teams.filter((ele) => ele.id == data.games[0].teams.away.team.id).map((team) => (
+                  <img className="logo logo__small" src={team.url} alt={team.id} key={team.id} />
+                ))}
+              </div>
+              <div className="sixth-element">
+                {data.games[0].teams.away.team.name}
+              </div>
+              <div className="seventh-element">
+                {data.games[0].teams.away.score}
+              </div>
+              <div className="eighth-element">
+                <Link to={`/game/${data.games[0].gamePk}`}>To GameCenter</Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

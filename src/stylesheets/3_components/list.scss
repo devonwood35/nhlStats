@@ -1,0 +1,13 @@
+.list {
+  border: 1px solid $black;
+
+  &--black {
+    background-color: $black;
+    color: $white;
+    padding: 10px;
+  }
+
+  &--large {
+    min-height: 80px;
+  }
+}

@@ -25,6 +25,7 @@ class Roster extends Component {
     return (
       <div>
         <div>
+          <div className="header-section">Forwards</div>
           {roster.filter((position) => position.position.type === 'Forward').map((player) => (
             <div className="quad-section">
               <div className="first-element">
@@ -43,6 +44,7 @@ class Roster extends Component {
           ))}
         </div>
         <div>
+          <div className="header-section">Defenseman</div>
           {roster.filter((position) => position.position.type === 'Defenseman').map((player) => (
             <div className="quad-section">
               <div className="first-element">
@@ -61,6 +63,7 @@ class Roster extends Component {
           ))}
         </div>
         <div>
+          <div className="header-section">Goalies</div>
           {roster.filter((position) => position.position.type === 'Goalie').map((player) => (
             <div className="quad-section">
               <div className="first-element">

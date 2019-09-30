@@ -3,6 +3,10 @@
   grid-template-columns: 20% 80%;
 }
 
+.sub-container {
+  border: 2px solid $black;
+}
+
 .side-container {
   font-family: 'TurretRoad', sans-serif;
   grid-column-start: 1;
@@ -50,6 +54,7 @@
 }
 
 .octo-section {
+  align-items: center;
   display: grid;
   grid-template-columns: 10% 20% 5% 5% 10% 20% 5% 25%;
   text-align: center;
