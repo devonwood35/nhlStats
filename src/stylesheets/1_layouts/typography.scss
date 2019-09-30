@@ -4,6 +4,7 @@
 }
 
 .side-container {
+  font-family: 'TurretRoad', sans-serif;
   grid-column-start: 1;
 }
 
@@ -16,6 +17,18 @@
   border: 1px solid $black;
   padding: 10px;
   text-align: center;
+}
+
+.side-section {
+  text-align: center;
+
+  &--blue {
+    border: 1px solid $blue;
+  }
+
+  &--red {
+    border: 1px solid $red;
+  }
 }
 
 .tri-section {

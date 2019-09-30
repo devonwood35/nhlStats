@@ -15,9 +15,44 @@ class Sidebar extends Component {
     const { teams } = this.props;
     return (
       <div className="side-container">
-        {teams.map((team) => (
-          <Button name={team.name} id={team.id} key={team.id} />
-        ))}
+        <div className="side-section side-section--red">
+          <div className="header-title__main">Eastern Conference</div>
+          <div className="side-element">
+            <div className="header-title__secondary">Atlantic Division</div>
+            {teams.map((team) => (
+              team.division.name === 'Atlantic'
+                ? <Button name={team.name} id={team.id} key={team.id} />
+                : null
+            ))}
+          </div>
+          <div className="side-element">
+            <div className="header-title__secondary">Metropolitan Division</div>
+            {teams.map((team) => (
+              team.division.name === 'Metropolitan'
+                ? <Button name={team.name} id={team.id} key={team.id} />
+                : null
+            ))}
+          </div>
+        </div>
+        <div className="side-section side-section--blue">
+          <div className="header-title__main">Western Conference</div>
+          <div className="side-element">
+            <div className="header-title__secondary">Central Division</div>
+            {teams.map((team) => (
+              team.division.name === 'Central'
+                ? <Button name={team.name} id={team.id} key={team.id} />
+                : null
+            ))}
+          </div>
+          <div className="side-element">
+            <div className="header-title__secondary">Pacific Division</div>
+            {teams.map((team) => (
+              team.division.name === 'Pacific'
+                ? <Button name={team.name} id={team.id} key={team.id} />
+                : null
+            ))}
+          </div>
+        </div>
       </div>
     );
   }

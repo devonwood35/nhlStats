@@ -66,7 +66,7 @@ class RecentGames extends Component {
           </div>
         </div>
         {games.map((data) => (
-          <div className="octo-section">
+          <div className="octo-section" key={data.games[0].gamePk}>
             <div className="first-element">
               Logo
             </div>
