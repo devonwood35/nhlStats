@@ -11,10 +11,13 @@
 .main-container {
   border: 1px solid $black;
   grid-column-start: 2;
+  padding: 10px;
 }
 
 .header-section {
   border: 1px solid $black;
+  font-family: 'SquadaOne', sans-serif;
+  font-size: 30px;
   padding: 10px;
   text-align: center;
 }
@@ -23,11 +26,11 @@
   text-align: center;
 
   &--blue {
-    border: 1px solid $blue;
+    border: 5px solid $blue;
   }
 
   &--red {
-    border: 1px solid $red;
+    border: 5px solid $red;
   }
 }
 

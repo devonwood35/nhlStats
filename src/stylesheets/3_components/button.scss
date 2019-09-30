@@ -1,8 +1,21 @@
 .btn {
 
   &__sidebar {
-    font-family: 'Helvetica', sans-serif;
+    border: none;
+    border-top: 2px solid grey;
+    font-family: 'SquadaOne', sans-serif;
+    font-size: 20px;
     padding: 5px;
     width: 100%;
+  }
+
+  &__sidebar:focus {
+    outline: none;
+  }
+
+  &__sidebar:hover {
+    background-color: $black;
+    color: $white;
+    cursor: pointer;
   }
 }

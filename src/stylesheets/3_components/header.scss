@@ -5,6 +5,18 @@
   }
 
   &__secondary {
+    background-color: $black;
+    color: $white;
     font-size: 20px;
+  }
+
+  &--blue {
+    background-color: $blue;
+    color: $white;
+  }
+
+  &--red {
+    background-color: $red;
+    color: $white;
   }
 }

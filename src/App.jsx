@@ -5,6 +5,8 @@ import Sidebar from './containers/Sidebar';
 import News from './containers/News';
 import Team from './containers/Team';
 import Game from './containers/Game';
+import Roster from './containers/Roster';
+import Player from './containers/Player';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Route exact path="/" component={() => <News />} />
             <Route exact path="/team/:id" component={() => <Team />} />
             <Route exact path="/game/:id" component={() => <Game />} />
+            <Route exact path="/:id/roster" component={() => <Roster />} />
+            <Route exact path="/player/:id" component={() => <Player />} />
           </div>
         </div>
       </Router>

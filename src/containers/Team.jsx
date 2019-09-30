@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TeamStats from '../components/TeamStats';
 import RecentGames from '../components/RecentGames';
-// import allTeams from '../utils/teams.json';
+import allTeams from '../utils/teams.json';
 import api from '../utils/api';
 
 class Team extends Component {
@@ -36,6 +36,7 @@ class Team extends Component {
 
   render() {
     const { team } = this.state;
+    const { match: { params: { id } } } = this.props;
 
     if (!team.name) { return (<div>loading...</div>); }
 
@@ -43,6 +44,11 @@ class Team extends Component {
       <div>
         <div className="header-section">
           {team.name}
+        </div>
+        <div className="logo-container">
+          {allTeams.teams.filter((data) => data.id === id).map((logo) => (
+            <img className="logo logo__main" src={logo.url} alt="logo" key={logo.id} />
+          ))}
         </div>
         <div className="tri-section">
           <div className="first-element">
@@ -68,6 +74,9 @@ class Team extends Component {
         </div>
         <TeamStats />
         <RecentGames />
+        <div>
+          <Link to={`/${id}/roster`}>Roster</Link>
+        </div>
       </div>
     );
   }

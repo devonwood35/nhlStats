@@ -7,6 +7,12 @@ export default {
   loadTeamStats(id) {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/teams/${id}/?expand=team.stats&season=20182019`);
   },
+  loadRoster(id) {
+    return axios.get(`https://statsapi.web.nhl.com/api/v1/teams/${id}/roster`);
+  },
+  loadPlayer(id) {
+    return axios.get(`https://statsapi.web.nhl.com/api/v1/people/${id}?expand=person.stats&stats=yearByYear`);
+  },
   loadGame(id) {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/game/${id}/feed/live`);
   },

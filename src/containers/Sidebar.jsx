@@ -16,7 +16,7 @@ class Sidebar extends Component {
     return (
       <div className="side-container">
         <div className="side-section side-section--red">
-          <div className="header-title__main">Eastern Conference</div>
+          <div className="header-title__main header-title--red">Eastern Conference</div>
           <div className="side-element">
             <div className="header-title__secondary">Atlantic Division</div>
             {teams.map((team) => (
@@ -35,7 +35,7 @@ class Sidebar extends Component {
           </div>
         </div>
         <div className="side-section side-section--blue">
-          <div className="header-title__main">Western Conference</div>
+          <div className="header-title__main header-title--blue">Western Conference</div>
           <div className="side-element">
             <div className="header-title__secondary">Central Division</div>
             {teams.map((team) => (
