@@ -41,7 +41,7 @@ class Team extends Component {
     if (!team.name) { return (<div>loading...</div>); }
 
     return (
-      <div>
+      <div className="box-container">
         <div className="header-section">
           {team.name}
         </div>
@@ -50,7 +50,7 @@ class Team extends Component {
             <img className="logo logo__main" src={logo.url} alt="logo" key={logo.id} />
           ))}
         </div>
-        <div className="tri-section list">
+        <div className="quint-section">
           <div className="first-element">
             {`${team.conference.name} Conference`}
           </div>
@@ -58,24 +58,20 @@ class Team extends Component {
             {`${team.division.name} Division`}
           </div>
           <div className="third-element">
-            <a href={team.officialSiteUrl}>Official Team Site</a>
-          </div>
-        </div>
-        <div className="tri-section list">
-          <div className="first-element">
             {team.venue.city}
           </div>
-          <div className="second-element">
+          <div className="fourth-element">
             {team.venue.name}
           </div>
-          <div className="third-element">
+          <div className="fifth-element">
             {team.firstYearOfPlay}
           </div>
         </div>
+        <a href={team.officialSiteUrl}>Official Team Site</a>
         <TeamStats />
         <RecentGames />
-        <div className="header-section">
-          <Link to={`/${id}/roster`}>Roster</Link>
+        <div className="header-section list">
+          <Link className="link-remove" to={`/${id}/roster`}>Roster</Link>
         </div>
       </div>
     );

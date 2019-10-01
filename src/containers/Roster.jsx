@@ -23,7 +23,7 @@ class Roster extends Component {
   render() {
     const { roster } = this.state;
     return (
-      <div>
+      <div className="box-container">
         <div>
           <div className="header-section">Forwards</div>
           {roster.filter((position) => position.position.type === 'Forward').map((player) => (

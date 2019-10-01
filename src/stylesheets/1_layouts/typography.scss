@@ -3,8 +3,12 @@
   grid-template-columns: 20% 80%;
 }
 
-.sub-container {
-  border: 2px solid $black;
+.box-container {
+  box-shadow: 3px 3px 5px 6px $lightgrey;
+}
+
+.header-container {
+  grid-template-columns: 50% 25% 25%;
 }
 
 .side-container {
@@ -15,11 +19,10 @@
 .main-container {
   border: 1px solid $black;
   grid-column-start: 2;
-  padding: 10px;
+  padding: 20px;
 }
 
 .header-section {
-  border: 1px solid $black;
   font-family: 'SquadaOne', sans-serif;
   font-size: 30px;
   padding: 10px;
@@ -51,6 +54,11 @@
 .quint-section {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.sext-section {
+  display: grid;
+  grid-template-columns: 16% 16% 16% 16% 16% 16%;
 }
 
 .octo-section {
@@ -87,7 +95,12 @@
 
 .first-element,
 .second-element,
-.third-element {
+.third-element,
+.fourth-element,
+.fifth-element,
+.sixth-element,
+.seventh-element,
+.eigth-element {
   text-align: center;
 }
 
@@ -122,4 +135,3 @@
 .eigth-element {
   grid-column-start: 8;
 }
-

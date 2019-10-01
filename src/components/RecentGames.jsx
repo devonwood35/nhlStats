@@ -49,8 +49,8 @@ class RecentGames extends Component {
     return (
       <div>
         <div className="header-section">Last Five Games</div>
-        <div className="sub-container">
-          <div className="octo-section list--black">
+        <div>
+          <div className="octo-section list--title">
             <div className="second-element">
               Home
             </div>
@@ -71,7 +71,7 @@ class RecentGames extends Component {
             <div className="octo-section list list--large" key={data.games[0].gamePk}>
               <div className="first-element">
                 { /* eslint-disable-next-line */ }
-                {allTeams.teams.filter((ele) => ele.id == data.games[0].teams.away.team.id).map((team) => (
+                {allTeams.teams.filter((ele) => ele.id == data.games[0].teams.home.team.id).map((team) => (
                   <img className="logo logo__small" src={team.url} alt={team.id} key={team.id} />
                 ))}
               </div>

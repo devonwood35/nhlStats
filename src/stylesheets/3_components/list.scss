@@ -1,13 +1,20 @@
 .list {
-  border: 1px solid $black;
+  border-top: 1px solid $lightgrey;
 
-  &--black {
-    background-color: $black;
-    color: $white;
-    padding: 10px;
+  &--title {
+    font-family: 'TurretRoad', sans-serif;
   }
 
   &--large {
     min-height: 80px;
+  }
+
+  &__border-large {
+    border-bottom: 5px solid $lightgrey;
+    border-top: 5px solid $lightgrey;
+  }
+
+  &__border-bottom {
+    border-bottom: 1px solid $lightgrey;
   }
 }
