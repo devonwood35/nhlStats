@@ -42,7 +42,7 @@ class Team extends Component {
 
     return (
       <div className="box-container">
-        <div className="header-section">
+        <div className="header-section header-section--large">
           {team.name}
         </div>
         <div className="logo-container">
@@ -67,7 +67,9 @@ class Team extends Component {
             {team.firstYearOfPlay}
           </div>
         </div>
-        <a href={team.officialSiteUrl}>Official Team Site</a>
+        <div className="header-section header-section--small">
+          <a className="link-remove" href={team.officialSiteUrl}>Official Team Site</a>
+        </div>
         <TeamStats />
         <RecentGames />
         <div className="header-section list">

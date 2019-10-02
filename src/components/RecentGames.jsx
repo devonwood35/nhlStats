@@ -44,6 +44,22 @@ class RecentGames extends Component {
     });
   }
 
+  checkWin(data) {
+    const { match: { params: { id } } } = this.props;
+
+    // eslint-disable-next-line
+    if (data.away.team.id == id) {
+      if (data.away.score > data.home.score) {
+        return 'W';
+      }
+      return 'L';
+    }
+    if (data.home.score > data.away.score) {
+      return 'W';
+    }
+    return 'L';
+  }
+
   render() {
     const { games } = this.state;
     return (
@@ -51,17 +67,17 @@ class RecentGames extends Component {
         <div className="header-section">Last Five Games</div>
         <div>
           <div className="octo-section list--title">
+            <div className="first-element">
+              Score
+            </div>
             <div className="second-element">
+              W/L
+            </div>
+            <div className="fourth-element">
               Home
             </div>
-            <div className="third-element">
-              Score
-            </div>
-            <div className="sixth-element">
-              Away
-            </div>
             <div className="seventh-element">
-              Score
+              Away
             </div>
             <div className="eighth-element">
               Link
@@ -70,31 +86,31 @@ class RecentGames extends Component {
           {games.map((data) => (
             <div className="octo-section list list--large" key={data.games[0].gamePk}>
               <div className="first-element">
+                {`${data.games[0].teams.home.score} - ${data.games[0].teams.away.score}`}
+              </div>
+              <div className="second-element">
+                {this.checkWin(data.games[0].teams)}
+              </div>
+              <div className="third-element">
                 { /* eslint-disable-next-line */ }
                 {allTeams.teams.filter((ele) => ele.id == data.games[0].teams.home.team.id).map((team) => (
                   <img className="logo logo__small" src={team.url} alt={team.id} key={team.id} />
                 ))}
               </div>
-              <div className="second-element">
+              <div className="fourth-element">
                 {data.games[0].teams.home.team.name}
               </div>
-              <div className="third-element">
-                {data.games[0].teams.home.score}
-              </div>
-              <div className="fourth-element">
-                at
-              </div>
               <div className="fifth-element">
+                @
+              </div>
+              <div className="sixth-element">
                 { /* eslint-disable-next-line */ }
                 {allTeams.teams.filter((ele) => ele.id == data.games[0].teams.away.team.id).map((team) => (
                   <img className="logo logo__small" src={team.url} alt={team.id} key={team.id} />
                 ))}
               </div>
-              <div className="sixth-element">
-                {data.games[0].teams.away.team.name}
-              </div>
               <div className="seventh-element">
-                {data.games[0].teams.away.score}
+                {data.games[0].teams.away.team.name}
               </div>
               <div className="eighth-element">
                 <Link to={`/game/${data.games[0].gamePk}`}>To GameCenter</Link>

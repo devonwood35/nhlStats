@@ -41,87 +41,87 @@ class TeamStats extends Component {
       <div className="list list__border-large">
         <div className="sext-section list__border-bottom">
           <div className="first-element">
-            <div>Games Played</div>
-            <div>{numbers.gamesPlayed}</div>
+            <div className="padding-small">Games Played</div>
+            <div className="padding-small">{numbers.gamesPlayed}</div>
           </div>
           <div className="second-element">
-            <div>Wins</div>
-            <div>{numbers.wins}</div>
+            <div className="padding-small">Wins</div>
+            <div className="padding-small">{numbers.wins}</div>
           </div>
           <div className="third-element">
-            <div>Losses</div>
-            <div>{numbers.losses}</div>
+            <div className="padding-small">Losses</div>
+            <div className="padding-small">{numbers.losses}</div>
           </div>
           <div className="fourth-element">
-            <div>OT</div>
-            <div>{numbers.ot}</div>
+            <div className="padding-small">OT</div>
+            <div className="padding-small">{numbers.ot}</div>
           </div>
           <div className="fifth-element">
-            <div>Points</div>
-            <div>{numbers.pts}</div>
+            <div className="padding-small">Points</div>
+            <div className="padding-small">{numbers.pts}</div>
           </div>
           <div className="sixth-element">
-            <div>Rank</div>
-            <div>{rank.pts}</div>
+            <div className="padding-small">League Rank</div>
+            <div className="padding-small">{rank.pts}</div>
           </div>
         </div>
         <div className="half-section">
-          <div className="tri-section half-section__first">
+          <div className="tri-section tri-section__uneven half-section__first">
             <div className="first-element">
-              <div>--------</div>
-              <div>Goals Per Game</div>
-              <div>Goals Against Per Game</div>
-              <div>Shots Per Game</div>
-              <div>Shots Allowed Per Game</div>
-              <div>Power Play Percentage</div>
-              <div>Power Play Goals</div>
+              <div className="padding-small">--------</div>
+              <div className="padding-small">Goals Per Game</div>
+              <div className="padding-small">Goals Against Per Game</div>
+              <div className="padding-small">Shots Per Game</div>
+              <div className="padding-small">Shots Allowed Per Game</div>
+              <div className="padding-small">Power Play Percentage</div>
+              <div className="padding-small">Power Play Goals</div>
             </div>
             <div className="second-element">
-              <div>--------</div>
-              <div>{numbers.goalsPerGame.toFixed(2)}</div>
-              <div>{numbers.goalsAgainstPerGame.toFixed(2)}</div>
-              <div>{numbers.shotsPerGame.toFixed(2)}</div>
-              <div>{numbers.shotsAllowed.toFixed(2)}</div>
-              <div>{`${numbers.powerPlayPercentage}%`}</div>
-              <div>{numbers.powerPlayGoals}</div>
+              <div className="padding-small">--------</div>
+              <div className="padding-small">{numbers.goalsPerGame.toFixed(2)}</div>
+              <div className="padding-small">{numbers.goalsAgainstPerGame.toFixed(2)}</div>
+              <div className="padding-small">{numbers.shotsPerGame.toFixed(2)}</div>
+              <div className="padding-small">{numbers.shotsAllowed.toFixed(2)}</div>
+              <div className="padding-small">{`${numbers.powerPlayPercentage}%`}</div>
+              <div className="padding-small">{numbers.powerPlayGoals}</div>
             </div>
             <div className="third-element">
-              <div>Rank</div>
-              <div>{rank.goalsPerGame}</div>
-              <div>{rank.goalsAgainstPerGame}</div>
-              <div>{rank.shotsPerGame}</div>
-              <div>{rank.shotsAllowed}</div>
-              <div>{rank.powerPlayPercentage}</div>
-              <div>{rank.powerPlayGoals}</div>
+              <div className="padding-small">League Rank</div>
+              <div className="padding-small">{rank.goalsPerGame}</div>
+              <div className="padding-small">{rank.goalsAgainstPerGame}</div>
+              <div className="padding-small">{rank.shotsPerGame}</div>
+              <div className="padding-small">{rank.shotsAllowed}</div>
+              <div className="padding-small">{rank.powerPlayPercentage}</div>
+              <div className="padding-small">{rank.powerPlayGoals}</div>
             </div>
           </div>
-          <div className="tri-section half-section__second">
+          <div className="tri-section tri-section__uneven half-section__second">
             <div className="first-element">
-              <div>--------</div>
-              <div>Power Play Goals Against</div>
-              <div>Penalty Kill Percentage</div>
-              <div>Face Offs Taken</div>
-              <div>Face Offs Won</div>
-              <div>Face Offs Lost</div>
-              <div>Face Off Percentage</div>
+              <div className="padding-small">--------</div>
+              <div className="padding-small">Power Play Goals Against</div>
+              <div className="padding-small">Penalty Kill Percentage</div>
+              <div className="padding-small">Face Offs Taken</div>
+              <div className="padding-small">Face Offs Won</div>
+              <div className="padding-small">Face Offs Lost</div>
+              <div className="padding-small">Face Off Percentage</div>
             </div>
             <div className="second-element">
-              <div>--------</div>
-              <div>{numbers.powerPlayGoalsAgainst}</div>
-              <div>{`${numbers.penaltyKillPercentage}%`}</div>
-              <div>{numbers.faceOffsTaken}</div>
-              <div>{numbers.faceOffsWon}</div>
-              <div>{numbers.faceOffsLost}</div>
-              <div>{`${numbers.faceOffWinPercentage}%`}</div>
+              <div className="padding-small">--------</div>
+              <div className="padding-small">{numbers.powerPlayGoalsAgainst}</div>
+              <div className="padding-small">{`${numbers.penaltyKillPercentage}%`}</div>
+              <div className="padding-small">{numbers.faceOffsTaken}</div>
+              <div className="padding-small">{numbers.faceOffsWon}</div>
+              <div className="padding-small">{numbers.faceOffsLost}</div>
+              <div className="padding-small">{`${numbers.faceOffWinPercentage}%`}</div>
             </div>
             <div className="third-element">
-              <div>Rank</div>
-              <div>{rank.powerPlayGoalsAgainst}</div>
-              <div>{rank.penaltyKillPercentage}</div>
-              <div>{rank.faceOffsTaken}</div>
-              <div>{rank.faceOffsWon}</div>
-              <div>{rank.faceOffsLost}</div>
-              <div>{rank.faceOffWinPercentage}</div>
+              <div className="padding-small">League Rank</div>
+              <div className="padding-small">{rank.powerPlayGoalsAgainst}</div>
+              <div className="padding-small">{rank.penaltyKillPercentage}</div>
+              <div className="padding-small">{rank.faceOffsTaken}</div>
+              <div className="padding-small">{rank.faceOffsWon}</div>
+              <div className="padding-small">{rank.faceOffsLost}</div>
+              <div className="padding-small">{rank.faceOffWinPercentage}</div>
             </div>
           </div>
         </div>

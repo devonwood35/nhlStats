@@ -17,9 +17,9 @@
 }
 
 .main-container {
-  border: 1px solid $black;
   grid-column-start: 2;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .header-section {
@@ -27,6 +27,19 @@
   font-size: 30px;
   padding: 10px;
   text-align: center;
+
+  &__primary {
+    border-bottom: 1px solid $lightgrey;
+    margin-bottom: 10px;
+  }
+
+  &--large {
+    font-size: 45px;
+  }
+
+  &--small {
+    font-size: 20px;
+  }
 }
 
 .side-section {
@@ -44,6 +57,10 @@
 .tri-section {
   display: grid;
   grid-template-columns: 33% 33% 33%;
+
+  &__uneven {
+    grid-template-columns: 60% 20% 20%;
+  }
 }
 
 .quad-section {
@@ -64,7 +81,7 @@
 .octo-section {
   align-items: center;
   display: grid;
-  grid-template-columns: 10% 20% 5% 5% 10% 20% 5% 25%;
+  grid-template-columns: 5% 5% 10% 20% 5% 10% 20% 25%;
   text-align: center;
 }
 
@@ -134,4 +151,8 @@
 
 .eigth-element {
   grid-column-start: 8;
+}
+
+.padding-small {
+  padding: 5px;
 }
