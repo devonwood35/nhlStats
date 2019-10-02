@@ -22,9 +22,33 @@ class Player extends Component {
 
   render() {
     const { player } = this.state;
+    if (!player.primaryPosition) { return (<div>loading...</div>)};
+
     return (
       <div>
-        <div>{player.fullName}</div>
+        <div className="half-section">
+          <div className="first-element">{player.fullName}</div>
+          <div className="second-element half-section">
+            <div className="first-element">
+              <div>Position</div>
+              <div>Number</div>
+              <div>Nationality</div>
+              <div>Birthday</div>
+              <div>Height</div>
+              <div>Weight</div>
+              <div>Age</div>
+            </div>
+            <div className="second-element">
+              <div>{player.primaryPosition.name}</div>
+              <div>{player.primaryNumber}</div>
+              <div>{player.birthCountry}</div>
+              <div>{player.birthDate}</div>
+              <div>{player.height}</div>
+              <div>{player.weight}</div>
+              <div>{player.currentAge}</div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

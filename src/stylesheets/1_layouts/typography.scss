@@ -55,6 +55,31 @@
   }
 }
 
+.half-section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  &__first {
+    grid-column-start: 1;
+  }
+
+  &__second {
+    grid-column-start: 2;
+  }
+
+  &__third {
+    grid-column-start: 3;
+  }
+
+  &__fourth {
+    grid-column-start: 4;
+  }
+
+  &__fifth {
+    grid-column-start: 5;
+  }
+}
+
 .tri-section {
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -91,31 +116,6 @@
 
   &__uneven {
     grid-template-columns: 5% 5% 10% 20% 5% 10% 20% 25%;
-  }
-}
-
-.half-section {
-  display: grid;
-  grid-template-columns: 50% 50%;
-
-  &__first {
-    grid-column-start: 1;
-  }
-
-  &__second {
-    grid-column-start: 2;
-  }
-
-  &__third {
-    grid-column-start: 3;
-  }
-
-  &__fourth {
-    grid-column-start: 4;
-  }
-
-  &__fifth {
-    grid-column-start: 5;
   }
 }
 
