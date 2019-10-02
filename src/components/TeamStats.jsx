@@ -41,27 +41,27 @@ class TeamStats extends Component {
       <div className="list list__border-large">
         <div className="sext-section list__border-bottom">
           <div className="first-element">
-            <div className="padding-small">Games Played</div>
+            <div className="padding-small list--title">Games Played</div>
             <div className="padding-small">{numbers.gamesPlayed}</div>
           </div>
           <div className="second-element">
-            <div className="padding-small">Wins</div>
+            <div className="padding-small list--title">Wins</div>
             <div className="padding-small">{numbers.wins}</div>
           </div>
           <div className="third-element">
-            <div className="padding-small">Losses</div>
+            <div className="padding-small list--title">Losses</div>
             <div className="padding-small">{numbers.losses}</div>
           </div>
           <div className="fourth-element">
-            <div className="padding-small">OT</div>
+            <div className="padding-small list--title">OT</div>
             <div className="padding-small">{numbers.ot}</div>
           </div>
           <div className="fifth-element">
-            <div className="padding-small">Points</div>
+            <div className="padding-small list--title">Points</div>
             <div className="padding-small">{numbers.pts}</div>
           </div>
           <div className="sixth-element">
-            <div className="padding-small">League Rank</div>
+            <div className="padding-small list--title">League Rank</div>
             <div className="padding-small">{rank.pts}</div>
           </div>
         </div>
@@ -86,7 +86,7 @@ class TeamStats extends Component {
               <div className="padding-small">{numbers.powerPlayGoals}</div>
             </div>
             <div className="third-element">
-              <div className="padding-small">League Rank</div>
+              <div className="padding-small list--title">League Rank</div>
               <div className="padding-small">{rank.goalsPerGame}</div>
               <div className="padding-small">{rank.goalsAgainstPerGame}</div>
               <div className="padding-small">{rank.shotsPerGame}</div>
@@ -95,7 +95,7 @@ class TeamStats extends Component {
               <div className="padding-small">{rank.powerPlayGoals}</div>
             </div>
           </div>
-          <div className="tri-section tri-section__uneven half-section__second">
+          <div className="quad-section quad-section__uneven half-section__second">
             <div className="first-element">
               <div className="padding-small">--------</div>
               <div className="padding-small">Power Play Goals Against</div>
@@ -115,7 +115,7 @@ class TeamStats extends Component {
               <div className="padding-small">{`${numbers.faceOffWinPercentage}%`}</div>
             </div>
             <div className="third-element">
-              <div className="padding-small">League Rank</div>
+              <div className="padding-small list--title">League Rank</div>
               <div className="padding-small">{rank.powerPlayGoalsAgainst}</div>
               <div className="padding-small">{rank.penaltyKillPercentage}</div>
               <div className="padding-small">{rank.faceOffsTaken}</div>

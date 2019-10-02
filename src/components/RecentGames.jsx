@@ -66,7 +66,7 @@ class RecentGames extends Component {
       <div>
         <div className="header-section">Last Five Games</div>
         <div>
-          <div className="octo-section list--title">
+          <div className="octo-section octo-section__uneven list--title">
             <div className="first-element">
               Score
             </div>
@@ -84,7 +84,7 @@ class RecentGames extends Component {
             </div>
           </div>
           {games.map((data) => (
-            <div className="octo-section list list--large" key={data.games[0].gamePk}>
+            <div className="octo-section octo-section__uneven list list--large" key={data.games[0].gamePk}>
               <div className="first-element">
                 {`${data.games[0].teams.home.score} - ${data.games[0].teams.away.score}`}
               </div>
@@ -113,7 +113,7 @@ class RecentGames extends Component {
                 {data.games[0].teams.away.team.name}
               </div>
               <div className="eighth-element">
-                <Link to={`/game/${data.games[0].gamePk}`}>To GameCenter</Link>
+                <Link className="link-remove header-section header-section--small" to={`/game/${data.games[0].gamePk}`}>GameCenter</Link>
               </div>
             </div>
           ))}

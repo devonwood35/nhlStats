@@ -52,19 +52,24 @@ class Team extends Component {
         </div>
         <div className="quint-section">
           <div className="first-element">
-            {`${team.conference.name} Conference`}
+            <div className="list--title padding-small">Conference</div>
+            <div className="list padding-small">{team.conference.name}</div>
           </div>
           <div className="second-element">
-            {`${team.division.name} Division`}
+            <div className="list--title padding-small">Division</div>
+            <div className="list padding-small">{team.division.name}</div>
           </div>
           <div className="third-element">
-            {team.venue.city}
+            <div className="list--title padding-small">City</div>
+            <div className="list padding-small">{team.venue.city}</div>
           </div>
           <div className="fourth-element">
-            {team.venue.name}
+            <div className="list--title padding-small">Arena</div>
+            <div className="list padding-small">{team.venue.name}</div>
           </div>
           <div className="fifth-element">
-            {team.firstYearOfPlay}
+            <div className="list--title padding-small">Founded</div>
+            <div className="list padding-small">{team.firstYearOfPlay}</div>
           </div>
         </div>
         <div className="header-section header-section--small">

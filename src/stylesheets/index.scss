@@ -8,3 +8,8 @@
 @import './3_components/link.scss';
 @import './3_components/list.scss';
 @import './3_components/logo.scss';
+
+body {
+  color: $darkgrey;
+  font-family: 'Helvetica', sans-serif;
+}
