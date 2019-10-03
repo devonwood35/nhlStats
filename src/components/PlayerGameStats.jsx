@@ -64,20 +64,48 @@ class PlayerGameStats extends Component {
           <div key={game.date}>
             <div className="quad-section quad-section__side-margin list">
               <div className="second-element">
-                <div className="list--title">Home</div>
+                <div className="list--title padding-small">Home</div>
                 <img src={logos[index].home} alt="home" className="logo__xs center" />
               </div>
               <div className="third-element">
-                <div className="list--title">Away</div>
+                <div className="list--title padding-small">Away</div>
                 <img src={logos[index].away} alt="away" className="logo__xs fourth-element center" />
               </div>
             </div>
             {isGoalie
               ? (
-                <div />
+                <div className="sept-section">
+                  <div className="first-element">
+                    <div className="padding-small">Date</div>
+                    <div className="padding-small">{moment(game.date, 'YYYY-MM-DD').format('MM-DD-YYYY')}</div>
+                  </div>
+                  <div className="second-element">
+                    <div className="padding-small">Shots Against</div>
+                    <div className="padding-small">{game.stat.shotsAgainst}</div>
+                  </div>
+                  <div className="third-element">
+                    <div className="padding-small">Saves</div>
+                    <div className="padding-small">{game.stat.saves}</div>
+                  </div>
+                  <div className="fourth-element">
+                    <div className="padding-small">Save %</div>
+                    <div className="padding-small">{game.stat.savePercentage}</div>
+                  </div>
+                  <div className="fifth-element">
+                    <div className="padding-small">Goals Against</div>
+                    <div className="padding-small">{game.stat.goalsAgainst}</div>
+                  </div>
+                  <div className="sixth-element">
+                    <div className="padding-small">Time on Ice</div>
+                    <div className="padding-small">{game.stat.timeOnIce}</div>
+                  </div>
+                  <div className="seventh-element">
+                    <div className="padding-small">GameCenter</div>
+                  </div>
+                </div>
               )
               : (
-                <div className="dec-section list">
+                <div className="dec-section">
                   <div className="first-element">
                     <div className="padding-small">Date</div>
                     <div className="padding-small">{moment(game.date, 'YYYY-MM-DD').format('MM-DD-YYYY')}</div>
