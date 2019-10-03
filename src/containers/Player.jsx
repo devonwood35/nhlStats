@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import api from '../utils/api';
+import allTeams from '../utils/teams.json';
 import PlayerStats from '../components/PlayerStats';
 
 class Player extends Component {
@@ -33,17 +35,24 @@ class Player extends Component {
 
   render() {
     const { player } = this.state;
+
     if (!player.primaryPosition) { return (<div>loading...</div>); }
+
+    const logo = allTeams.teams.filter((ele) => ele.id == player.currentTeam.id); //eslint-disable-line
 
     return (
       <div className="box-container">
+        <Link to={`/${player.currentTeam.id}/roster`} className="header-section header-section--shift link-remove padding-small">
+          <FontAwesomeIcon icon="angle-double-left" />
+          &nbsp;Roster
+        </Link>
         <div className="header-section header-section--large">
           {this.isCaptain(player)}
         </div>
         <div className="quad-section list">
           <div className="first-element">
             <div className="list--title">Current Team</div>
-            <div />
+            <img className="logo__xs" src={logo[0].url} alt={logo[0].id} />
           </div>
           <div className="second-element">
             <div className="list--title">Number</div>

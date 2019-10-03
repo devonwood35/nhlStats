@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 import Header from './components/Header';
 import Sidebar from './containers/Sidebar';
 import News from './containers/News';
@@ -7,6 +9,8 @@ import Team from './containers/Team';
 import Game from './containers/Game';
 import Roster from './containers/Roster';
 import Player from './containers/Player';
+
+library.add(faAngleDoubleLeft);
 
 function App() {
   return (

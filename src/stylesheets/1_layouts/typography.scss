@@ -41,6 +41,10 @@
   &--small {
     font-size: 20px;
   }
+
+  &--shift {
+    text-align: left;
+  }
 }
 
 .side-section {
@@ -120,7 +124,7 @@
 }
 
 .paginate {
-
+  overflow-x: scroll;
 }
 
 .first-element,

@@ -81,65 +81,65 @@ class PlayerStats extends Component {
       <div>
         <div className="paginate">
           {stats.map((year) => (
-            <button type="button" key={year.season} onClick={this.changeYear} value={year.season}>
+            <button className="btn btn__paginate" type="button" key={year.season} onClick={this.changeYear} value={year.season}>
               {year.season}
             </button>
           )).reverse()}
         </div>
-        <div className="quad-section">
+        <div className="quad-section list">
           <div className="first-element">
-            <div className="list--title">{statArr[0]}</div>
-            <div className="list--title">{statArr[1]}</div>
-            <div className="list--title">{statArr[2]}</div>
-            <div className="list--title">{statArr[3]}</div>
-            <div className="list--title">{statArr[4]}</div>
+            <div className="list--title padding-small">{statArr[0]}</div>
+            <div className="list--title padding-small">{statArr[1]}</div>
+            <div className="list--title padding-small">{statArr[2]}</div>
+            <div className="list--title padding-small">{statArr[3]}</div>
+            <div className="list--title padding-small">{statArr[4]}</div>
           </div>
           <div className="second-element">
             {isGoalie
               ? (
                 <div>
-                  <div>{statYear[0].stat.games}</div>
-                  <div>{statYear[0].stat.wins}</div>
-                  <div>{statYear[0].stat.losses}</div>
-                  <div>{statYear[0].stat.ot}</div>
-                  <div>{statYear[0].stat.shutouts}</div>
+                  <div className="padding-small">{statYear[0].stat.games}</div>
+                  <div className="padding-small">{statYear[0].stat.wins}</div>
+                  <div className="padding-small">{statYear[0].stat.losses}</div>
+                  <div className="padding-small">{statYear[0].stat.ot}</div>
+                  <div className="padding-small">{statYear[0].stat.shutouts}</div>
                 </div>
               )
               : (
                 <div>
-                  <div>{statYear[0].stat.games}</div>
-                  <div>{statYear[0].stat.goals}</div>
-                  <div>{statYear[0].stat.assists}</div>
-                  <div>{statYear[0].stat.points}</div>
-                  <div>{statYear[0].stat.plusMinus}</div>
+                  <div className="padding-small">{statYear[0].stat.games}</div>
+                  <div className="padding-small">{statYear[0].stat.goals}</div>
+                  <div className="padding-small">{statYear[0].stat.assists}</div>
+                  <div className="padding-small">{statYear[0].stat.points}</div>
+                  <div className="padding-small">{statYear[0].stat.plusMinus}</div>
                 </div>
               )}
           </div>
           <div className="third-element">
-            <div className="list--title">{statArr[5]}</div>
-            <div className="list--title">{statArr[6]}</div>
-            <div className="list--title">{statArr[7]}</div>
-            <div className="list--title">{statArr[8]}</div>
-            <div className="list--title">{statArr[9]}</div>
+            <div className="list--title padding-small">{statArr[5]}</div>
+            <div className="list--title padding-small">{statArr[6]}</div>
+            <div className="list--title padding-small">{statArr[7]}</div>
+            <div className="list--title padding-small">{statArr[8]}</div>
+            <div className="list--title padding-small">{statArr[9]}</div>
           </div>
           <div className="fourth-element">
             {isGoalie
               ? (
                 <div>
-                  <div>{statYear[0].stat.savePercentage}</div>
-                  <div>{statYear[0].stat.goalAgainstAverage}</div>
-                  <div>{statYear[0].stat.shotsAgainst}</div>
-                  <div>{statYear[0].stat.saves}</div>
-                  <div>{statYear[0].stat.goalsAgainst}</div>
+                  <div className="padding-small">{statYear[0].stat.savePercentage}</div>
+                  <div className="padding-small">{statYear[0].stat.goalAgainstAverage}</div>
+                  <div className="padding-small">{statYear[0].stat.shotsAgainst}</div>
+                  <div className="padding-small">{statYear[0].stat.saves}</div>
+                  <div className="padding-small">{statYear[0].stat.goalsAgainst}</div>
                 </div>
               )
               : (
                 <div>
-                  <div>{`${statYear[0].stat.faceOffPct}%`}</div>
-                  <div>{`${statYear[0].stat.shotPct}%`}</div>
-                  <div>{statYear[0].stat.penaltyMinutes}</div>
-                  <div>{statYear[0].stat.hits}</div>
-                  <div>{statYear[0].stat.blocked}</div>
+                  <div className="padding-small">{`${statYear[0].stat.faceOffPct}%`}</div>
+                  <div className="padding-small">{`${statYear[0].stat.shotPct}%`}</div>
+                  <div className="padding-small">{statYear[0].stat.penaltyMinutes}</div>
+                  <div className="padding-small">{statYear[0].stat.hits}</div>
+                  <div className="padding-small">{statYear[0].stat.blocked}</div>
                 </div>
               )}
           </div>

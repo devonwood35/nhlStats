@@ -1,7 +1,3 @@
-.logo-container {
-
-}
-
 .logo {
 
   &__main {
@@ -13,5 +9,9 @@
 
   &__small {
     width: 50%;
+  }
+
+  &__xs {
+    width: 20%;
   }
 }

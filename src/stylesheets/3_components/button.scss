@@ -1,4 +1,5 @@
 .btn {
+  border: none;
 
   &__sidebar {
     border: none;
@@ -17,5 +18,18 @@
     background-color: $black;
     color: $white;
     cursor: pointer;
+  }
+
+  &__paginate {
+    border: 1px solid $black;
+    font-family: 'TurretRoad', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  &__paginate:hover, &__paginate:focus {
+    background-color: $black;
+    color: $white;
+    outline: none;
   }
 }
