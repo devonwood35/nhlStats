@@ -100,6 +100,10 @@
   &__uneven {
     grid-template-columns: 50% 20% 20% 10%;
   }
+
+  &__side-margin {
+    grid-template-columns: 35% 15% 15% 35%;
+  }
 }
 
 .quint-section {
@@ -119,8 +123,15 @@
   text-align: center;
 
   &__uneven {
-    grid-template-columns: 5% 5% 10% 20% 5% 10% 20% 25%;
+    grid-template-columns: 5% 5% 10% 20% 10% 20% 10% 20%;
   }
+}
+
+.dec-section {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  text-align: center;
 }
 
 .paginate {
@@ -170,6 +181,18 @@
   grid-column-start: 8;
 }
 
+.ninth-element {
+  grid-column-start: 9;
+}
+
+.tenth-element {
+  grid-column-start: 10;
+}
+
 .padding-small {
   padding: 5px;
+}
+
+.center {
+  margin: 0 auto;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import api from '../utils/api';
 import allTeams from '../utils/teams.json';
 
@@ -76,8 +77,11 @@ class RecentGames extends Component {
             <div className="fourth-element">
               Home
             </div>
-            <div className="seventh-element">
+            <div className="sixth-element">
               Away
+            </div>
+            <div className="seventh-element">
+              Date
             </div>
             <div className="eighth-element">
               Link
@@ -101,16 +105,16 @@ class RecentGames extends Component {
                 {data.games[0].teams.home.team.name}
               </div>
               <div className="fifth-element">
-                @
-              </div>
-              <div className="sixth-element">
                 { /* eslint-disable-next-line */ }
                 {allTeams.teams.filter((ele) => ele.id == data.games[0].teams.away.team.id).map((team) => (
                   <img className="logo logo__small" src={team.url} alt={team.id} key={team.id} />
                 ))}
               </div>
-              <div className="seventh-element">
+              <div className="sixth-element">
                 {data.games[0].teams.away.team.name}
+              </div>
+              <div className="seventh-element">
+                {moment(data.date, 'YYYY-MM-DD').format('MM-DD-YYYY')}
               </div>
               <div className="eighth-element">
                 <Link className="link-remove header-section header-section--small" to={`/game/${data.games[0].gamePk}`}>GameCenter</Link>
