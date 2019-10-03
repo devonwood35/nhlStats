@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import TeamStats from '../components/TeamStats';
 import RecentGames from '../components/RecentGames';
@@ -42,6 +43,10 @@ class Team extends Component {
 
     return (
       <div className="box-container">
+        <Link to="/" className="header-section header-section--shift link-remove padding-small">
+          <FontAwesomeIcon icon="angle-double-left" />
+          &nbsp;Home
+        </Link>
         <div className="header-section header-section--large">
           {team.name}
         </div>

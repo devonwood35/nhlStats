@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import api from '../utils/api';
 
@@ -22,8 +23,14 @@ class Roster extends Component {
 
   render() {
     const { roster } = this.state;
+    const { match: { params: { id } } } = this.props;
+
     return (
       <div className="box-container">
+        <Link to={`/team/${id}`} className="header-section header-section--shift link-remove padding-small">
+          <FontAwesomeIcon icon="angle-double-left" />
+          &nbsp;Team
+        </Link>
         <div>
           <div className="header-section">Forwards</div>
           {roster.filter((position) => position.position.type === 'Forward').map((player) => (
