@@ -117,7 +117,7 @@ class RecentGames extends Component {
                 {moment(data.date, 'YYYY-MM-DD').format('MM-DD-YYYY')}
               </div>
               <div className="eighth-element">
-                <Link className="link-remove header-section header-section--small" to={`/game/${data.games[0].gamePk}`}>GameCenter</Link>
+                <Link className="link-remove header-section header-section--small" to={`/game/${data.games[0].gamePk}/${data.date}`}>GameCenter</Link>
               </div>
             </div>
           ))}

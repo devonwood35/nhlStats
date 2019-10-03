@@ -22,7 +22,7 @@ function App() {
           <div className="main-container">
             <Route exact path="/" component={() => <News />} />
             <Route exact path="/team/:id" component={() => <Team />} />
-            <Route exact path="/game/:id" component={() => <Game />} />
+            <Route exact path="/game/:id/:date" component={() => <Game />} />
             <Route exact path="/:id/roster" component={() => <Roster />} />
             <Route exact path="/player/:id" component={() => <Player />} />
           </div>

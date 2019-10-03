@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import allTeams from '../utils/teams.json';
@@ -51,7 +51,6 @@ class PlayerGameStats extends Component {
   render() {
     const { games, logos } = this.state;
     const { isGoalie } = this.props;
-    console.log(games);
 
     if (!games[0]) { return (<div>loading...</div>); }
 
@@ -76,75 +75,74 @@ class PlayerGameStats extends Component {
               ? (
                 <div className="sept-section">
                   <div className="first-element">
-                    <div className="padding-small">Date</div>
+                    <div className="padding-small list--title">Date</div>
                     <div className="padding-small">{moment(game.date, 'YYYY-MM-DD').format('MM-DD-YYYY')}</div>
                   </div>
                   <div className="second-element">
-                    <div className="padding-small">Shots Against</div>
+                    <div className="padding-small list--title">Shots Against</div>
                     <div className="padding-small">{game.stat.shotsAgainst}</div>
                   </div>
                   <div className="third-element">
-                    <div className="padding-small">Saves</div>
+                    <div className="padding-small list--title">Saves</div>
                     <div className="padding-small">{game.stat.saves}</div>
                   </div>
                   <div className="fourth-element">
-                    <div className="padding-small">Save %</div>
+                    <div className="padding-small list--title">Save %</div>
                     <div className="padding-small">{game.stat.savePercentage}</div>
                   </div>
                   <div className="fifth-element">
-                    <div className="padding-small">Goals Against</div>
+                    <div className="padding-small list--title">Goals Against</div>
                     <div className="padding-small">{game.stat.goalsAgainst}</div>
                   </div>
                   <div className="sixth-element">
-                    <div className="padding-small">Time on Ice</div>
+                    <div className="padding-small list--title">Time on Ice</div>
                     <div className="padding-small">{game.stat.timeOnIce}</div>
                   </div>
                   <div className="seventh-element">
-                    <div className="padding-small">GameCenter</div>
+                    <Link to={`/game/${game.game.gamePk}/${game.date}`} className="padding-small header-section header-section--small link-remove">GameCenter</Link>
                   </div>
                 </div>
               )
               : (
                 <div className="dec-section">
                   <div className="first-element">
-                    <div className="padding-small">Date</div>
+                    <div className="padding-small list--title">Date</div>
                     <div className="padding-small">{moment(game.date, 'YYYY-MM-DD').format('MM-DD-YYYY')}</div>
                   </div>
                   <div className="second-element">
-                    <div className="padding-small">Goals</div>
+                    <div className="padding-small list--title">Goals</div>
                     <div className="padding-small">{game.stat.goals}</div>
                   </div>
                   <div className="third-element">
-                    <div className="padding-small">Assists</div>
+                    <div className="padding-small list--title">Assists</div>
                     <div className="padding-small">{game.stat.assists}</div>
                   </div>
                   <div className="fourth-element">
-                    <div className="padding-small">Points</div>
+                    <div className="padding-small list--title">Points</div>
                     <div className="padding-small">{game.stat.points}</div>
                   </div>
                   <div className="fifth-element">
-                    <div className="padding-small">+/-</div>
+                    <div className="padding-small list--title">+/-</div>
                     <div className="padding-small">{game.stat.plusMinus}</div>
                   </div>
                   <div className="sixth-element">
-                    <div className="padding-small">Shots</div>
+                    <div className="padding-small list--title">Shots</div>
                     <div className="padding-small">{game.stat.shots}</div>
                   </div>
                   <div className="seventh-element">
-                    <div className="padding-small">Hits</div>
+                    <div className="padding-small list--title">Hits</div>
                     <div className="padding-small">{game.stat.hits}</div>
                   </div>
                   <div className="eigth-element">
-                    <div className="padding-small">PiM</div>
+                    <div className="padding-small list--title">PiM</div>
                     <div className="padding-small">{game.stat.pim}</div>
                   </div>
                   <div className="nineth-element">
-                    <div className="padding-small">Time on Ice</div>
+                    <div className="padding-small list--title">Time on Ice</div>
                     <div className="padding-small">{game.stat.timeOnIce}</div>
                   </div>
                   <div className="tenth-element">
-                    <div className="padding-small">GameCenter</div>
-                    <div className="padding-small" />
+                    <Link to={`/game/${game.game.gamePk}/${game.date}`} className="padding-small header-section header-section--small link-remove">GameCenter</Link>
                   </div>
                 </div>
               )}
