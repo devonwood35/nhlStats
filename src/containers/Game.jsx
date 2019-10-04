@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import allTeams from '../utils/teams.json';
 import api from '../utils/api';
 import Period from '../components/Period';
+import GameStats from '../components/GameStats';
 
 class Game extends Component {
   constructor(props) {
@@ -26,15 +27,15 @@ class Game extends Component {
   render() {
     const { game } = this.state;
     const { match: { params: { date } } } = this.props;
-    console.log(game);
+
     if (!game.gameData) { return (<div>loading...</div>); }
 
     return (
       <div className="box-container">
+        <div className="header-section">
+          {moment(date, 'YYYY-MM-DD').format('MM-DD-YYYY')}
+        </div>
         <div className="tri-section">
-          <div className="header-section">
-            {moment(date, 'YYYY-MM-DD').format('MM-DD-YYYY')}
-          </div>
           <div className="first-element">
             <div className="header-section">Home</div>
             { /* eslint-disable-next-line */ }
@@ -56,6 +57,7 @@ class Game extends Component {
             ))}
           </div>
         </div>
+        <GameStats liveData={game.liveData} />
         <Period liveData={game.liveData} />
       </div>
     );
