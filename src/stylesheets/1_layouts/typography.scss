@@ -144,7 +144,10 @@
 }
 
 .paginate {
-  overflow-x: scroll;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .first-element,
@@ -225,4 +228,8 @@
 
 .hidden {
   opacity: 0;
+}
+
+.width {
+  width: 25%;
 }

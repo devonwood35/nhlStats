@@ -41,10 +41,10 @@ class Period extends Component {
             1st Period
           </div>
           <div className="half-section list">
-            <div className="first-element header-section header-section--small">
+            <div className="first-element list--title center--grid padding-large">
               Goals
             </div>
-            <div className="second-element header-section header-section--small">
+            <div className="second-element list--title center--grid padding-large">
               Penalties
             </div>
           </div>
@@ -56,12 +56,22 @@ class Period extends Component {
                     {play.team.name}
                     &nbsp;
                     (
-                    {play.about.periodTimeRemaining}
+                    {play.about.periodTime}
                     )
                     &nbsp;
                     {play.about.goals.home}
                     -
                     {play.about.goals.away}
+                    {play.result.strength.code === 'PPG'
+                      ? (
+                        ' PP'
+                      )
+                      : null}
+                    {play.result.emptyNet
+                      ? (
+                        ' EN'
+                      )
+                      : null}
                   </div>
                   {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
                     player.playerType === 'Scorer'
@@ -89,7 +99,7 @@ class Period extends Component {
                       {play.team.name}
                       &nbsp;
                       (
-                      {play.about.periodTimeRemaining}
+                      {play.about.periodTime}
                       )
                     </div>
                     <div className="padding-small">{play.players[0].player.fullName}</div>
@@ -112,10 +122,10 @@ class Period extends Component {
             2nd Period
           </div>
           <div className="half-section list">
-            <div className="first-element header-section header-section--small">
+            <div className="first-element list--title center--grid padding-large">
               Goals
             </div>
-            <div className="second-element header-section header-section--small">
+            <div className="second-element list--title center--grid padding-large">
               Penalties
             </div>
           </div>
@@ -127,12 +137,22 @@ class Period extends Component {
                     {play.team.name}
                     &nbsp;
                     (
-                    {play.about.periodTimeRemaining}
+                    {play.about.periodTime}
                     )
                     &nbsp;
                     {play.about.goals.home}
                     -
                     {play.about.goals.away}
+                    {play.result.strength.code === 'PPG'
+                      ? (
+                        ' PP'
+                      )
+                      : null}
+                    {play.result.emptyNet
+                      ? (
+                        ' EN'
+                      )
+                      : null}
                   </div>
                   {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
                     player.playerType === 'Scorer'
@@ -160,7 +180,7 @@ class Period extends Component {
                       {play.team.name}
                       &nbsp;
                       (
-                      {play.about.periodTimeRemaining}
+                      {play.about.periodTime}
                       )
                     </div>
                     <div className="padding-small">{play.players[0].player.fullName}</div>
@@ -183,10 +203,10 @@ class Period extends Component {
             3rd Period
           </div>
           <div className="half-section list">
-            <div className="first-element header-section header-section--small">
+            <div className="first-element list--title center--grid padding-large">
               Goals
             </div>
-            <div className="second-element header-section header-section--small">
+            <div className="second-element list--title center--grid padding-large">
               Penalties
             </div>
           </div>
@@ -198,12 +218,22 @@ class Period extends Component {
                     {play.team.name}
                     &nbsp;
                     (
-                    {play.about.periodTimeRemaining}
+                    {play.about.periodTime}
                     )
                     &nbsp;
                     {play.about.goals.home}
                     -
                     {play.about.goals.away}
+                    {play.result.strength.code === 'PPG'
+                      ? (
+                        ' PP'
+                      )
+                      : null}
+                    {play.result.emptyNet
+                      ? (
+                        ' EN'
+                      )
+                      : null}
                   </div>
                   {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
                     player.playerType === 'Scorer'
@@ -231,7 +261,7 @@ class Period extends Component {
                       {play.team.name}
                       &nbsp;
                       (
-                      {play.about.periodTimeRemaining}
+                      {play.about.periodTime}
                       )
                     </div>
                     <div className="padding-small">{play.players[0].player.fullName}</div>
@@ -256,10 +286,10 @@ class Period extends Component {
                 OT
               </div>
               <div className="half-section">
-                <div className="first-element header-section header-section--small">
+                <div className="first-element list--title center--grid padding-large">
                   Goals
                 </div>
-                <div className="second-element header-section header-section--small">
+                <div className="second-element list--title center--grid padding-large">
                   Penalties
                 </div>
               </div>
@@ -271,12 +301,22 @@ class Period extends Component {
                         {play.team.name}
                         &nbsp;
                         (
-                        {play.about.periodTimeRemaining}
+                        {play.about.periodTime}
                         )
                         &nbsp;
                         {play.about.goals.home}
                         -
                         {play.about.goals.away}
+                        {play.result.strength.code === 'PPG'
+                          ? (
+                            ' PP'
+                          )
+                          : null}
+                        {play.result.emptyNet
+                          ? (
+                            ' EN'
+                          )
+                          : null}
                       </div>
                       {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
                         player.playerType === 'Scorer'
@@ -304,7 +344,7 @@ class Period extends Component {
                           {play.team.name}
                           &nbsp;
                           (
-                          {play.about.periodTimeRemaining}
+                          {play.about.periodTime}
                           )
                         </div>
                         <div className="padding-small">{play.players[0].player.fullName}</div>

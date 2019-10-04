@@ -18,7 +18,7 @@ class Sidebar extends Component {
         <div className="side-section side-section--red">
           <div className="header-title__main header-title--red">Eastern Conference</div>
           <div className="side-element">
-            <div className="header-title__secondary">Atlantic Division</div>
+            <div className="header-title__secondary padding-small padding-small">Atlantic Division</div>
             {teams.map((team) => (
               team.division.name === 'Atlantic'
                 ? <Button name={team.name} id={team.id} key={team.id} />
@@ -26,7 +26,7 @@ class Sidebar extends Component {
             ))}
           </div>
           <div className="side-element">
-            <div className="header-title__secondary">Metropolitan Division</div>
+            <div className="header-title__secondary padding-small">Metropolitan Division</div>
             {teams.map((team) => (
               team.division.name === 'Metropolitan'
                 ? <Button name={team.name} id={team.id} key={team.id} />
@@ -37,7 +37,7 @@ class Sidebar extends Component {
         <div className="side-section side-section--blue">
           <div className="header-title__main header-title--blue">Western Conference</div>
           <div className="side-element">
-            <div className="header-title__secondary">Central Division</div>
+            <div className="header-title__secondary padding-small">Central Division</div>
             {teams.map((team) => (
               team.division.name === 'Central'
                 ? <Button name={team.name} id={team.id} key={team.id} />
@@ -45,7 +45,7 @@ class Sidebar extends Component {
             ))}
           </div>
           <div className="side-element">
-            <div className="header-title__secondary">Pacific Division</div>
+            <div className="header-title__secondary padding-small">Pacific Division</div>
             {teams.map((team) => (
               team.division.name === 'Pacific'
                 ? <Button name={team.name} id={team.id} key={team.id} />

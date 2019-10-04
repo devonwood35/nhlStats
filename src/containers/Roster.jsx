@@ -33,6 +33,17 @@ class Roster extends Component {
         </Link>
         <div>
           <div className="header-section">Forwards</div>
+          <div className="quad-section padding-small">
+            <div className="first-element list--title">
+              Name
+            </div>
+            <div className="second-element list--title">
+              Number
+            </div>
+            <div className="third-element list--title">
+              Position
+            </div>
+          </div>
           {roster.filter((position) => position.position.type === 'Forward').map((player) => (
             <div className="quad-section list" key={player.person.id}>
               <div className="first-element padding-small">
@@ -44,7 +55,7 @@ class Roster extends Component {
               <div className="third-element padding-small">
                 {player.position.abbreviation}
               </div>
-              <div className="fourth-element padding-small header-section header-section--small list">
+              <div className="fourth-element padding-small header-section header-section--small">
                 <Link className="link-remove" to={`/player/${player.person.id}`}>Profile</Link>
               </div>
             </div>
@@ -63,7 +74,7 @@ class Roster extends Component {
               <div className="third-element padding-small">
                 {player.position.abbreviation}
               </div>
-              <div className="fourth-element padding-small header-section header-section--small list">
+              <div className="fourth-element padding-small header-section header-section--small">
                 <Link className="link-remove" to={`/player/${player.person.id}`}>Profile</Link>
               </div>
             </div>
@@ -82,7 +93,7 @@ class Roster extends Component {
               <div className="third-element padding-small">
                 {player.position.abbreviation}
               </div>
-              <div className="fourth-element padding-small header-section header-section--small list">
+              <div className="fourth-element padding-small header-section header-section--small">
                 <Link className="link-remove" to={`/player/${player.person.id}`}>Profile</Link>
               </div>
             </div>

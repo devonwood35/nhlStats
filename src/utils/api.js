@@ -21,5 +21,8 @@ export default {
   },
   loadGames(id, start, end) {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/schedule?teamId=${id}&startDate=${start}&endDate=${end}`);
+  },
+  loadSchedule(date) {
+    return axios.get(`https://statsapi.web.nhl.com/api/v1/schedule?date=${date}`);
   }
 };

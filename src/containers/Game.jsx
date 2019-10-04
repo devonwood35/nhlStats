@@ -33,7 +33,7 @@ class Game extends Component {
     return (
       <div className="box-container">
         <div className="header-section">
-          {moment(date, 'YYYY-MM-DD').format('MM-DD-YYYY')}
+          {moment(date, 'YYYY-MM-DD').format('LL')}
         </div>
         <div className="tri-section">
           <div className="first-element">

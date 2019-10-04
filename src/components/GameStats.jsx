@@ -17,6 +17,11 @@ function GameStats({ liveData }) {
             %
           </div>
           <div className="padding-small">
+            {liveData.boxscore.teams.home.teamStats.teamSkaterStats.powerPlayGoals}
+            /
+            {liveData.boxscore.teams.home.teamStats.teamSkaterStats.powerPlayOpportunities}
+          </div>
+          <div className="padding-small">
             {liveData.boxscore.teams.home.teamStats.teamSkaterStats.powerPlayPercentage}
             %
           </div>
@@ -29,6 +34,7 @@ function GameStats({ liveData }) {
           <div className="padding-small list--title">Shots</div>
           <div className="padding-small list--title">Hits</div>
           <div className="padding-small list--title">FO%</div>
+          <div className="padding-small list--title">Power Plays</div>
           <div className="padding-small list--title">PP%</div>
           <div className="padding-small list--title">PiM</div>
           <div className="padding-small list--title">Take Aways</div>
@@ -41,6 +47,11 @@ function GameStats({ liveData }) {
           <div className="padding-small">
             {liveData.boxscore.teams.away.teamStats.teamSkaterStats.faceOffWinPercentage}
             %
+          </div>
+          <div className="padding-small">
+            {liveData.boxscore.teams.away.teamStats.teamSkaterStats.powerPlayGoals}
+            /
+            {liveData.boxscore.teams.away.teamStats.teamSkaterStats.powerPlayOpportunities}
           </div>
           <div className="padding-small">
             {liveData.boxscore.teams.away.teamStats.teamSkaterStats.powerPlayPercentage}

@@ -76,7 +76,7 @@ class PlayerGameStats extends Component {
                 <div className="sept-section">
                   <div className="first-element">
                     <div className="padding-small list--title">Date</div>
-                    <div className="padding-small">{moment(game.date, 'YYYY-MM-DD').format('MM-DD-YYYY')}</div>
+                    <div className="padding-small">{moment(game.date, 'YYYY-MM-DD').format('ll')}</div>
                   </div>
                   <div className="second-element">
                     <div className="padding-small list--title">Shots Against</div>
@@ -107,7 +107,7 @@ class PlayerGameStats extends Component {
                 <div className="dec-section">
                   <div className="first-element">
                     <div className="padding-small list--title">Date</div>
-                    <div className="padding-small">{moment(game.date, 'YYYY-MM-DD').format('MM-DD-YYYY')}</div>
+                    <div className="padding-small">{moment(game.date, 'YYYY-MM-DD').format('ll')}</div>
                   </div>
                   <div className="second-element">
                     <div className="padding-small list--title">Goals</div>
