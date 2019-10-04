@@ -198,8 +198,16 @@
   grid-column-start: 10;
 }
 
+.border-right {
+  border-right: 1px solid $lightgrey;
+}
+
 .padding-small {
   padding: 5px;
+}
+
+.padding-large {
+  padding: 10px;
 }
 
 .center {
@@ -213,4 +221,8 @@
   &--text {
     text-align: center;
   }
+}
+
+.hidden {
+  opacity: 0;
 }
