@@ -40,6 +40,14 @@ class Period extends Component {
           <div className="header-section">
             1st Period
           </div>
+          <div className="half-section list">
+            <div className="first-element header-section header-section--small">
+              Goals
+            </div>
+            <div className="second-element header-section header-section--small">
+              Penalties
+            </div>
+          </div>
           <div className="half-section">
             <div className="first-element border-right">
               {scoringPlays.filter((ele) => ele.about.period === 1).map((play) => (
@@ -102,6 +110,14 @@ class Period extends Component {
         <div className="list">
           <div className="header-section">
             2nd Period
+          </div>
+          <div className="half-section list">
+            <div className="first-element header-section header-section--small">
+              Goals
+            </div>
+            <div className="second-element header-section header-section--small">
+              Penalties
+            </div>
           </div>
           <div className="half-section">
             <div className="first-element border-right">
@@ -166,6 +182,14 @@ class Period extends Component {
           <div className="header-section">
             3rd Period
           </div>
+          <div className="half-section list">
+            <div className="first-element header-section header-section--small">
+              Goals
+            </div>
+            <div className="second-element header-section header-section--small">
+              Penalties
+            </div>
+          </div>
           <div className="half-section">
             <div className="first-element border-right">
               {scoringPlays.filter((ele) => ele.about.period === 3).map((play) => (
@@ -225,11 +249,19 @@ class Period extends Component {
             </div>
           </div>
         </div>
-        {liveData.linescore.currentPeriod === 4
+        {liveData.linescore.currentPeriod >= 4
           ? (
             <div className="list">
               <div className="header-section">
                 OT
+              </div>
+              <div className="half-section">
+                <div className="first-element header-section header-section--small">
+                  Goals
+                </div>
+                <div className="second-element header-section header-section--small">
+                  Penalties
+                </div>
               </div>
               <div className="half-section">
                 <div className="first-element border-right">
@@ -288,6 +320,15 @@ class Period extends Component {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+          )
+          : null}
+        {liveData.linescore.currentPeriod === 5
+          ? (
+            <div className="list">
+              <div className="header-section">
+                SO
               </div>
             </div>
           )

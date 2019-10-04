@@ -50,6 +50,7 @@ class Game extends Component {
             {game.liveData.linescore.teams.away.goals}
             &nbsp;
             {game.liveData.linescore.currentPeriod === 4 ? 'OT' : null}
+            {game.liveData.linescore.currentPeriod === 5 ? 'SO' : null}
           </div>
           <div className="third-element">
             <div className="header-section">Away</div>
