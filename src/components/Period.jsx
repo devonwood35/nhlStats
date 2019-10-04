@@ -32,6 +32,7 @@ class Period extends Component {
 
   render() {
     const { scoringPlays, penaltyPlays } = this.state;
+    const { liveData } = this.props;
 
     return (
       <div>
@@ -49,6 +50,10 @@ class Period extends Component {
                     (
                     {play.about.periodTimeRemaining}
                     )
+                    &nbsp;
+                    {play.about.goals.home}
+                    -
+                    {play.about.goals.away}
                   </div>
                   {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
                     player.playerType === 'Scorer'
@@ -108,6 +113,10 @@ class Period extends Component {
                     (
                     {play.about.periodTimeRemaining}
                     )
+                    &nbsp;
+                    {play.about.goals.home}
+                    -
+                    {play.about.goals.away}
                   </div>
                   {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
                     player.playerType === 'Scorer'
@@ -167,6 +176,10 @@ class Period extends Component {
                     (
                     {play.about.periodTimeRemaining}
                     )
+                    &nbsp;
+                    {play.about.goals.home}
+                    -
+                    {play.about.goals.away}
                   </div>
                   {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
                     player.playerType === 'Scorer'
@@ -212,6 +225,73 @@ class Period extends Component {
             </div>
           </div>
         </div>
+        {liveData.linescore.currentPeriod === 4
+          ? (
+            <div className="list">
+              <div className="header-section">
+                OT
+              </div>
+              <div className="half-section">
+                <div className="first-element border-right">
+                  {scoringPlays.filter((ele) => ele.about.period === 4).map((play) => (
+                    <div className="list">
+                      <div className="header-section header-section--small">
+                        {play.team.name}
+                        &nbsp;
+                        (
+                        {play.about.periodTimeRemaining}
+                        )
+                        &nbsp;
+                        {play.about.goals.home}
+                        -
+                        {play.about.goals.away}
+                      </div>
+                      {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
+                        player.playerType === 'Scorer'
+                          ? (
+                            <div className="padding-small">
+                              (G)&nbsp;
+                              {player.player.fullName}
+                            </div>
+                          )
+                          : (
+                            <div className="padding-small">
+                              (A)&nbsp;
+                              {player.player.fullName}
+                            </div>
+                          )
+                      ))}
+                    </div>
+                  ))}
+                </div>
+                <div className="half-section">
+                  <div className="first-element">
+                    {penaltyPlays.filter((ele) => ele.about.period === 4).map((play) => (
+                      <div className="list">
+                        <div className="header-section header-section--small">
+                          {play.team.name}
+                          &nbsp;
+                          (
+                          {play.about.periodTimeRemaining}
+                          )
+                        </div>
+                        <div className="padding-small">{play.players[0].player.fullName}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="second-element">
+                    {penaltyPlays.filter((ele) => ele.about.period === 4).map((play) => (
+                      <div className="list">
+                        <div className="header-section header-section--small hidden">--------</div>
+                        <div className="padding-small">{play.result.secondaryType}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+          : null}
       </div>
     );
   }
