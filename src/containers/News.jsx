@@ -5,7 +5,6 @@ import UpcomingGames from '../components/UpcomingGames';
 function News() {
   return (
     <div className="box-container">
-      <div>News</div>
       <YesterdaysGames />
       <UpcomingGames />
     </div>

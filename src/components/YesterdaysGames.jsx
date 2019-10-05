@@ -24,7 +24,6 @@ class YesterdaysGames extends Component {
 
   render() {
     const { oldGames } = this.state;
-    const date = moment().subtract(1, 'days').format().split('T')[0];
 
     return (
       <div>
@@ -33,7 +32,7 @@ class YesterdaysGames extends Component {
         </div>
         <div>
           {oldGames.map((game) => (
-            <div className="sext-section">
+            <div key={game.gamePk} className="sext-section game-row list">
               <div className="first-element">
                 { /* eslint-disable-next-line */ }
                 {allTeams.teams.filter((team) => team.id == game.teams.home.team.id).map((logo) => (
@@ -58,7 +57,7 @@ class YesterdaysGames extends Component {
                 {game.teams.away.team.name}
               </div>
               <div className="sixth-element">
-                <Link className="header-section header-section--small link-remove" to={`/game/${game.gamePk}/${date}`}>
+                <Link className="header-section header-section--small link-remove" to={`/game/${game.gamePk}/${moment().subtract(1, 'days').format().split('T')[0]}`}>
                   GameCenter
                 </Link>
               </div>
