@@ -23,7 +23,6 @@
 }
 
 .header-section {
-  color: $black;
   font-family: 'SquadaOne', sans-serif;
   font-size: 30px;
   padding: 10px;
@@ -255,5 +254,13 @@
 
   &__left {
     text-align: left;
+  }
+}
+
+.background {
+
+  &--black {
+    background: $black;
+    color: $white;
   }
 }
