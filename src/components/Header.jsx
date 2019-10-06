@@ -3,8 +3,9 @@ import { withRouter, Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <div className="header-section header-section__primary header-section--shift">
-      <Link className="link-remove" to="/">NHL Stat Tracker</Link>
+    <div className="quad-section header-section header-section__primary header-section--shift">
+      <Link className="first-element align__left link-remove" to="/">NHL Stat Tracker</Link>
+      <Link className="second-element link-remove" to="/standings">Standings</Link>
     </div>
   );
 }

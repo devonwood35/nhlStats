@@ -51,6 +51,18 @@ class Game extends Component {
             &nbsp;
             {game.liveData.linescore.currentPeriod === 4 ? 'OT' : null}
             {game.liveData.linescore.currentPeriod === 5 ? 'SO' : null}
+            {game.gameData.status.abstractGameState === 'Live'
+              ? (
+                <div>
+                  <div className="live-marker">Live</div>
+                  <div className="header-section list--title">
+                    {`${game.liveData.linescore.currentPeriodOrdinal} Period`}
+                    &nbsp;
+                    {game.liveData.linescore.currentPeriodTimeRemaining}
+                  </div>
+                </div>
+              )
+              : null}
           </div>
           <div className="third-element">
             <div className="header-section">Away</div>

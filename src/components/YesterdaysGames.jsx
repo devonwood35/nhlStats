@@ -43,9 +43,13 @@ class YesterdaysGames extends Component {
                 {game.teams.home.team.name}
               </div>
               <div className="third-element">
-                {game.teams.home.score}
+                {game.teams.home.score > game.teams.away.score
+                  ? <strong>{game.teams.home.score}</strong>
+                  : game.teams.home.score}
                 &nbsp;-&nbsp;
-                {game.teams.away.score}
+                {game.teams.away.score > game.teams.home.score
+                  ? <strong>{game.teams.away.score}</strong>
+                  : game.teams.away.score}
               </div>
               <div className="fourth-element">
                 { /* eslint-disable-next-line */ }

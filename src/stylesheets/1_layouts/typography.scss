@@ -143,6 +143,11 @@
   text-align: center;
 }
 
+.twelfth-section {
+  display: grid;
+  grid-template-columns: 10% 20% 7% 7% 7% 7% 7% 7% 7% 7% 7%;
+}
+
 .paginate {
   overflow-x: auto;
   padding-bottom: 20px;
@@ -157,7 +162,11 @@
 .fifth-element,
 .sixth-element,
 .seventh-element,
-.eigth-element {
+.eigth-element,
+.ninth-element,
+.tenth-element,
+.eleventh-element,
+.twelfth-element {
   text-align: center;
 }
 
@@ -201,6 +210,14 @@
   grid-column-start: 10;
 }
 
+.eleventh-element {
+  grid-column-start: 11;
+}
+
+.twelfth-element {
+  grid-column-start: 12;
+}
+
 .border-right {
   border-right: 1px solid $lightgrey;
 }
@@ -232,4 +249,11 @@
 
 .width {
   width: 25%;
+}
+
+.align {
+
+  &__left {
+    text-align: left;
+  }
 }

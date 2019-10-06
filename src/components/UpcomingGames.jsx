@@ -58,6 +58,10 @@ class UpcomingGames extends Component {
                       {game.teams.home.score}
                       &nbsp;-&nbsp;
                       {game.teams.away.score}
+                      &nbsp;
+                      {game.status.abstractGameState === 'Live'
+                        ? <span className="live-marker">Live</span>
+                        : null}
                     </div>
                   )}
               </div>
