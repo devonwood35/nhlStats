@@ -4,33 +4,20 @@ import PropTypes from 'prop-types';
 import allTeams from '../utils/teams.json';
 import StandingsHeader from './StandingsHeader';
 
-function Division({ team }) {
-  Division.propTypes = ({
-    team: PropTypes.object.isRequired // eslint-disable-line
+function Conference({ team }) {
+  Conference.propTypes = ({
+    team: PropTypes.array.isRequired // eslint-disable-line
   });
-
-  if (!team) { return (<div>loading...</div>); }
 
   return (
     <div>
-      {team.map((division) => (
+      {team.map((conference) => (
         <div>
-          {division.division.name === 'Metropolitan'
-            ? (
-              <div className="header-section align__left">
-                {division.conference.name}
-              </div>
-            )
-            : null}
-          {division.division.name === 'Central'
-            ? (
-              <div className="header-section align__left">
-                {division.conference.name}
-              </div>
-            )
-            : null}
-          <StandingsHeader name={division.division.name} />
-          {division.teamRecords.map((teams) => (
+          <div className="header-section align__left">
+            {conference.conference.name}
+          </div>
+          <StandingsHeader />
+          {conference.teamRecords.map((teams) => (
             <div className="twelfth-section list">
               <div className="first-element padding-small">
                 { /* eslint-disable-next-line */ }
@@ -81,4 +68,4 @@ function Division({ team }) {
   );
 }
 
-export default withRouter(Division);
+export default withRouter(Conference);

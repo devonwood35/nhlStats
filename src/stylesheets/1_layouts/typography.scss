@@ -90,6 +90,10 @@
   &__uneven {
     grid-template-columns: 60% 20% 20%;
   }
+
+  &__navigate {
+    grid-template-columns: 10% 80% 10%;
+  }
 }
 
 .quad-section {
@@ -235,6 +239,7 @@
   &--grid {
     align-items: center;
     display: grid;
+    justify-content: center;
   }
 
   &--text {

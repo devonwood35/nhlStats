@@ -25,7 +25,7 @@ export default {
   loadSchedule(date) {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/schedule?date=${date}`);
   },
-  loadStandings(date) {
-    return axios.get(`https://statsapi.web.nhl.com/api/v1/standings/byDivision?date=${date}`);
+  loadStandings(date, type) {
+    return axios.get(`https://statsapi.web.nhl.com/api/v1/standings/${type}?date=${date}`);
   }
 };
