@@ -5,7 +5,7 @@ export default {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/teams/${id}`);
   },
   loadTeamStats(id) {
-    return axios.get(`https://statsapi.web.nhl.com/api/v1/teams/${id}/?expand=team.stats&season=20182019`);
+    return axios.get(`https://statsapi.web.nhl.com/api/v1/teams/${id}/?expand=team.stats&season=20192020`);
   },
   loadRoster(id) {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/teams/${id}/roster`);

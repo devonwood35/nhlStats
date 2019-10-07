@@ -61,13 +61,13 @@ class Standings extends Component {
         <div className="header-section header-section--large">
           Standings
         </div>
-        <button type="button" onClick={this.changeType} className="btn__paginate" value="byDivision">
+        <button type="button" onClick={this.changeType} className="btn btn__paginate" value="byDivision">
           Division
         </button>
-        <button type="button" onClick={this.changeType} className="btn__paginate" value="wildCardWithLeaders">
+        <button type="button" onClick={this.changeType} className="btn btn__paginate" value="wildCardWithLeaders">
           Wildcard
         </button>
-        <button type="button" onClick={this.changeType} className="btn__paginate" value="byConference">
+        <button type="button" onClick={this.changeType} className="btn btn__paginate" value="byConference">
           Conference
         </button>
         {this.chooseType(standings)}

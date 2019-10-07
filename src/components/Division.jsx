@@ -39,7 +39,7 @@ function Division({ team }) {
                 ))}
               </div>
               <div className="second-element center--grid padding-small">
-                <Link className="link-remove" to={`/teams/${teams.team.id}`}>{teams.team.name}</Link>
+                <Link className="link-remove" to={`/team/${teams.team.id}`}>{teams.team.name}</Link>
               </div>
               <div className="third-element center--grid padding-small">
                 {teams.gamesPlayed}

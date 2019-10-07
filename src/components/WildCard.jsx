@@ -38,7 +38,7 @@ function WildCard({ team }) {
       return <StandingsHeader name="Wild Card" />;
     }
     if (ele.standingsType === 'wildCard' && index === 2) {
-      return <StandingsHeader />;
+      return <div className="line-block" />;
     }
     return null;
   };
@@ -61,7 +61,7 @@ function WildCard({ team }) {
                   ))}
                 </div>
                 <div className="second-element center--grid padding-small">
-                  <Link className="link-remove" to={`/teams/${teams.team.id}`}>{teams.team.name}</Link>
+                  <Link className="link-remove" to={`/team/${teams.team.id}`}>{teams.team.name}</Link>
                 </div>
                 <div className="third-element center--grid padding-small">
                   {teams.gamesPlayed}

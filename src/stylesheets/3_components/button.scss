@@ -1,5 +1,6 @@
 .btn {
   border: none;
+  cursor: pointer;
 
   &__sidebar {
     border: none;
@@ -21,10 +22,11 @@
   }
 
   &__paginate {
-    border: 1px solid $black;
+    border: 1px solid $lightgrey;
     font-family: 'TurretRoad', sans-serif;
     font-size: 20px;
     padding: 10px;
+    width: 130px;
   }
 
   &__paginate:hover, &__paginate:focus {

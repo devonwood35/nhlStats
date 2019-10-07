@@ -107,6 +107,10 @@
   &__side-margin {
     grid-template-columns: 35% 15% 15% 35%;
   }
+
+  &__navbar {
+    grid-template-columns: 19% 20% auto;
+  }
 }
 
 .quint-section {
@@ -268,4 +272,10 @@
     background: $black;
     color: $white;
   }
+}
+
+.line-block {
+  background-color: $lightgrey;
+  height: 10px;
+  width: 100%;
 }
