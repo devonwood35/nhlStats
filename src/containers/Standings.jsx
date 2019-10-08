@@ -4,6 +4,7 @@ import api from '../utils/api';
 import Division from '../components/Division';
 import Conference from '../components/Conference';
 import WildCard from '../components/WildCard';
+import League from '../components/League';
 
 class Standings extends Component {
   constructor(props) {
@@ -46,6 +47,8 @@ class Standings extends Component {
         return <Conference team={team} />;
       case 'wildCardWithLeaders':
         return <WildCard team={team} />;
+      case 'byLeague':
+        return <League team={team} />;
       default:
         return <Division team={team} />;
     }
@@ -69,6 +72,9 @@ class Standings extends Component {
         </button>
         <button type="button" onClick={this.changeType} className="btn btn__paginate" value="byConference">
           Conference
+        </button>
+        <button type="button" onClick={this.changeType} className="btn btn__paginate" value="byLeague">
+          League
         </button>
         {this.chooseType(standings)}
       </div>
