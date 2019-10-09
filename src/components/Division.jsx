@@ -9,7 +9,7 @@ function Division({ team }) {
     team: PropTypes.object.isRequired // eslint-disable-line
   });
 
-  if (!team) { return (<div>loading...</div>); }
+  if (!team) { return (<div className="loading padding-large">loading...</div>); }
 
   return (
     <div>

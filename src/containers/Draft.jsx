@@ -29,8 +29,6 @@ class Draft extends Component {
     // eslint-disable-next-line
     const newRound = parseInt(round) + parseInt(yearValue);
 
-    if (newRound < 0 || newRound >= 7) { return null; }
-
     this.setState({
       round: newRound
     });
@@ -40,7 +38,7 @@ class Draft extends Component {
   render() {
     const { year, players, round } = this.state;
 
-    if (!players[0]) { return (<div>loading...</div>); }
+    if (!players[0]) { return (<div className="loading padding-large">loading...</div>); }
 
     return (
       <div className="box-container">
@@ -49,18 +47,26 @@ class Draft extends Component {
           &nbsp;Draft
         </div>
         <div className="header-section quint-section quint-section__centered">
-          { /* eslint-disable-next-line */ }
-          <div className="second-element link" onClick={this.changeYear} value="-1">
-            &lt;
-          </div>
+          {round === 0
+            ? null
+            : (
+              /* eslint-disable-next-line */
+              <div className="second-element link" onClick={this.changeYear} value="-1">
+                &lt;
+              </div>
+            )}
           <div className="third-element">
             Round&nbsp;
             {round + 1}
           </div>
-          { /* eslint-disable-next-line */ }
-          <div className="fourth-element link" onClick={this.changeYear} value="1">
-            &gt;
-          </div>
+          {round >= players.length - 1
+            ? null
+            : (
+              /* eslint-disable-next-line */
+              <div className="fourth-element link" onClick={this.changeYear} value="1">
+                &gt;
+              </div>
+            )}
         </div>
         <div className="quint-section">
           <div className="second-element list--title">

@@ -33,7 +33,7 @@ class TeamStats extends Component {
 
   render() {
     const { teamStats } = this.state;
-    if (!teamStats || !teamStats[0]) { return (<div>loading...</div>); }
+    if (!teamStats || !teamStats[0]) { return (<div className="loading padding-large">loading...</div>); }
 
     const numbers = teamStats[0].stat;
     const rank = teamStats[1].stat;

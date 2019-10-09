@@ -73,9 +73,7 @@ class PlayerStats extends Component {
     const { stats, statArr, statYear } = this.state;
     const { isGoalie } = this.props;
 
-    if (!statYear[0]) {
-      return (<div>loading...</div>);
-    }
+    if (!statYear[0]) { return (<div className="loading padding-large">loading...</div>); }
 
     return (
       <div>

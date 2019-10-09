@@ -1,244 +1,20 @@
-.container {
-  display: grid;
-  grid-template-columns: 20% 80%;
-}
+.align {
 
-.box-container {
-  box-shadow: 3px 3px 5px 6px $lightgrey;
-}
-
-.header-container {
-  grid-template-columns: 50% 25% 25%;
-}
-
-.side-container {
-  font-family: 'TurretRoad', sans-serif;
-  grid-column-start: 1;
-}
-
-.main-container {
-  grid-column-start: 2;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header-section {
-  font-family: 'SquadaOne', sans-serif;
-  font-size: 30px;
-  padding: 10px;
-  text-align: center;
-
-  &__primary {
-    border-bottom: 1px solid $lightgrey;
-    margin-bottom: 10px;
-  }
-
-  &--large {
-    font-size: 45px;
-  }
-
-  &--small {
-    font-size: 20px;
-  }
-
-  &--shift {
+  &__left {
     text-align: left;
   }
 }
 
-.side-section {
-  text-align: center;
+.background {
 
-  &--blue {
-    border: 5px solid $blue;
+  &--black {
+    background: $black;
+    color: $white;
   }
-
-  &--red {
-    border: 5px solid $red;
-  }
-}
-
-.half-section {
-  display: grid;
-  grid-template-columns: 50% 50%;
-
-  &__first {
-    grid-column-start: 1;
-  }
-
-  &__second {
-    grid-column-start: 2;
-  }
-
-  &__third {
-    grid-column-start: 3;
-  }
-
-  &__fourth {
-    grid-column-start: 4;
-  }
-
-  &__fifth {
-    grid-column-start: 5;
-  }
-}
-
-.tri-section {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-
-  &__uneven {
-    grid-template-columns: 60% 20% 20%;
-  }
-
-  &__navigate {
-    grid-template-columns: 10% 80% 10%;
-  }
-}
-
-.quad-section {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-
-  &__uneven {
-    grid-template-columns: 50% 20% 20% 10%;
-  }
-
-  &__side-margin {
-    grid-template-columns: 35% 15% 15% 35%;
-  }
-
-  &__navbar {
-    grid-template-columns: 21% 20% auto;
-  }
-}
-
-.quint-section {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-
-  &__side-margin {
-    grid-template-columns: 25% 20% 10% 20% 25%;
-  }
-
-  &__centered {
-    grid-template-columns: 40% 5% 10% 5% 40%;
-  }
-}
-
-.sext-section {
-  display: grid;
-  grid-template-columns: 16% 16% 16% 16% 16% 16%;
-}
-
-.sept-section {
-  display: grid;
-  grid-template-columns: 14% 14% 14% 14% 14% 14% 16%;
-}
-
-.octo-section {
-  align-items: center;
-  display: grid;
-  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
-  text-align: center;
-
-  &__uneven {
-    grid-template-columns: 5% 5% 10% 20% 10% 20% 10% 20%;
-  }
-}
-
-.dec-section {
-  align-items: center;
-  display: grid;
-  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-  text-align: center;
-}
-
-.twelfth-section {
-  display: grid;
-  grid-template-columns: 10% 20% 7% 7% 7% 7% 7% 7% 7% 7% 7%;
-}
-
-.paginate {
-  overflow-x: auto;
-  padding-bottom: 20px;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.first-element,
-.second-element,
-.third-element,
-.fourth-element,
-.fifth-element,
-.sixth-element,
-.seventh-element,
-.eigth-element,
-.ninth-element,
-.tenth-element,
-.eleventh-element,
-.twelfth-element {
-  text-align: center;
-}
-
-.first-element {
-  grid-column-start: 1;
-}
-
-.second-element {
-  grid-column-start: 2;
-}
-
-.third-element {
-  grid-column-start: 3;
-}
-
-.fourth-element {
-  grid-column-start: 4;
-}
-
-.fifth-element {
-  grid-column-start: 5;
-}
-
-.sixth-element {
-  grid-column-start: 6;
-}
-
-.seventh-element {
-  grid-column-start: 7;
-}
-
-.eigth-element {
-  grid-column-start: 8;
-}
-
-.ninth-element {
-  grid-column-start: 9;
-}
-
-.tenth-element {
-  grid-column-start: 10;
-}
-
-.eleventh-element {
-  grid-column-start: 11;
-}
-
-.twelfth-element {
-  grid-column-start: 12;
 }
 
 .border-right {
   border-right: 1px solid $lightgrey;
-}
-
-.padding-small {
-  padding: 5px;
-}
-
-.padding-large {
-  padding: 10px;
 }
 
 .center {
@@ -259,27 +35,33 @@
   opacity: 0;
 }
 
-.width {
-  width: 25%;
-}
-
-.align {
-
-  &__left {
-    text-align: left;
-  }
-}
-
-.background {
-
-  &--black {
-    background: $black;
-    color: $white;
-  }
-}
-
 .line-block {
   background-color: $lightgrey;
   height: 10px;
   width: 100%;
+}
+
+.loading {
+  font-family: 'TurretRoad', sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+.padding-small {
+  padding: 5px;
+}
+
+.padding-large {
+  padding: 10px;
+}
+
+.paginate {
+  overflow-x: auto;
+  padding-bottom: 20px;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.width {
+  width: 25%;
 }

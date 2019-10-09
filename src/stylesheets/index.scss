@@ -1,6 +1,9 @@
 @import './0_globals/colors.scss';
 @import './0_globals/fonts.scss';
 
+@import './1_layouts/containers.scss';
+@import './1_layouts/elements.scss';
+@import './1_layouts/sections.scss';
 @import './1_layouts/typography.scss';
 
 @import './3_components/button.scss';

@@ -1,0 +1,136 @@
+.header-section {
+  font-family: 'SquadaOne', sans-serif;
+  font-size: 30px;
+  padding: 10px;
+  text-align: center;
+
+  &__primary {
+    border-bottom: 1px solid $lightgrey;
+    margin-bottom: 10px;
+  }
+
+  &--large {
+    font-size: 45px;
+  }
+
+  &--small {
+    font-size: 20px;
+  }
+
+  &--shift {
+    text-align: left;
+  }
+}
+
+.side-section {
+  text-align: center;
+
+  &--blue {
+    border: 5px solid $blue;
+  }
+
+  &--red {
+    border: 5px solid $red;
+  }
+}
+
+.half-section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  &__first {
+    grid-column-start: 1;
+  }
+
+  &__second {
+    grid-column-start: 2;
+  }
+
+  &__third {
+    grid-column-start: 3;
+  }
+
+  &__fourth {
+    grid-column-start: 4;
+  }
+
+  &__fifth {
+    grid-column-start: 5;
+  }
+}
+
+.tri-section {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+
+  &__uneven {
+    grid-template-columns: 60% 20% 20%;
+  }
+
+  &__navigate {
+    grid-template-columns: 10% 80% 10%;
+  }
+}
+
+.quad-section {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+
+  &__uneven {
+    grid-template-columns: 50% 20% 20% 10%;
+  }
+
+  &__side-margin {
+    grid-template-columns: 35% 15% 15% 35%;
+  }
+
+  &__navbar {
+    grid-template-columns: 21% 20% auto;
+  }
+}
+
+.quint-section {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+
+  &__side-margin {
+    grid-template-columns: 25% 20% 10% 20% 25%;
+  }
+
+  &__centered {
+    grid-template-columns: 40% 5% 10% 5% 40%;
+  }
+}
+
+.sext-section {
+  display: grid;
+  grid-template-columns: 16% 16% 16% 16% 16% 16%;
+}
+
+.sept-section {
+  display: grid;
+  grid-template-columns: 14% 14% 14% 14% 14% 14% 16%;
+}
+
+.octo-section {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  text-align: center;
+
+  &__uneven {
+    grid-template-columns: 5% 5% 10% 20% 10% 20% 10% 20%;
+  }
+}
+
+.dec-section {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  text-align: center;
+}
+
+.twelfth-section {
+  display: grid;
+  grid-template-columns: 10% 20% 7% 7% 7% 7% 7% 7% 7% 7% 7%;
+}

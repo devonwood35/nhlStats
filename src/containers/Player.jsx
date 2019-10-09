@@ -37,7 +37,7 @@ class Player extends Component {
   render() {
     const { player } = this.state;
 
-    if (!player.primaryPosition) { return (<div>loading...</div>); }
+    if (!player.primaryPosition) { return (<div className="loading padding-large">loading...</div>); }
 
     const logo = allTeams.teams.filter((ele) => ele.id == player.currentTeam.id); //eslint-disable-line
 

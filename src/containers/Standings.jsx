@@ -57,7 +57,7 @@ class Standings extends Component {
   render() {
     const { standings } = this.state;
 
-    if (!standings[0]) { return (<div>loading...</div>); }
+    if (!standings[0]) { return (<div className="loading padding-large">loading...</div>); }
 
     return (
       <div className="box-container">

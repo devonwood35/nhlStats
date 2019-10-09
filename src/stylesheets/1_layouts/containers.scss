@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.box-container {
+  box-shadow: 3px 3px 5px 6px $lightgrey;
+}
+
+.header-container {
+  grid-template-columns: 50% 25% 25%;
+}
+
+.side-container {
+  font-family: 'TurretRoad', sans-serif;
+  grid-column-start: 1;
+}
+
+.main-container {
+  grid-column-start: 2;
+  padding-left: 20px;
+  padding-right: 20px;
+}

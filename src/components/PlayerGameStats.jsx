@@ -52,7 +52,7 @@ class PlayerGameStats extends Component {
     const { games, logos } = this.state;
     const { isGoalie } = this.props;
 
-    if (!games[0]) { return (<div>loading...</div>); }
+    if (!games[0]) { return (<div className="loading padding-large">loading...</div>); }
 
     return (
       <div>

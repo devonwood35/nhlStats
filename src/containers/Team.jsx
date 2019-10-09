@@ -39,7 +39,7 @@ class Team extends Component {
     const { team } = this.state;
     const { match: { params: { id } } } = this.props;
 
-    if (!team.name) { return (<div>loading...</div>); }
+    if (!team.name) { return (<div className="loading padding-large">loading...</div>); }
 
     return (
       <div className="box-container">

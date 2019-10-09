@@ -43,7 +43,7 @@ function WildCard({ team }) {
     return null;
   };
 
-  if (!sortedArray[0]) { return (<div>loading...</div>); }
+  if (!sortedArray[0]) { return (<div className="loading padding-large">loading...</div>); }
 
   return (
     <div>

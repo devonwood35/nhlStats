@@ -28,7 +28,7 @@ class Game extends Component {
     const { game } = this.state;
     const { match: { params: { date } } } = this.props;
 
-    if (!game.gameData) { return (<div>loading...</div>); }
+    if (!game.gameData) { return (<div className="loading padding-large">loading...</div>); }
 
     return (
       <div className="box-container">
