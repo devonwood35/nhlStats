@@ -11,6 +11,7 @@ import Roster from './containers/Roster';
 import Player from './containers/Player';
 import Standings from './containers/Standings';
 import Schedule from './containers/Schedule';
+import Draft from './containers/Draft';
 
 library.add(faAngleDoubleLeft, faAngleRight, faAngleLeft);
 
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/player/:id" component={() => <Player />} />
             <Route exact path="/standings" component={() => <Standings />} />
             <Route exact path="/schedule" component={() => <Schedule />} />
+            <Route exact path="/draft/" component={() => <Draft />} />
           </div>
         </div>
       </Router>

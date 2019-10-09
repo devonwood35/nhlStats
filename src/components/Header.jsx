@@ -8,6 +8,7 @@ function Header() {
       <div className="second-element">
         <Link className="list--title link-remove btn btn__paginate" to="/standings">Standings</Link>
         <Link className="list--title link-remove btn btn__paginate" to="/schedule">Schedule</Link>
+        <Link className="list--title link-remove btn btn__paginate" to="/draft">Draft</Link>
       </div>
     </div>
   );

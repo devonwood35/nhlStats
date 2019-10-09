@@ -49,13 +49,17 @@ class RecentGames extends Component {
     const { match: { params: { id } } } = this.props;
 
     // eslint-disable-next-line
-    if (data.away.team.id == id) {
-      if (data.away.score > data.home.score) {
+    if (data.status.abstractGameState !== 'Final') {
+      return null;
+    }
+    // eslint-disable-next-line
+    if (data.teams.away.team.id == id) {
+      if (data.teams.away.score > data.teams.home.score) {
         return 'W';
       }
       return 'L';
     }
-    if (data.home.score > data.away.score) {
+    if (data.teams.home.score > data.teams.away.score) {
       return 'W';
     }
     return 'L';
@@ -93,7 +97,7 @@ class RecentGames extends Component {
                 {`${data.games[0].teams.home.score} - ${data.games[0].teams.away.score}`}
               </div>
               <div className="second-element">
-                {this.checkWin(data.games[0].teams)}
+                {this.checkWin(data.games[0])}
               </div>
               <div className="third-element">
                 { /* eslint-disable-next-line */ }

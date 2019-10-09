@@ -8,7 +8,7 @@ class PlayerStats extends Component {
     this.state = {
       stats: [],
       statArr: [],
-      currentYear: '20182019',
+      currentYear: '20192020',
       statYear: {}
     };
   }
@@ -48,7 +48,7 @@ class PlayerStats extends Component {
         statYear: years.filter((year) => year.season === currentYear)
       });
     } else {
-      years = player.filter((year) => year.stat.blocked);
+      years = player.filter((year) => year.stat.shifts);
       years.forEach((year, index) => {
         if (year.sequenceNumber === 2) {
           // eslint-disable-next-line
