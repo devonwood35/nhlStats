@@ -23,8 +23,18 @@ class Draft extends Component {
   }
 
   changeYear = (event) => {
+    const { round } = this.state;
     const yearValue = event.target.getAttribute('value');
-    console.log(yearValue);
+
+    // eslint-disable-next-line
+    const newRound = parseInt(round) + parseInt(yearValue);
+
+    if (newRound < 0 || newRound >= 7) { return null; }
+
+    this.setState({
+      round: newRound
+    });
+    return true;
   }
 
   render() {
@@ -35,17 +45,24 @@ class Draft extends Component {
     return (
       <div className="box-container">
         <div className="header-section header-section--large align__left">
-          Drafts
-        </div>
-        <div className="list--title center--text">
           {year}
+          &nbsp;Draft
         </div>
-        <div className="list--title">
-          Round&nbsp;
+        <div className="header-section quint-section quint-section__centered">
           { /* eslint-disable-next-line */ }
-          {round + 1}
+          <div className="second-element link" onClick={this.changeYear} value="-1">
+            &lt;
+          </div>
+          <div className="third-element">
+            Round&nbsp;
+            {round + 1}
+          </div>
+          { /* eslint-disable-next-line */ }
+          <div className="fourth-element link" onClick={this.changeYear} value="1">
+            &gt;
+          </div>
         </div>
-        <div className="quint-section list">
+        <div className="quint-section">
           <div className="second-element list--title">
             Team
           </div>
@@ -60,7 +77,7 @@ class Draft extends Component {
           </div>
         </div>
         {players[round].picks.map((player) => (
-          <div className="quint-section center--grid">
+          <div className="quint-section center--grid list">
             <div className="first-element">
               { /* eslint-disable-next-line */ }
               {allTeams.teams.filter((id) => id.id == player.team.id).map((logo) => (
