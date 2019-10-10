@@ -27,6 +27,10 @@
     font-size: 20px;
     padding: 10px;
     width: 130px;
+
+    &--no-border {
+      border: none;
+    }
   }
 
   &__paginate:hover, &__paginate:focus {

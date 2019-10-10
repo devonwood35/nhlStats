@@ -20,6 +20,14 @@
   &--shift {
     text-align: left;
   }
+
+  &__navbar {
+    background-color: $black;
+    color: $white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
 }
 
 .side-section {

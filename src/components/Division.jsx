@@ -6,7 +6,7 @@ import StandingsHeader from './StandingsHeader';
 
 function Division({ team }) {
   Division.propTypes = ({
-    team: PropTypes.object.isRequired // eslint-disable-line
+    team: PropTypes.array.isRequired // eslint-disable-line
   });
 
   if (!team) { return (<div className="loading padding-large">loading...</div>); }

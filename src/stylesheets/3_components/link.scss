@@ -5,4 +5,8 @@
 .link-remove {
   text-decoration: none;
   color: $black;
+
+  &--white {
+    color: $white;
+  }
 }
