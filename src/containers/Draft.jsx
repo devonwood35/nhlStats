@@ -83,11 +83,11 @@ class Draft extends Component {
           </div>
         </div>
         {players[round].picks.map((player) => (
-          <div className="quint-section center--grid list">
+          <div key={player.pickOverall} className="quint-section center--grid list">
             <div className="first-element">
               { /* eslint-disable-next-line */ }
               {allTeams.teams.filter((id) => id.id == player.team.id).map((logo) => (
-                <img className="logo logo__xs" src={logo.url} alt={logo.id} />
+                <img key={logo.id} className="logo logo__xs" src={logo.url} alt={logo.id} />
               ))}
             </div>
             <div className="second-element">

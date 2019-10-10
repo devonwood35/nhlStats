@@ -51,7 +51,7 @@ class Period extends Component {
           <div className="half-section">
             <div className="first-element border-right">
               {scoringPlays.filter((ele) => ele.about.period === 1).map((play) => (
-                <div key={play.team.periodTime} className="list">
+                <div key={play.about.dateTime} className="list">
                   <div className="header-section header-section--small">
                     {play.team.name}
                     &nbsp;
@@ -108,7 +108,7 @@ class Period extends Component {
               </div>
               <div className="second-element">
                 {penaltyPlays.filter((ele) => ele.about.period === 1).map((play) => (
-                  <div className="list">
+                  <div key={play.about.dateTime} className="list">
                     <div className="header-section header-section--small hidden">--------</div>
                     <div className="padding-small">{play.result.secondaryType}</div>
                   </div>
@@ -132,7 +132,7 @@ class Period extends Component {
           <div className="half-section">
             <div className="first-element border-right">
               {scoringPlays.filter((ele) => ele.about.period === 2).map((play) => (
-                <div className="list">
+                <div key={play.about.dateTime} className="list">
                   <div className="header-section header-section--small">
                     {play.team.name}
                     &nbsp;
@@ -157,13 +157,13 @@ class Period extends Component {
                   {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
                     player.playerType === 'Scorer'
                       ? (
-                        <div className="padding-small">
+                        <div key={player.player.fullName} className="padding-small">
                           (G)&nbsp;
                           {player.player.fullName}
                         </div>
                       )
                       : (
-                        <div className="padding-small">
+                        <div key={player.player.fullName} className="padding-small">
                           (A)&nbsp;
                           {player.player.fullName}
                         </div>
@@ -175,7 +175,7 @@ class Period extends Component {
             <div className="half-section">
               <div className="first-element">
                 {penaltyPlays.filter((ele) => ele.about.period === 2).map((play) => (
-                  <div className="list">
+                  <div key={play.about.dateTime} className="list">
                     <div className="header-section header-section--small">
                       {play.team.name}
                       &nbsp;
@@ -189,7 +189,7 @@ class Period extends Component {
               </div>
               <div className="second-element">
                 {penaltyPlays.filter((ele) => ele.about.period === 2).map((play) => (
-                  <div className="list">
+                  <div key={play.about.dateTime} className="list">
                     <div className="header-section header-section--small hidden">--------</div>
                     <div className="padding-small">{play.result.secondaryType}</div>
                   </div>
@@ -213,7 +213,7 @@ class Period extends Component {
           <div className="half-section">
             <div className="first-element border-right">
               {scoringPlays.filter((ele) => ele.about.period === 3).map((play) => (
-                <div className="list">
+                <div key={play.about.dateTime} className="list">
                   <div className="header-section header-section--small">
                     {play.team.name}
                     &nbsp;
@@ -238,13 +238,13 @@ class Period extends Component {
                   {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
                     player.playerType === 'Scorer'
                       ? (
-                        <div className="padding-small">
+                        <div key={player.player.fullName} className="padding-small">
                           (G)&nbsp;
                           {player.player.fullName}
                         </div>
                       )
                       : (
-                        <div className="padding-small">
+                        <div key={player.player.fullName} className="padding-small">
                           (A)&nbsp;
                           {player.player.fullName}
                         </div>
@@ -256,7 +256,7 @@ class Period extends Component {
             <div className="half-section">
               <div className="first-element">
                 {penaltyPlays.filter((ele) => ele.about.period === 3).map((play) => (
-                  <div className="list">
+                  <div key={play.about.dateTime} className="list">
                     <div className="header-section header-section--small">
                       {play.team.name}
                       &nbsp;
@@ -270,7 +270,7 @@ class Period extends Component {
               </div>
               <div className="second-element">
                 {penaltyPlays.filter((ele) => ele.about.period === 3).map((play) => (
-                  <div className="list">
+                  <div key={play.about.dateTime} className="list">
                     <div className="header-section header-section--small hidden">--------</div>
                     <div className="padding-small">{play.result.secondaryType}</div>
                   </div>
@@ -296,7 +296,7 @@ class Period extends Component {
               <div className="half-section">
                 <div className="first-element border-right">
                   {scoringPlays.filter((ele) => ele.about.period === 4).map((play) => (
-                    <div className="list">
+                    <div key={play.about.dateTime} className="list">
                       <div className="header-section header-section--small">
                         {play.team.name}
                         &nbsp;
@@ -321,13 +321,13 @@ class Period extends Component {
                       {play.players.filter((data) => data.playerType !== 'Goalie').map((player) => (
                         player.playerType === 'Scorer'
                           ? (
-                            <div className="padding-small">
+                            <div key={player.player.fullName} className="padding-small">
                               (G)&nbsp;
                               {player.player.fullName}
                             </div>
                           )
                           : (
-                            <div className="padding-small">
+                            <div key={player.player.fullName} className="padding-small">
                               (A)&nbsp;
                               {player.player.fullName}
                             </div>
@@ -339,7 +339,7 @@ class Period extends Component {
                 <div className="half-section">
                   <div className="first-element">
                     {penaltyPlays.filter((ele) => ele.about.period === 4).map((play) => (
-                      <div className="list">
+                      <div key={play.about.dateTime} className="list">
                         <div className="header-section header-section--small">
                           {play.team.name}
                           &nbsp;
@@ -353,7 +353,7 @@ class Period extends Component {
                   </div>
                   <div className="second-element">
                     {penaltyPlays.filter((ele) => ele.about.period === 4).map((play) => (
-                      <div className="list">
+                      <div key={play.about.dateTime} className="list">
                         <div className="header-section header-section--small hidden">--------</div>
                         <div className="padding-small">{play.result.secondaryType}</div>
                       </div>

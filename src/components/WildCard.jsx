@@ -48,16 +48,17 @@ function WildCard({ team }) {
   return (
     <div>
       {sortedArray.map((ele, i) => (
-        <div>
+        /* eslint-disable-next-line */
+        <div key={i}>
           {headerConf(ele, i)}
           {ele.teamRecords.map((teams, index) => (
-            <div>
+            <div key={teams.team.id}>
               {headerDiv(ele, teams, index)}
               <div className="twelfth-section list">
                 <div className="first-element padding-small">
                   { /* eslint-disable-next-line */ }
                   {allTeams.teams.filter((id) => id.id == teams.team.id).map((logo) => (
-                    <img src={logo.url} className="logo logo__small" alt="logo" />
+                    <img key={logo.id} src={logo.url} className="logo logo__small" alt="logo" />
                   ))}
                 </div>
                 <div className="second-element center--grid padding-small">

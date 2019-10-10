@@ -14,7 +14,7 @@ function Division({ team }) {
   return (
     <div>
       {team.map((division) => (
-        <div>
+        <div key={division.division.name}>
           {division.division.name === 'Metropolitan'
             ? (
               <div className="header-section align__left">
@@ -31,11 +31,11 @@ function Division({ team }) {
             : null}
           <StandingsHeader name={division.division.name} />
           {division.teamRecords.map((teams) => (
-            <div className="twelfth-section list">
+            <div key={teams.leagueRank} className="twelfth-section list">
               <div className="first-element padding-small">
                 { /* eslint-disable-next-line */ }
                 {allTeams.teams.filter((id) => id.id == teams.team.id).map((logo) => (
-                  <img src={logo.url} className="logo logo__small" alt="logo" />
+                  <img key={logo.id} src={logo.url} className="logo logo__small" alt="logo" />
                 ))}
               </div>
               <div className="second-element center--grid padding-small">

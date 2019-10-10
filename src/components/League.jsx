@@ -14,12 +14,12 @@ function League({ team }) {
       <div className="header-section align__left">League</div>
       <StandingsHeader />
       {team[0].teamRecords.map((teams) => (
-        <div>
+        <div key={teams.leagueRank}>
           <div className="twelfth-section list">
             <div className="first-element padding-small">
               { /* eslint-disable-next-line */ }
               {allTeams.teams.filter((id) => id.id == teams.team.id).map((logo) => (
-                <img src={logo.url} className="logo logo__small" alt="logo" />
+                <img key={logo.id} src={logo.url} className="logo logo__small" alt="logo" />
               ))}
             </div>
             <div className="second-element center--grid padding-small">

@@ -12,17 +12,17 @@ function Conference({ team }) {
   return (
     <div>
       {team.map((conference) => (
-        <div>
+        <div key={conference.conference.name}>
           <div className="header-section align__left">
             {conference.conference.name}
           </div>
           <StandingsHeader />
           {conference.teamRecords.map((teams) => (
-            <div className="twelfth-section list">
+            <div key={teams.leagueRank} className="twelfth-section list">
               <div className="first-element padding-small">
                 { /* eslint-disable-next-line */ }
                 {allTeams.teams.filter((id) => id.id == teams.team.id).map((logo) => (
-                  <img src={logo.url} className="logo logo__small" alt="logo" />
+                  <img key={logo.id} src={logo.url} className="logo logo__small" alt="logo" />
                 ))}
               </div>
               <div className="second-element center--grid padding-small">
