@@ -28,6 +28,12 @@ export default {
   loadStandings(date, type) {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/standings/${type}?date=${date}`);
   },
+  loadStandingsOld(season) {
+    return axios.get(`https://statsapi.web.nhl.com/api/v1/standings?season=${season}`);
+  },
+  loadSeasons() {
+    return axios.get('https://statsapi.web.nhl.com/api/v1/seasons');
+  },
   loadDraft(year) {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/draft/${year}`);
   }

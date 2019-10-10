@@ -7,6 +7,7 @@
 @import './1_layouts/typography.scss';
 
 @import './3_components/button.scss';
+@import './3_components/dropdown.scss';
 @import './3_components/header.scss';
 @import './3_components/link.scss';
 @import './3_components/list.scss';
@@ -16,5 +17,6 @@
 body {
   color: $darkgrey;
   font-family: 'Helvetica', sans-serif;
-  margin: 0;
+  margin-left: 5%;
+  margin-right: 5%;
 }

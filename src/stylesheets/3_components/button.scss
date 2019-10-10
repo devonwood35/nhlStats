@@ -31,6 +31,10 @@
     &--no-border {
       border: none;
     }
+
+    &--no-border:focus {
+      border-bottom: 2px solid $blue;
+    }
   }
 
   &__paginate:hover, &__paginate:focus {

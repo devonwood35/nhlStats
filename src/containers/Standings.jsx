@@ -5,13 +5,15 @@ import Division from '../components/Division';
 import Conference from '../components/Conference';
 import WildCard from '../components/WildCard';
 import League from '../components/League';
+import Dropdown from '../components/Dropdown';
 
 class Standings extends Component {
   constructor(props) {
     super(props);
     this.state = {
       standings: [],
-      type: 'byDivision'
+      type: 'byDivision',
+      season: '20192020'
     };
   }
 
@@ -38,6 +40,17 @@ class Standings extends Component {
     });
   }
 
+  changeSeason = (event) => {
+    const season = event.target.value;
+
+    api.loadStandingsOld(season).then((data) => {
+      this.setState({
+        standings: data.data.records,
+        season
+      });
+    });
+  }
+
   chooseType(team) {
     const { type } = this.state;
     switch (type) {
@@ -55,7 +68,7 @@ class Standings extends Component {
   }
 
   render() {
-    const { standings } = this.state;
+    const { standings, season } = this.state;
 
     if (!standings[0]) { return (<div className="loading padding-large">loading...</div>); }
 
@@ -67,15 +80,22 @@ class Standings extends Component {
         <button type="button" onClick={this.changeType} className="btn btn__paginate" value="byDivision">
           Division
         </button>
-        <button type="button" onClick={this.changeType} className="btn btn__paginate" value="wildCardWithLeaders">
-          Wildcard
-        </button>
-        <button type="button" onClick={this.changeType} className="btn btn__paginate" value="byConference">
-          Conference
-        </button>
-        <button type="button" onClick={this.changeType} className="btn btn__paginate" value="byLeague">
-          League
-        </button>
+        {season === '20192020'
+          ? (
+            <span>
+              <button type="button" onClick={this.changeType} className="btn btn__paginate" value="wildCardWithLeaders">
+                Wildcard
+              </button>
+              <button type="button" onClick={this.changeType} className="btn btn__paginate" value="byConference">
+                Conference
+              </button>
+              <button type="button" onClick={this.changeType} className="btn btn__paginate" value="byLeague">
+                League
+              </button>
+            </span>
+          )
+          : null}
+        <Dropdown click={this.changeSeason} />
         {this.chooseType(standings)}
       </div>
     );
