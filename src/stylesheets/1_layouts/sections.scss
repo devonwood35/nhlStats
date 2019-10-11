@@ -21,9 +21,12 @@
     text-align: left;
   }
 
-  &__navbar {
+  &--black {
     background-color: $black;
     color: $white;
+  }
+
+  &__navbar {
     left: 0;
     position: fixed;
     top: 0;

@@ -27,7 +27,9 @@ class Dropdown extends Component {
     return (
       <select onChange={click} className="dropdown">
         {seasons.map((season) => (
-          <option className="option" key={season.seasonId} value={season.seasonId}>{season.seasonId}</option>
+          <option key={season.seasonId} value={season.seasonId}>
+            {season.seasonId}
+          </option>
         )).reverse()}
       </select>
     );

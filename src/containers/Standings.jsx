@@ -46,6 +46,7 @@ class Standings extends Component {
     api.loadStandingsOld(season).then((data) => {
       this.setState({
         standings: data.data.records,
+        type: 'byDivision',
         season
       });
     });

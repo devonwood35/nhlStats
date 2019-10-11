@@ -14,14 +14,30 @@ class PlayerStats extends Component {
   }
 
   componentDidMount() {
-    this.updateStats();
+    const { statCat } = this.props;
+
+    if (statCat === 'singleS') {
+      this.updateSingleSeason();
+    } else if (statCat === 'careerS') {
+
+    }
   }
 
   changeYear = (event) => {
-    this.updateStats(event.target.getAttribute('value'));
+    this.updateSingleSeason(event.target.getAttribute('value'));
   }
 
-  updateStats(newYear) {
+  updateCareerSeason() {
+    const { isGoalie } = this.props;
+
+    if (isGoalie) {
+
+    } else {
+
+    }
+  }
+
+  updateSingleSeason(newYear) {
     let { currentYear } = this.state;
     const { isGoalie, player } = this.props;
 
@@ -73,7 +89,7 @@ class PlayerStats extends Component {
     const { stats, statArr, statYear } = this.state;
     const { isGoalie } = this.props;
 
-    if (!statYear[0]) { return (<div className="loading padding-large">loading...</div>); }
+    if (!statYear[0]) { return (<div className="loading padding-large">No Games Played</div>); }
 
     return (
       <div>
@@ -149,7 +165,8 @@ class PlayerStats extends Component {
 
 PlayerStats.propTypes = ({
   isGoalie: PropTypes.bool.isRequired,
-  player: PropTypes.array.isRequired //eslint-disable-line
+  player: PropTypes.array.isRequired, //eslint-disable-line
+  statCat: PropTypes.string.isRequired
 });
 
 export default withRouter(PlayerStats);

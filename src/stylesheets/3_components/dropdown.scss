@@ -3,10 +3,10 @@
   border: 1px solid $lightgrey;
   font-family: 'TurretRoad', sans-serif;
   font-size: 20px;
-  height: 40px;
+  height: 45px;
   margin: 10px;
 }
 
-.option {
-  background-color: $white;
+.dropdown:focus {
+  outline: none;
 }

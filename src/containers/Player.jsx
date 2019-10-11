@@ -11,7 +11,8 @@ class Player extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      player: {}
+      player: {},
+      statCat: 'singleS'
     };
   }
 
@@ -34,8 +35,29 @@ class Player extends Component {
     return state.fullName;
   }
 
+  changeCategory = (event) => {
+    const category = event.target.value;
+    const { match: { params: { id } } } = this.props;
+
+    if (category === 'singleS') {
+      api.loadPlayer(id).then((stats) => {
+        this.setState({
+          player: stats.data.people[0],
+          statCat: 'singleS'
+        });
+      });
+    } else if (category === 'careerS') {
+      api.loadPlayerCareer(id).then((stats) => {
+        this.setState({
+          player: stats.data.people[0],
+          statCat: 'careerS'
+        });
+      });
+    }
+  }
+
   render() {
-    const { player } = this.state;
+    const { player, statCat } = this.state;
 
     if (!player.primaryPosition) { return (<div className="loading padding-large">loading...</div>); }
 
@@ -86,11 +108,23 @@ class Player extends Component {
             <div className="padding-small">{player.weight}</div>
           </div>
         </div>
-        <div className="header-section">
-          Stats
+        <br />
+        <div className="quad-section header-section remove header-section--shift header-section--black">
+          <button type="button" onClick={this.changeCategory} value="singleS" className="first-element list--title header-section--small btn btn__player-stats">
+            Single Season
+          </button>
+          <button type="button" onClick={this.changeCategory} value="singleP" className="second-element list--title header-section--small btn btn__player-stats">
+            Single Playoffs
+          </button>
+          <button type="button" onClick={this.changeCategory} value="careerS" className="third-element list--title header-section--small btn btn__player-stats">
+            Career Season
+          </button>
+          <button type="button" onClick={this.changeCategory} value="careerP" className="fourth-element list--title header-section--small btn btn__player-stats">
+            Career Playoffs
+          </button>
         </div>
         { /* eslint-disable-next-line */ }
-        <PlayerStats isGoalie={player.primaryPosition.code === 'G' ? true : false} player={player.stats[0].splits} />
+        <PlayerStats isGoalie={player.primaryPosition.code === 'G' ? true : false} player={player.stats[0].splits} category={statCat} />
         { /* eslint-disable-next-line */ }
         <PlayerGameStats isGoalie={player.primaryPosition.code === 'G' ? true : false} />
       </div>

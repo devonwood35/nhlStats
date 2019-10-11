@@ -42,4 +42,15 @@
     color: $white;
     outline: none;
   }
+
+  &__player-stats {
+    background-color: $black;
+    border: none;
+    color: $white;
+  }
+
+  &__player-stats:focus {
+    border-bottom: 1px solid $blue;
+    outline: none;
+  }
 }
