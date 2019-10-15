@@ -4,8 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import api from '../utils/api';
 import allTeams from '../utils/teams.json';
-import PlayerStats from '../components/PlayerStats';
 import PlayerGameStats from '../components/PlayerGameStats';
+import SingleSeason from '../components/SingleSeason';
+import SinglePlayoffs from '../components/SinglePlayoffs';
+import CareerSeason from '../components/CareerSeason';
+import CareerPlayoffs from '../components/CareerPlayoffs';
 
 class Player extends Component {
   constructor(props) {
@@ -37,27 +40,45 @@ class Player extends Component {
 
   changeCategory = (event) => {
     const category = event.target.value;
-    const { match: { params: { id } } } = this.props;
 
     if (category === 'singleS') {
-      api.loadPlayer(id).then((stats) => {
-        this.setState({
-          player: stats.data.people[0],
-          statCat: 'singleS'
-        });
+      this.setState({
+        statCat: 'singleS'
       });
     } else if (category === 'careerS') {
-      api.loadPlayerCareer(id).then((stats) => {
-        this.setState({
-          player: stats.data.people[0],
-          statCat: 'careerS'
-        });
+      this.setState({
+        statCat: 'careerS'
+      });
+    } else if (category === 'singleP') {
+      this.setState({
+        statCat: 'singleP'
+      });
+    } else if (category === 'careerP') {
+      this.setState({
+        statCat: 'careerP'
       });
     }
   }
 
+  currentCategory = (player) => {
+    const { statCat } = this.state;
+
+    switch (statCat) {
+      case 'singleS':
+        return <SingleSeason isGoalie={player.primaryPosition.code === 'G'} player={player} />;
+      case 'singleP':
+        return <SinglePlayoffs isGoalie={player.primaryPosition.code === 'G'} player={player} />;
+      case 'careerS':
+        return <CareerSeason isGoalie={player.primaryPosition.code === 'G'} />;
+      case 'careerP':
+        return <CareerPlayoffs isGoalie={player.primaryPosition.code === 'G'} />;
+      default:
+        return <SingleSeason isGoalie={player.primaryPosition.code === 'G'} player={player} />;
+    }
+  }
+
   render() {
-    const { player, statCat } = this.state;
+    const { player } = this.state;
 
     if (!player.primaryPosition) { return (<div className="loading padding-large">loading...</div>); }
 
@@ -123,8 +144,7 @@ class Player extends Component {
             Career Playoffs
           </button>
         </div>
-        { /* eslint-disable-next-line */ }
-        <PlayerStats isGoalie={player.primaryPosition.code === 'G' ? true : false} player={player.stats[0].splits} category={statCat} />
+        {this.currentCategory(player)}
         { /* eslint-disable-next-line */ }
         <PlayerGameStats isGoalie={player.primaryPosition.code === 'G' ? true : false} />
       </div>

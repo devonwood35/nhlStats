@@ -16,6 +16,12 @@ export default {
   loadPlayerCareer(id) {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/people/${id}?expand=person.stats&stats=careerRegularSeason`);
   },
+  loadPlayerPlayoffsSingle(id) {
+    return axios.get(`https://statsapi.web.nhl.com/api/v1/people/${id}?expand=person.stats&stats=yearByYearPlayoffs`);
+  },
+  loadPlayerPlayoffsCareer(id) {
+    return axios.get(`https://statsapi.web.nhl.com/api/v1/people/${id}?expand=person.stats&stats=careerPlayoffs`);
+  },
   loadGameStats(id, date) {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/people/${id}?expand=person.stats&stats=gameLog&season=${date}`);
   },

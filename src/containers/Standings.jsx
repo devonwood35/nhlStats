@@ -54,6 +54,7 @@ class Standings extends Component {
 
   chooseType(team) {
     const { type } = this.state;
+
     switch (type) {
       case 'byDivision':
         return <Division team={team} />;

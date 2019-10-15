@@ -1,88 +1,54 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import api from '../utils/api';
 
-class PlayerStats extends Component {
+class SinglePlayoffs extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stats: [],
+      stats: this.props.player.stats[0].splits, // eslint-disable-line
       statArr: [],
-      currentYear: '20192020',
+      currentYear: '20182019',
       statYear: {}
     };
   }
 
   componentDidMount() {
-    const { statCat } = this.props;
-
-    if (statCat === 'singleS') {
-      this.updateSingleSeason();
-    } else if (statCat === 'careerS') {
-
-    }
+    this.updateSinglePlayoffs();
   }
 
   changeYear = (event) => {
-    this.updateSingleSeason(event.target.getAttribute('value'));
+    this.updateSinglePlayoffs(event.target.getAttribute('value'));
   }
 
-  updateCareerSeason() {
-    const { isGoalie } = this.props;
-
-    if (isGoalie) {
-
-    } else {
-
-    }
-  }
-
-  updateSingleSeason(newYear) {
+  updateSinglePlayoffs(newYear) {
+    const { match: { params: { id } }, isGoalie } = this.props;
     let { currentYear } = this.state;
-    const { isGoalie, player } = this.props;
 
     newYear ? currentYear = newYear : newYear = null; //eslint-disable-line
 
-    let years;
-    if (isGoalie) {
-      years = player.filter((year) => year.stat.evenSaves);
-      years.forEach((year, index) => {
-        if (year.sequenceNumber === 2) {
-          // eslint-disable-next-line
-          for (const ele in year.stat) {
-            years[index - 1].stat[ele] += year.stat[ele]; //eslint-disable-line
-          }
-          years.splice(index, 1);
-        }
-      });
-      this.setState({
-        stats: years,
-        statArr: [
-          'Games Played', 'Wins', 'Losses', 'OT', 'Shutouts', 'Save %', 'GAA', 'Shots Against', 'Saves', 'Goals Against'
-        ],
-        currentYear,
-        statYear: years.filter((year) => year.season === currentYear)
-      });
-    } else {
-      years = player.filter((year) => year.stat.shifts);
-      years.forEach((year, index) => {
-        if (year.sequenceNumber === 2) {
-          // eslint-disable-next-line
-          for (const ele in year.stat) {
-            years[index - 1].stat[ele] += year.stat[ele]; //eslint-disable-line
-          }
-          years.splice(index, 1);
-        }
-      });
-      this.setState({
-        stats: years,
-        statArr: [
-          'Games Played', 'Goals', 'Assists', 'Points', '+/-', 'Faceoff %', 'Shot %', 'PiM', 'Hits', 'Blocks'
-        ],
-        currentYear,
-        statYear: years.filter((year) => year.season === currentYear)
-      });
-    }
+    api.loadPlayerPlayoffsSingle(id).then((data) => {
+      const nhlStats = data.data.people[0].stats[0].splits.filter((nhl) => nhl.league.id === 133);
+
+      if (isGoalie) {
+        this.setState({
+          stats: nhlStats,
+          statArr: [
+            'Games Played', 'Wins', 'Losses', 'OT', 'Shutouts', 'Save %', 'GAA', 'Shots Against', 'Saves', 'Goals Against'
+          ],
+          statYear: nhlStats.filter((year) => year.season === currentYear)
+        });
+      } else {
+        this.setState({
+          stats: nhlStats,
+          statArr: [
+            'Games Played', 'Goals', 'Assists', 'Points', '+/-', 'Faceoff %', 'Shot %', 'PiM', 'Hits', 'Blocks'
+          ],
+          statYear: nhlStats.filter((year) => year.season === currentYear)
+        });
+      }
+    });
   }
 
   render() {
@@ -115,7 +81,7 @@ class PlayerStats extends Component {
                   <div className="padding-small">{statYear[0].stat.games}</div>
                   <div className="padding-small">{statYear[0].stat.wins}</div>
                   <div className="padding-small">{statYear[0].stat.losses}</div>
-                  <div className="padding-small">{statYear[0].stat.ot}</div>
+                  <div className="padding-small">{statYear[0].stat.ot || 0 }</div>
                   <div className="padding-small">{statYear[0].stat.shutouts}</div>
                 </div>
               )
@@ -163,10 +129,14 @@ class PlayerStats extends Component {
   }
 }
 
-PlayerStats.propTypes = ({
+SinglePlayoffs.propTypes = ({
   isGoalie: PropTypes.bool.isRequired,
-  player: PropTypes.array.isRequired, //eslint-disable-line
-  statCat: PropTypes.string.isRequired
+  player: PropTypes.object.isRequired, //eslint-disable-line
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
 });
 
-export default withRouter(PlayerStats);
+export default withRouter(SinglePlayoffs);
