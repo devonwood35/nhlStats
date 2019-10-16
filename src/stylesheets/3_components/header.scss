@@ -19,7 +19,13 @@
     color: $white;
   }
 
-  &__main-logo {
+  &--tiny-text {
+    font-family: 'TurretRoad', sans-serif;
+    font-size: 14px;
+    margin-left: 10px;
+  }
 
+  &__main-logo {
+    font-family: 'Righteous', sans-serif;
   }
 }

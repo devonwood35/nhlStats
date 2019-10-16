@@ -67,6 +67,7 @@ class RecentGames extends Component {
 
   render() {
     const { games } = this.state;
+
     return (
       <div>
         <div className="header-section">Last Five Games</div>

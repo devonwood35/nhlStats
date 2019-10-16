@@ -79,8 +79,11 @@ class Player extends Component {
 
   render() {
     const { player } = this.state;
+    const { match: { params: { id } } } = this.props;
 
     if (!player.primaryPosition) { return (<div className="loading padding-large">loading...</div>); }
+
+    const isGoalie = player.primaryPosition.code === 'G';
 
     const logo = allTeams.teams.filter((ele) => ele.id == player.currentTeam.id); //eslint-disable-line
 
@@ -146,7 +149,13 @@ class Player extends Component {
         </div>
         {this.currentCategory(player)}
         { /* eslint-disable-next-line */ }
-        <PlayerGameStats isGoalie={player.primaryPosition.code === 'G' ? true : false} />
+        <PlayerGameStats isGoalie={player.primaryPosition.code === 'G'} />
+        { /* eslint-disable-next-line */ }
+        <Link to={{pathname: `/all_games_player/${id}`, state: isGoalie}} className="link-remove">
+          <div className="header-section">
+            All Games
+          </div>
+        </Link>
       </div>
     );
   }

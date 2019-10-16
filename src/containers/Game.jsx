@@ -73,6 +73,29 @@ class Game extends Component {
           </div>
         </div>
         <GameStats liveData={game.liveData} />
+        {game.gameData.status.abstractGameState === 'Final'
+          ? (
+            <div>
+              <div className="header-section list">
+                Three Stars
+              </div>
+              <div className="tri-section">
+                <div className="first-element">
+                  <div className="list--title">First Star</div>
+                  <div className="padding-large list">{game.liveData.decisions.firstStar.fullName}</div>
+                </div>
+                <div className="second-element">
+                  <div className="list--title">Second Star</div>
+                  <div className="padding-large list">{game.liveData.decisions.secondStar.fullName}</div>
+                </div>
+                <div className="third-element">
+                  <div className="list--title">Third Star</div>
+                  <div className="padding-large list">{game.liveData.decisions.thirdStar.fullName}</div>
+                </div>
+              </div>
+            </div>
+          )
+          : null}
         <Period liveData={game.liveData} />
       </div>
     );

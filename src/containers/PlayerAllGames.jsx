@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import moment from 'moment';
-import allTeams from '../utils/teams.json';
+import PropTypes from 'prop-types';
 import api from '../utils/api';
+import allTeams from '../utils/teams.json';
 
-class PlayerGameStats extends Component {
+class PlayerAllGames extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,11 +17,11 @@ class PlayerGameStats extends Component {
   componentDidMount() {
     const { match: { params: { id } } } = this.props;
 
-    api.loadGameStats(id, '20192020').then((stats) => {
-      const statsArray = stats.data.people[0].stats[0].splits.slice(0, 5);
+    api.loadGameStats(id, '20192020').then((game) => {
       const logoArray = [];
+      const newGame = game.data.people[0].stats[0].splits;
 
-      statsArray.forEach((team) => {
+      newGame.forEach((team) => {
         if (team.isHome) {
           const home = allTeams.teams.filter((logo) => team.team.id == logo.id); // eslint-disable-line
           const away = allTeams.teams.filter((logo) => team.opponent.id == logo.id); // eslint-disable-line
@@ -42,7 +42,7 @@ class PlayerGameStats extends Component {
       });
 
       this.setState({
-        games: statsArray,
+        games: newGame,
         logos: logoArray
       });
     });
@@ -50,14 +50,14 @@ class PlayerGameStats extends Component {
 
   render() {
     const { games, logos } = this.state;
-    const { isGoalie } = this.props;
+    const { location: { state } } = this.props;
 
     if (!games[0]) { return (<div className="loading padding-large">loading...</div>); }
 
     return (
-      <div>
+      <div className="box-container">
         <div className="header-section">
-          Last Five Games
+          All Games
         </div>
         {games.map((game, index) => (
           <div key={game.date}>
@@ -71,7 +71,7 @@ class PlayerGameStats extends Component {
                 <img src={logos[index].away} alt="away" className="logo__xs fourth-element center" />
               </div>
             </div>
-            {isGoalie
+            {state
               ? (
                 <div className="sept-section">
                   <div className="first-element">
@@ -153,13 +153,15 @@ class PlayerGameStats extends Component {
   }
 }
 
-PlayerGameStats.propTypes = ({
+PlayerAllGames.propTypes = ({
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
-  isGoalie: PropTypes.bool.isRequired
+  location: PropTypes.shape({
+    state: PropTypes.bool.isRequired
+  }).isRequired
 });
 
-export default withRouter(PlayerGameStats);
+export default withRouter(PlayerAllGames);
