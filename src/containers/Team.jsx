@@ -85,6 +85,9 @@ class Team extends Component {
         <div className="header-section list">
           <Link className="link-remove" to={`/${id}/roster`}>Roster</Link>
         </div>
+        <div className="header-section list">
+          <Link className="link-remove" to={`/all_games_team/${id}`}>All Games</Link>
+        </div>
       </div>
     );
   }

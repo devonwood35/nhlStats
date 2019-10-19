@@ -51,7 +51,7 @@ class Schedule extends Component {
       <div className="box-container">
         <div className="tri-section tri-section__navigate">
           <div className="first-element center--grid">
-            <div className="link header-section--large" icon="angle-left">
+            <div className="link header-section--large">
               { /* eslint-disable-next-line */ }
               <strong onClick={this.changeDay} value="-1">&lt;</strong>
             </div>
@@ -60,7 +60,7 @@ class Schedule extends Component {
             {moment(day, 'YYYY-MM-DD').format('LL')}
           </div>
           <div className="third-element center--grid">
-            <div className="link header-section--large" icon="angle-right">
+            <div className="link header-section--large">
               { /* eslint-disable-next-line */ }
               <strong onClick={this.changeDay} value="1">&gt;</strong>
             </div>

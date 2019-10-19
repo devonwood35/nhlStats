@@ -13,6 +13,7 @@ import Standings from './containers/Standings';
 import Schedule from './containers/Schedule';
 import Draft from './containers/Draft';
 import PlayerAllGames from './containers/PlayerAllGames';
+import TeamAllGames from './containers/TeamAllGames';
 
 library.add(faAngleDoubleLeft, faAngleRight, faAngleLeft);
 
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/schedule" component={() => <Schedule />} />
             <Route exact path="/draft" component={() => <Draft />} />
             <Route exact path="/all_games_player/:id" component={() => <PlayerAllGames />} />
+            <Route exact path="/all_games_team/:id" component={() => <TeamAllGames />} />
           </div>
         </div>
       </Router>
