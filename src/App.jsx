@@ -23,7 +23,7 @@ function App() {
       <Router>
         <Header />
         <div className="container">
-          <Sidebar />
+          {/*<Sidebar />*/}
           <div className="main-container">
             <Route exact path="/" component={() => <News />} />
             <Route exact path="/team/:id" component={() => <Team />} />
