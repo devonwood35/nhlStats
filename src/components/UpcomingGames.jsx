@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import moment from 'moment';
 import api from '../utils/api';
-import allTeams from '../utils/teams.json';
+import logos from '../utils/logos';
 
 class UpcomingGames extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class UpcomingGames extends Component {
             <div key={game.gamePk} className="sext-section game-row list">
               <div className="first-element">
                 { /* eslint-disable-next-line */ }
-                {allTeams.teams.filter((team) => team.id == game.teams.home.team.id).map((logo) => (
+                {logos.filter((team) => team.id == game.teams.home.team.id).map((logo) => (
                   <img key={logo.id} src={logo.url} alt={logo.id} className="logo__xs" />
                 ))}
               </div>
@@ -67,7 +67,7 @@ class UpcomingGames extends Component {
               </div>
               <div className="fourth-element">
                 { /* eslint-disable-next-line */ }
-                {allTeams.teams.filter((team) => team.id == game.teams.away.team.id).map((logo) => (
+                {logos.filter((team) => team.id == game.teams.away.team.id).map((logo) => (
                   <img key={logo.id} src={logo.url} alt={logo.id} className="logo__xs" />
                 ))}
               </div>

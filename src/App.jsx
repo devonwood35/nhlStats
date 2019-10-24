@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAngleDoubleLeft, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import Header from './components/Header';
-import Sidebar from './containers/Sidebar';
 import News from './containers/News';
 import Team from './containers/Team';
 import Game from './containers/Game';
@@ -23,7 +22,7 @@ function App() {
       <Router>
         <Header />
         <div className="container">
-          <Sidebar />
+          { /* <Sidebar /> */ }
           <div className="main-container">
             <Route exact path="/" component={() => <News />} />
             <Route exact path="/team/:id" component={() => <Team />} />

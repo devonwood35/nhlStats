@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import allTeams from '../utils/teams.json';
+import teamLogos from '../utils/logos';
 import api from '../utils/api';
 
 class PlayerGameStats extends Component {
@@ -23,16 +23,16 @@ class PlayerGameStats extends Component {
 
       statsArray.forEach((team) => {
         if (team.isHome) {
-          const home = allTeams.teams.filter((logo) => team.team.id == logo.id); // eslint-disable-line
-          const away = allTeams.teams.filter((logo) => team.opponent.id == logo.id); // eslint-disable-line
+          const home = teamLogos.filter((logo) => team.team.id == logo.id); // eslint-disable-line
+          const away = teamLogos.filter((logo) => team.opponent.id == logo.id); // eslint-disable-line
 
           logoArray.push({
             home: home[0].url,
             away: away[0].url
           });
         } else {
-          const away = allTeams.teams.filter((logo) => team.team.id == logo.id); // eslint-disable-line
-          const home = allTeams.teams.filter((logo) => team.opponent.id == logo.id); // eslint-disable-line
+          const away = teamLogos.filter((logo) => team.team.id == logo.id); // eslint-disable-line
+          const home = teamLogos.filter((logo) => team.opponent.id == logo.id); // eslint-disable-line
 
           logoArray.push({
             home: home[0].url,

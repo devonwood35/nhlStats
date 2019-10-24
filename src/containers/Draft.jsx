@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import api from '../utils/api';
-import allTeams from '../utils/teams.json';
+import logos from '../utils/logos';
 
 class Draft extends Component {
   constructor(props) {
@@ -86,7 +86,7 @@ class Draft extends Component {
           <div key={player.pickOverall} className="quint-section center--grid list">
             <div className="first-element">
               { /* eslint-disable-next-line */ }
-              {allTeams.teams.filter((id) => id.id == player.team.id).map((logo) => (
+              {logos.filter((id) => id.id == player.team.id).map((logo) => (
                 <img key={logo.id} className="logo logo__xs" src={logo.url} alt={logo.id} />
               ))}
             </div>

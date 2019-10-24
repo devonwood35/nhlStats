@@ -3,7 +3,7 @@ import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import api from '../utils/api';
-import allTeams from '../utils/teams.json';
+import logos from '../utils/logos';
 
 class RecentGames extends Component {
   constructor(props) {
@@ -102,7 +102,7 @@ class RecentGames extends Component {
               </div>
               <div className="third-element">
                 { /* eslint-disable-next-line */ }
-                {allTeams.teams.filter((ele) => ele.id == data.games[0].teams.home.team.id).map((team) => (
+                {logos.filter((ele) => ele.id == data.games[0].teams.home.team.id).map((team) => (
                   <img className="logo logo__small" src={team.url} alt={team.id} key={team.id} />
                 ))}
               </div>
@@ -111,7 +111,7 @@ class RecentGames extends Component {
               </div>
               <div className="fifth-element">
                 { /* eslint-disable-next-line */ }
-                {allTeams.teams.filter((ele) => ele.id == data.games[0].teams.away.team.id).map((team) => (
+                {logos.filter((ele) => ele.id == data.games[0].teams.away.team.id).map((team) => (
                   <img className="logo logo__small" src={team.url} alt={team.id} key={team.id} />
                 ))}
               </div>

@@ -55,7 +55,11 @@ class TeamAllGames extends Component {
 
     // eslint-disable-next-line
     if (data.status.abstractGameState !== 'Final') {
-      return null;
+      return (
+        data.status.abstractGameState === 'Live'
+          ? <span className="live-marker">Live</span>
+          : null
+      );
     }
     // eslint-disable-next-line
     if (data.teams.away.team.id == id) {
@@ -132,10 +136,6 @@ class TeamAllGames extends Component {
                     {game.games[0].teams.home.score}
                     &nbsp;-&nbsp;
                     {game.games[0].teams.away.score}
-                    &nbsp;
-                    {game.games[0].status.abstractGameState === 'Live'
-                      ? <span className="live-marker">Live</span>
-                      : null}
                   </div>
                 )}
             </div>
