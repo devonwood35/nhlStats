@@ -3,7 +3,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import api from '../utils/api';
-import allTeams from '../utils/teams.json';
+import teamLogos from '../utils/logos';
 import PlayerGameStats from '../components/PlayerGameStats';
 import SingleSeason from '../components/SingleSeason';
 import SinglePlayoffs from '../components/SinglePlayoffs';
@@ -85,7 +85,7 @@ class Player extends Component {
 
     const isGoalie = player.primaryPosition.code === 'G';
 
-    const logo = allTeams.teams.filter((ele) => ele.id == player.currentTeam.id); //eslint-disable-line
+    const logo = teamLogos.filter((ele) => ele.id == player.currentTeam.id); //eslint-disable-line
 
     return (
       <div className="box-container">
