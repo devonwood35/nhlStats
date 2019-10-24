@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import TeamStats from '../components/TeamStats';
 import RecentGames from '../components/RecentGames';
-import allTeams from '../utils/teams.json';
+import logos from '../utils/logos';
 import api from '../utils/api';
 
 class Team extends Component {
@@ -51,7 +51,8 @@ class Team extends Component {
           {team.name}
         </div>
         <div className="logo-container">
-          {allTeams.teams.filter((data) => data.id === id).map((logo) => (
+          { /* eslint-disable-next-line */ }
+          {logos.filter((data) => data.id == id).map((logo) => (
             <img className="logo logo__main" src={logo.url} alt="logo" key={logo.id} />
           ))}
         </div>

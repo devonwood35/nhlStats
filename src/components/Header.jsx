@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import allTeams from '../utils/teams.json';
 import logos from '../utils/logos';
 
 function Header() {
@@ -20,8 +19,10 @@ function Header() {
         </div>
       </div>
       <div className="nav-section">
-        {allTeams.teams.map((team) => (
-          <img src={team.url} alt={team.id} className="logo logo__nav" />
+        {logos.map((team) => (
+          <Link to={`/team/${team.id}`}>
+            <img src={team.url} className="logo logo__nav logo__header" alt={team.id} key={team.id} />
+          </Link>
         ))}
       </div>
     </div>

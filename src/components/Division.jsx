@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import allTeams from '../utils/teams.json';
+import logos from '../utils/logos';
 import StandingsHeader from './StandingsHeader';
 
 function Division({ team }) {
@@ -34,7 +34,7 @@ function Division({ team }) {
             <div key={teams.leagueRank} className="twelfth-section list">
               <div className="first-element padding-small">
                 { /* eslint-disable-next-line */ }
-                {allTeams.teams.filter((id) => id.id == teams.team.id).map((logo) => (
+                {logos.filter((id) => id.id == teams.team.id).map((logo) => (
                   <img key={logo.id} src={logo.url} className="logo logo__small" alt="logo" />
                 ))}
               </div>
