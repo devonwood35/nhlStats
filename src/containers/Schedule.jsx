@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import moment from 'moment';
-import allTeams from '../utils/teams.json';
+import teamLogos from '../utils/logos';
 import api from '../utils/api';
 
 class Schedule extends Component {
@@ -71,7 +71,7 @@ class Schedule extends Component {
             <div key={game.gamePk} className="sext-section game-row list">
               <div className="first-element">
                 { /* eslint-disable-next-line */ }
-                {allTeams.teams.filter((team) => team.id == game.teams.home.team.id).map((logo) => (
+                {teamLogos.filter((team) => team.id == game.teams.home.team.id).map((logo) => (
                   <img key={logo.id} src={logo.url} alt={logo.id} className="logo__xs" />
                 ))}
               </div>
@@ -97,7 +97,7 @@ class Schedule extends Component {
               </div>
               <div className="fourth-element">
                 { /* eslint-disable-next-line */ }
-                {allTeams.teams.filter((team) => team.id == game.teams.away.team.id).map((logo) => (
+                {teamLogos.filter((team) => team.id == game.teams.away.team.id).map((logo) => (
                   <img key={logo.id} src={logo.url} alt={logo.id} className="logo__xs" />
                 ))}
               </div>

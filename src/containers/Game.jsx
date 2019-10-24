@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import allTeams from '../utils/teams.json';
+import teamLogos from '../utils/logos';
 import api from '../utils/api';
 import Period from '../components/Period';
 import GameStats from '../components/GameStats';
@@ -39,7 +39,7 @@ class Game extends Component {
           <div className="first-element">
             <div className="header-section">Home</div>
             { /* eslint-disable-next-line */ }
-            {allTeams.teams.filter((team) => game.gameData.teams.home.id == team.id).map((logo) => (
+            {teamLogos.filter((team) => game.gameData.teams.home.id == team.id).map((logo) => (
               <img key={logo.id} src={logo.url} alt="Home" className="logo logo__small" />
             ))}
           </div>
@@ -67,7 +67,7 @@ class Game extends Component {
           <div className="third-element">
             <div className="header-section">Away</div>
             { /* eslint-disable-next-line */ }
-            {allTeams.teams.filter((team) => game.gameData.teams.away.id == team.id).map((logo) => (
+            {teamLogos.filter((team) => game.gameData.teams.away.id == team.id).map((logo) => (
               <img key={logo.id} src={logo.url} alt="Home" className="logo logo__small" />
             ))}
           </div>
