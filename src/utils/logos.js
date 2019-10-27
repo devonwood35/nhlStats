@@ -32,6 +32,74 @@ import winnepeg from '../images/teamLogos/winnepeg.png';
 
 const logos = [
   {
+    id: 24,
+    url: anaheim
+  },
+  {
+    id: 53,
+    url: arizona
+  },
+  {
+    id: 6,
+    url: boston
+  },
+  {
+    id: 7,
+    url: buffalo
+  },
+  {
+    id: 20,
+    url: calgary
+  },
+  {
+    id: 12,
+    url: carolina
+  },
+  {
+    id: 16,
+    url: chicago
+  },
+  {
+    id: 21,
+    url: colorado
+  },
+  {
+    id: 29,
+    url: columbus
+  },
+  {
+    id: 25,
+    url: dallas
+  },
+  {
+    id: 17,
+    url: detroit
+  },
+  {
+    id: 22,
+    url: edmonton
+  },
+  {
+    id: 13,
+    url: florida
+  },
+  {
+    id: 26,
+    url: la
+  },
+  {
+    id: 30,
+    url: minnesota
+  },
+  {
+    id: 8,
+    url: montreal
+  },
+  {
+    id: 18,
+    url: nashville
+  },
+  {
     id: 1,
     url: newJersey
   },
@@ -44,6 +112,10 @@ const logos = [
     url: rangers
   },
   {
+    id: 9,
+    url: ottawa
+  },
+  {
     id: 4,
     url: philly
   },
@@ -52,109 +124,37 @@ const logos = [
     url: pittsburgh
   },
   {
-    id: 6,
-    url: boston
-  },
-  {
-    id: 7,
-    url: buffalo
-  },
-  {
-    id: 8,
-    url: montreal
-  },
-  {
-    id: 9,
-    url: ottawa
-  },
-  {
-    id: 10,
-    url: toronto
-  },
-  {
-    id: 12,
-    url: carolina
-  },
-  {
-    id: 13,
-    url: florida
-  },
-  {
-    id: 14,
-    url: tampa
-  },
-  {
-    id: 15,
-    url: washington
-  },
-  {
-    id: 16,
-    url: chicago
-  },
-  {
-    id: 17,
-    url: detroit
-  },
-  {
-    id: 18,
-    url: nashville
-  },
-  {
     id: 19,
     url: stLouis
-  },
-  {
-    id: 20,
-    url: calgary
-  },
-  {
-    id: 21,
-    url: colorado
-  },
-  {
-    id: 22,
-    url: edmonton
-  },
-  {
-    id: 23,
-    url: vancouver
-  },
-  {
-    id: 24,
-    url: anaheim
-  },
-  {
-    id: 25,
-    url: dallas
-  },
-  {
-    id: 26,
-    url: la
   },
   {
     id: 28,
     url: sanJose
   },
   {
-    id: 29,
-    url: columbus
+    id: 14,
+    url: tampa
   },
   {
-    id: 30,
-    url: minnesota
+    id: 10,
+    url: toronto
+  },
+  {
+    id: 23,
+    url: vancouver
+  },
+  {
+    id: 54,
+    url: vegas
+  },
+  {
+    id: 15,
+    url: washington
   },
   {
     id: 52,
     url: winnepeg
   },
-  {
-    id: 53,
-    url: arizona
-  },
-  {
-    id: 54,
-    url: vegas
-  }
 ];
 
 export default logos;
