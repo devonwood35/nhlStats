@@ -1,7 +1,15 @@
 .align {
 
+  &__center {
+    text-align: center;
+  }
+
   &__left {
     text-align: left;
+  }
+
+  &__right {
+    text-align: right;
   }
 }
 

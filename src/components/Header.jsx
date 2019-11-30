@@ -13,9 +13,18 @@ function Header() {
           </span>
         </Link>
         <div className="second-element">
-          <Link className="list--title link-remove link-remove--white btn btn__paginate btn__paginate--no-border" to="/standings">Standings</Link>
-          <Link className="list--title link-remove link-remove--white btn btn__paginate btn__paginate--no-border" to="/schedule">Schedule</Link>
-          <Link className="list--title link-remove link-remove--white btn btn__paginate btn__paginate--no-border" to="/draft">Draft</Link>
+          <Link className="list--title link-remove link-remove--white btn btn__paginate btn__paginate--no-border" to="/standings">
+            Standings
+          </Link>
+          <Link className="list--title link-remove link-remove--white btn btn__paginate btn__paginate--no-border" to="/schedule">
+            Schedule
+          </Link>
+          <Link className="list--title link-remove link-remove--white btn btn__paginate btn__paginate--no-border" to="/draft">
+            Draft
+          </Link>
+          <Link className="list--title link-remove link-remove--white btn btn__paginate btn__paginate--no-border" to="/fantasy">
+            Fantasy
+          </Link>
         </div>
       </div>
       <div className="nav-section">

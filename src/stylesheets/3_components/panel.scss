@@ -1,0 +1,9 @@
+.panel {
+  border: 4px solid $darkgrey;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  &__grey {
+    background-color: $lightgrey;
+  }
+}
