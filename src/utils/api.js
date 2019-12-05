@@ -48,5 +48,8 @@ export default {
   },
   loadDraft(year) {
     return axios.get(`https://statsapi.web.nhl.com/api/v1/draft/${year}`);
+  },
+  loadAllPlayers(id) {
+    return axios.get(`https://records.nhl.com/site/api/player/byTeam/${id}`);
   }
 };

@@ -16,7 +16,7 @@ const INITIAL_STATE = {
 function reducer(state = INITIAL_STATE, { type, payload }) {
   switch (type) {
     case LOAD_TEAMS:
-      return { teams: [...payload] };
+      return { teams: payload };
     default:
       return state;
   }

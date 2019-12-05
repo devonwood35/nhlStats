@@ -5,13 +5,12 @@ import {
 
 function loadTeams() {
   return async (dispatch) => {
-    const response = await axios.get('https://statsapi.web.nhl.com/api/v1/teams');
-
+    const allPlayers = await axios.get('/get/players/24');
     dispatch({
       type: LOAD_TEAMS,
-      payload: response.data.teams
+      payload: allPlayers.data
     });
   };
 }
 
-export default loadTeams;
+export { loadTeams };
