@@ -2,6 +2,20 @@ const ids = require('../playerIds');
 const axios = require('axios');
 const fs = require('fs');
 
+/*
+
+  File returns all players registered in the NHL for every season they played
+
+  Parameters:
+
+    None
+
+  Returns:
+
+    playerStats.json: List of all current players with stats in the NHL
+
+*/
+
 const finalStats = [];
 const playerStats = async () => {
   for (const roster of ids.ids) {

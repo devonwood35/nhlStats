@@ -6,7 +6,7 @@ class Draft extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      year: '2019',
+      year: '2020',
       players: [],
       round: 0
     };

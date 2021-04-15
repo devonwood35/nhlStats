@@ -13,7 +13,7 @@ class Standings extends Component {
     this.state = {
       standings: [],
       type: 'byDivision',
-      season: '20192020'
+      season: '20202021'
     };
   }
 
@@ -82,7 +82,8 @@ class Standings extends Component {
         <button type="button" onClick={this.changeType} className="btn btn__paginate" value="byDivision">
           Division
         </button>
-        {season === '20192020'
+        {/* Block out 20202021 season for Covid */}
+        {season === '20202021' && season !== '20202021'
           ? (
             <span>
               <button type="button" onClick={this.changeType} className="btn btn__paginate" value="wildCardWithLeaders">

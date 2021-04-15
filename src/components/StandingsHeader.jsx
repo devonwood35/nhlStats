@@ -7,38 +7,41 @@ function StandingsHeader({ name }) {
   });
 
   return (
-    <div className="twelfth-section background--black">
+    <div className="thirteenth-section background--black">
       <div className="second-element header-section header-section--small">
         {name}
       </div>
-      <div className="third-element list--title center--grid padding-large">
+      <div className="third-element list--title center--grid padding-large" title="Games Played">
         GP
       </div>
-      <div className="fourth-element list--title center--grid padding-large">
+      <div className="fourth-element list--title center--grid padding-large" title="Wins">
         W
       </div>
-      <div className="fifth-element list--title center--grid padding-large">
+      <div className="fifth-element list--title center--grid padding-large" title="Losses">
         L
       </div>
-      <div className="sixth-element list--title center--grid padding-large">
+      <div className="sixth-element list--title center--grid padding-large" title="Overtime/Shootout Losses">
         OT
       </div>
-      <div className="seventh-element list--title center--grid padding-large">
+      <div className="seventh-element list--title center--grid padding-large" title="Points">
         PTS
       </div>
-      <div className="eigth-element list--title center--grid padding-large">
+      <div className="eigth-element list--title center--grid padding-large" title="Points Percentage">
+        P%
+      </div>
+      <div className="ninth-element list--title center--grid padding-large" title="Regulation/Overtime Wins">
         ROW
       </div>
-      <div className="ninth-element list--title center--grid padding-large">
+      <div className="tenth-element list--title center--grid padding-large" title="Goals For">
         GF
       </div>
-      <div className="tenth-element list--title center--grid padding-large">
+      <div className="eleventh-element list--title center--grid padding-large" title="Goals Against">
         GA
       </div>
-      <div className="eleventh-element list--title center--grid padding-large">
+      <div className="twelfth-element list--title center--grid padding-large" title="GF/GA Difference">
         DIFF
       </div>
-      <div className="twelfth-element list--title center--grid padding-large">
+      <div className="thirteenth-element list--title center--grid padding-large" title="Streak">
         STRK
       </div>
     </div>

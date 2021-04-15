@@ -1,6 +1,21 @@
 const fs = require('fs');
 const allPlayers = require('./playerStats.json');
 
+/*
+
+  Separates skaters from goalies from playerStats.json
+
+  Parameters:
+
+    None
+
+  Returns:
+
+    skaters: Array of skaters with only the stats of the current year
+    goalies: Array of goalies with only the stats of the current year
+
+*/
+
 const skaters = [];
 const goalies = [];
 
