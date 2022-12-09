@@ -11,7 +11,7 @@
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "logger": "^0.0.1",
     "moment": "^2.24.0",
     "mysql2": "^2.0.2",
